@@ -1,0 +1,54 @@
+name: Portfolio Governance Change
+description: Required for product status, priority, boundary, source hierarchy or archive/component changes.
+title: "[Governance] TKV-000 - proposed change"
+labels: ["governance"]
+body:
+  - type: input
+    id: product_id
+    attributes:
+      label: Product ID
+      placeholder: TKV-003
+    validations:
+      required: true
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Change type
+      options:
+        - status
+        - priority
+        - product boundary
+        - canonical source
+        - archive state
+        - component state
+        - condition to clear
+        - other governance change
+    validations:
+      required: true
+  - type: textarea
+    id: current_state
+    attributes:
+      label: Current canonical state
+      description: Quote or summarise the current state from PORTFOLIO.yaml.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_state
+    attributes:
+      label: Proposed canonical state
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Distinguish VERIFIED, INFERRED and UNVERIFIED claims.
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I understand ordinary implementation PRs must not silently change canonical portfolio state.
+          required: true

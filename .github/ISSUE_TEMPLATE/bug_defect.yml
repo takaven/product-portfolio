@@ -1,0 +1,38 @@
+name: Bug / Defect
+description: Defect report for portfolio repository or product execution work.
+title: "[Bug] brief description"
+labels: ["bug"]
+body:
+  - type: input
+    id: product_id
+    attributes:
+      label: Product ID
+      description: Use N/A only for repository-level defects.
+      placeholder: TKV-003 or N/A
+    validations:
+      required: true
+  - type: textarea
+    id: defect
+    attributes:
+      label: Defect
+      description: What is wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Screenshots, logs, files or reproduction notes. Do not include sensitive data.
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints / exclusions
+      description: What must not be changed while fixing this?

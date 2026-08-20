@@ -1,0 +1,47 @@
+name: Design Gate
+description: D1-D4 visual/product design approval gate.
+title: "[Design Gate] TKV-000 - D1/D2/D3/D4"
+labels: ["design-gate"]
+body:
+  - type: input
+    id: product_id
+    attributes:
+      label: Product ID
+      placeholder: TKV-003
+    validations:
+      required: true
+  - type: dropdown
+    id: gate
+    attributes:
+      label: Design gate
+      options:
+        - D1 - UX principles
+        - D2 - Critical screens
+        - D3 - Component primitives
+        - D4 - Full frontend implementation
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+    validations:
+      required: true
+  - type: textarea
+    id: surfaces
+    attributes:
+      label: Screens or surfaces in scope
+    validations:
+      required: true
+  - type: textarea
+    id: exclusions
+    attributes:
+      label: Explicit exclusions
+    validations:
+      required: true
+  - type: textarea
+    id: approval_criteria
+    attributes:
+      label: Approval criteria
+    validations:
+      required: true

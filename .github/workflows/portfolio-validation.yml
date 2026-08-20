@@ -1,0 +1,30 @@
+name: Portfolio Validation
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate portfolio registry
+        run: python scripts/validate_portfolio.py
+
+      - name: Check generated portfolio view
+        run: python scripts/generate_portfolio.py --check
+
+      - name: Check generated product docs
+        run: python scripts/generate_product_docs.py --check
+
+      - name: Check documentation links
+        run: python scripts/check_docs.py

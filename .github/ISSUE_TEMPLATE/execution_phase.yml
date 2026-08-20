@@ -1,0 +1,70 @@
+name: Execution Phase
+description: Bounded authorised product execution work.
+title: "[Execution] TKV-000 - phase name"
+labels: ["execution"]
+body:
+  - type: input
+    id: product_id
+    attributes:
+      label: Product ID
+      description: Use the canonical ID from PORTFOLIO.yaml.
+      placeholder: TKV-003
+    validations:
+      required: true
+  - type: input
+    id: execution_phase
+    attributes:
+      label: Execution phase
+      placeholder: Phase 1 - Sanitisation and foundation extraction
+    validations:
+      required: true
+  - type: textarea
+    id: source_documents
+    attributes:
+      label: Source-of-truth documents
+      description: List the portfolio/product documents the agent must read.
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: Define the bounded outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: allowed_changes
+    attributes:
+      label: Allowed changes
+      description: State what may be changed.
+    validations:
+      required: true
+  - type: textarea
+    id: explicit_exclusions
+    attributes:
+      label: Explicit exclusions
+      description: State what must not be changed.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
+  - type: textarea
+    id: evidence_required
+    attributes:
+      label: Evidence required
+      description: Tests, screenshots, logs, review notes or other proof.
+    validations:
+      required: true
+  - type: checkboxes
+    id: status_update
+    attributes:
+      label: Status update requirement
+      options:
+        - label: This issue states whether PORTFOLIO.yaml or product docs may be updated.
+          required: true
+        - label: The agent must stop at this issue's acceptance gate.
+          required: true

@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Takaven Portfolio Registry",
+  "type": "object",
+  "required": ["portfolio", "products"],
+  "properties": {
+    "portfolio": {
+      "type": "object",
+      "required": ["name", "discovery_status", "canonical_source", "last_reviewed"],
+      "properties": {
+        "name": { "type": "string" },
+        "discovery_status": { "const": "PORTFOLIO_DISCOVERY_CLOSED" },
+        "canonical_source": { "const": "PORTFOLIO.yaml" },
+        "last_reviewed": { "type": "string" },
+        "operating_principle": { "type": "string" },
+        "new_product_policy": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/product" }
+    },
+    "components": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/component" }
+    }
+  },
+  "$defs": {
+    "status": {
+      "enum": [
+        "EXISTING_CORE",
+        "REVIVAL_IN_PROGRESS",
+        "SHORTLIST_BUILD",
+        "SHORTLIST_CONDITIONAL",
+        "COMPONENT_ABSORB",
+        "HOLD",
+        "ARCHIVE"
+      ]
+    },
+    "priority": {
+      "enum": ["P0", "P1", "P2", "P3", "P2_MODULE", "P3_MODULE", "HOLD"]
+    },
+    "lifecycle_stage": {
+      "enum": [
+        "STAGE_0_ASSET_IDENTIFIED",
+        "STAGE_1_PRODUCT_DEFINITION",
+        "STAGE_2_BUILD_COMPLETION",
+        "STAGE_3_PRODUCTION_HARDENING",
+        "STAGE_4_MARKET_READY_PREPARATION",
+        "STAGE_5_READY_TO_LAUNCH"
+      ]
+    },
+    "evidence_confidence": {
+      "enum": ["VERIFIED", "INFERRED", "UNVERIFIED"]
+    },
+    "source_asset": {
+      "type": "object",
+      "required": ["name", "classification", "evidence_confidence", "remarks"],
+      "properties": {
+        "name": { "type": "string" },
+        "classification": { "type": "string" },
+        "evidence_confidence": { "$ref": "#/$defs/evidence_confidence" },
+        "remarks": { "type": "string" }
+      }
+    },
+    "product": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "slug",
+        "category",
+        "status",
+        "priority",
+        "lifecycle_stage",
+        "product_promise",
+        "primary_buyer",
+        "problem",
+        "product_boundary",
+        "exclusions",
+        "source_assets",
+        "current_execution_gate",
+        "teamframe_relationship",
+        "owner_current_workstream",
+        "evidence_confidence",
+        "important_remarks"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^TKV-[0-9]{3}$" },
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "category": { "type": "string" },
+        "status": { "$ref": "#/$defs/status" },
+        "priority": { "$ref": "#/$defs/priority" },
+        "lifecycle_stage": { "$ref": "#/$defs/lifecycle_stage" },
+        "product_promise": { "type": "string" },
+        "primary_buyer": { "type": "string" },
+        "problem": { "type": "string" },
+        "product_boundary": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "exclusions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "source_assets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/source_asset" }
+        },
+        "source_repository_links": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "current_execution_gate": { "type": "string" },
+        "condition_to_clear": { "type": "string" },
+        "destination_product": { "type": "string" },
+        "teamframe_relationship": { "type": "string" },
+        "owner_current_workstream": { "type": "string" },
+        "evidence_confidence": { "$ref": "#/$defs/evidence_confidence" },
+        "important_remarks": { "type": "string" }
+      }
+    },
+    "component": {
+      "type": "object",
+      "required": ["name", "best_source", "destination_product", "why_retained", "reuse_instruction"],
+      "properties": {
+        "name": { "type": "string" },
+        "best_source": { "type": "string" },
+        "destination_product": { "type": "string" },
+        "why_retained": { "type": "string" },
+        "reuse_instruction": { "type": "string" }
+      }
+    }
+  }
+}

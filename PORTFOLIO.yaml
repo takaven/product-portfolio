@@ -1,0 +1,393 @@
+{
+  "portfolio": {
+    "name": "Takaven Product Portfolio",
+    "discovery_status": "PORTFOLIO_DISCOVERY_CLOSED",
+    "canonical_source": "PORTFOLIO.yaml",
+    "last_reviewed": "2026-08-20",
+    "operating_principle": "Portfolio repository -> product source-of-truth -> bounded GitHub issue -> agent execution -> pull request -> automated checks -> status/register update",
+    "new_product_policy": [
+      "genuinely new source assets are discovered",
+      "Takaven intentionally creates a new product",
+      "materially new evidence justifies reopening an archived lineage"
+    ]
+  },
+  "products": [
+    {
+      "id": "TKV-001",
+      "name": "TeamFrame",
+      "slug": "teamframe",
+      "category": "People Operations",
+      "status": "EXISTING_CORE",
+      "priority": "P0",
+      "lifecycle_stage": "STAGE_3_PRODUCTION_HARDENING",
+      "product_promise": "A people-operations product for structured HR workflows and employee lifecycle management.",
+      "primary_buyer": "HR lead or operator responsible for employee operations.",
+      "problem": "People operations require reliable workflows, records and management visibility after employment begins.",
+      "product_boundary": [
+        "employee lifecycle workflows",
+        "people operations records",
+        "post-hire HR operations"
+      ],
+      "exclusions": [
+        "pre-hire recruitment pass workflows owned by HirePass",
+        "property operations",
+        "payroll calculation engine"
+      ],
+      "source_assets": [
+        {
+          "name": "TeamFrame",
+          "classification": "primary implementation",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Active product handled separately by the founder."
+        }
+      ],
+      "source_repository_links": [],
+      "current_execution_gate": "Founder-managed workstream only; no execution authorised from this repository.",
+      "condition_to_clear": "",
+      "destination_product": "",
+      "teamframe_relationship": "self",
+      "owner_current_workstream": "founder",
+      "evidence_confidence": "VERIFIED",
+      "important_remarks": "Portfolio record exists for visibility and boundary control. Do not create TeamFrame execution issues from this setup."
+    },
+    {
+      "id": "TKV-002",
+      "name": "LeaseDesk",
+      "slug": "leasedesk",
+      "category": "Property Operations",
+      "status": "REVIVAL_IN_PROGRESS",
+      "priority": "P0",
+      "lifecycle_stage": "STAGE_4_MARKET_READY_PREPARATION",
+      "product_promise": "A simple operating system for small commercial landlords to manage units, tenants, leases, rent, arrears, documents and expenses.",
+      "primary_buyer": "Small commercial landlord or family-owned commercial property operator.",
+      "problem": "Small commercial portfolios are often run through spreadsheets, email and scattered documents.",
+      "product_boundary": [
+        "commercial units and stores",
+        "tenant and lease records",
+        "rent and payment status",
+        "arrears",
+        "documents",
+        "expenses",
+        "basic reporting and settings"
+      ],
+      "exclusions": [
+        "enterprise property management",
+        "online rent collection",
+        "maintenance ticketing",
+        "advanced accounting",
+        "tenant marketplace"
+      ],
+      "source_assets": [
+        {
+          "name": "AJM-Tenant-Management",
+          "classification": "original source asset",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Original family-property system; do not touch live data."
+        },
+        {
+          "name": "leasedesk-demo",
+          "classification": "isolated validation/demo environment",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Fictional-data demo environment prepared separately."
+        }
+      ],
+      "source_repository_links": [],
+      "current_execution_gate": "Commercial-product completion after validation/demo readiness.",
+      "condition_to_clear": "",
+      "destination_product": "",
+      "teamframe_relationship": "unrelated",
+      "owner_current_workstream": "revival in progress",
+      "evidence_confidence": "VERIFIED",
+      "important_remarks": "Substantive product asset. Do not downgrade to disposable validation software."
+    },
+    {
+      "id": "TKV-003",
+      "name": "HirePass",
+      "slug": "hirepass",
+      "category": "Recruitment Workflow",
+      "status": "SHORTLIST_BUILD",
+      "priority": "P1",
+      "lifecycle_stage": "STAGE_2_BUILD_COMPLETION",
+      "product_promise": "A secure hiring pass workflow that lets HR, managers and candidates complete hiring steps through controlled external links.",
+      "primary_buyer": "HR lead or founder at a 20-150 employee company hiring regularly.",
+      "problem": "Hiring decisions, candidate documents, interviews and manager feedback are scattered across email, WhatsApp and manual follow-up.",
+      "product_boundary": [
+        "hiring requests and positions",
+        "candidate records",
+        "Candidate Pass",
+        "Manager Pass",
+        "interview workflow",
+        "structured evaluations",
+        "candidate documents",
+        "candidate journey and status",
+        "offer-related workflow where materially implemented",
+        "onboarding handoff"
+      ],
+      "exclusions": [
+        "full enterprise ATS",
+        "job-board marketplace",
+        "recruitment agency CRM",
+        "payroll",
+        "employee lifecycle management",
+        "broad HRIS",
+        "TeamFrame functionality after employment begins"
+      ],
+      "source_assets": [
+        {
+          "name": "Talent-Flow",
+          "classification": "production foundation",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Strongest implementation; foundation selected for controlled consolidation."
+        },
+        {
+          "name": "BaynunahPass-1",
+          "classification": "component source",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Use auth, roles, audit and security patterns only."
+        },
+        {
+          "name": "HiringStreamline",
+          "classification": "component source",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Use simplified V1 workflow reference."
+        },
+        {
+          "name": "PremiumHRPass",
+          "classification": "component source",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Use candidate timeline, interview slot and notification concepts where useful."
+        },
+        {
+          "name": "BaynunahCareersPortal",
+          "classification": "component source",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Use candidate journey and manager review concepts where useful."
+        },
+        {
+          "name": "HRPWAPass",
+          "classification": "reference only",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Reference only; not a production foundation."
+        },
+        {
+          "name": "pass UI shells",
+          "classification": "reference only",
+          "evidence_confidence": "INFERRED",
+          "remarks": "Visual/reference material only."
+        }
+      ],
+      "source_repository_links": [],
+      "current_execution_gate": "Phase 1 - sanitisation and foundation extraction.",
+      "condition_to_clear": "",
+      "destination_product": "",
+      "teamframe_relationship": "complementary; possible later integration at hire-to-employee handoff",
+      "owner_current_workstream": "awaiting execution",
+      "evidence_confidence": "VERIFIED",
+      "important_remarks": "Do not rebuild from zero. Use Talent-Flow as the base, consolidate controlled modules, and remove full ATS/broad HR scope."
+    },
+    {
+      "id": "TKV-004",
+      "name": "PayrollFlowEngine",
+      "slug": "payrollflowengine",
+      "category": "Payroll Operations / Document Intelligence",
+      "status": "SHORTLIST_CONDITIONAL",
+      "priority": "P2",
+      "lifecycle_stage": "STAGE_1_PRODUCT_DEFINITION",
+      "product_promise": "A payroll change-control and document-intelligence layer for intake, extraction, approvals, variance checks and auditability.",
+      "primary_buyer": "HR/payroll operator responsible for controlled payroll changes.",
+      "problem": "Payroll change inputs arrive through documents and manual messages, creating variance, approval and audit risk.",
+      "product_boundary": [
+        "incoming payroll change documents",
+        "document extraction",
+        "classification",
+        "employee change records",
+        "approval workflow",
+        "payroll variance control",
+        "auditability",
+        "exports"
+      ],
+      "exclusions": [
+        "full payroll system",
+        "payroll calculation engine",
+        "replacement for mature payroll suites",
+        "tax filing engine"
+      ],
+      "source_assets": [
+        {
+          "name": "PayrollFlowEngine source assets",
+          "classification": "source lineage",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Retained as conditional product asset."
+        }
+      ],
+      "source_repository_links": [],
+      "current_execution_gate": "Resolve product boundary decision.",
+      "condition_to_clear": "Decide TeamFrame add-on vs independent Takaven control-layer product.",
+      "destination_product": "",
+      "teamframe_relationship": "conditional; could be TeamFrame add-on or independent control-layer product",
+      "owner_current_workstream": "not scheduled",
+      "evidence_confidence": "VERIFIED",
+      "important_remarks": "Must not become full payroll software. Boundary is payroll change control and document intelligence."
+    },
+    {
+      "id": "TKV-005",
+      "name": "HR Operations Inbox",
+      "slug": "hr-operations-inbox",
+      "category": "HR Workflow",
+      "status": "COMPONENT_ABSORB",
+      "priority": "P2_MODULE",
+      "lifecycle_stage": "STAGE_1_PRODUCT_DEFINITION",
+      "product_promise": "A retained HR request intake and case-management component for TeamFrame.",
+      "primary_buyer": "TeamFrame customer via TeamFrame module.",
+      "problem": "HR work intake needs structure, triage, ownership and visibility.",
+      "product_boundary": [
+        "HR request intake",
+        "case triage",
+        "case ownership",
+        "request status"
+      ],
+      "exclusions": [
+        "independent product workstream",
+        "standalone helpdesk",
+        "broad ticketing platform"
+      ],
+      "source_assets": [
+        {
+          "name": "HR Operations Inbox implementations",
+          "classification": "component source",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Absorb into TeamFrame; not retained as independent product."
+        }
+      ],
+      "source_repository_links": [],
+      "current_execution_gate": "Only execute inside authorised TeamFrame module work.",
+      "condition_to_clear": "",
+      "destination_product": "TeamFrame",
+      "teamframe_relationship": "should be absorbed",
+      "owner_current_workstream": "not scheduled",
+      "evidence_confidence": "VERIFIED",
+      "important_remarks": "Retained portfolio record only. Future agents must not create standalone execution issues unless governance changes this status."
+    },
+    {
+      "id": "TKV-006",
+      "name": "Attendance & Timesheet Exceptions",
+      "slug": "attendance-exceptions",
+      "category": "HR Operations",
+      "status": "COMPONENT_ABSORB",
+      "priority": "P3_MODULE",
+      "lifecycle_stage": "STAGE_1_PRODUCT_DEFINITION",
+      "product_promise": "A retained attendance and timesheet exception-handling component for TeamFrame.",
+      "primary_buyer": "TeamFrame customer via TeamFrame module.",
+      "problem": "Attendance and timesheet exceptions need review, correction and operational visibility.",
+      "product_boundary": [
+        "attendance exceptions",
+        "timesheet exceptions",
+        "review status",
+        "correction workflow"
+      ],
+      "exclusions": [
+        "independent product workstream",
+        "full time-and-attendance suite",
+        "payroll engine"
+      ],
+      "source_assets": [
+        {
+          "name": "Attendance/time assets",
+          "classification": "component source",
+          "evidence_confidence": "INFERRED",
+          "remarks": "Retained as TeamFrame component."
+        },
+        {
+          "name": "PassGuard-Pipeline",
+          "classification": "possible source attribution",
+          "evidence_confidence": "UNVERIFIED",
+          "remarks": "Must remain unverified unless independently confirmed from actual source evidence."
+        }
+      ],
+      "source_repository_links": [],
+      "current_execution_gate": "Only execute inside authorised TeamFrame module work after source confirmation.",
+      "condition_to_clear": "",
+      "destination_product": "TeamFrame",
+      "teamframe_relationship": "should be absorbed",
+      "owner_current_workstream": "not scheduled",
+      "evidence_confidence": "INFERRED",
+      "important_remarks": "Retained portfolio record only. Source attribution remains partly unverified."
+    },
+    {
+      "id": "TKV-007",
+      "name": "VisionForge / AI-DAN",
+      "slug": "visionforge",
+      "category": "AI Developer Tools",
+      "status": "HOLD",
+      "priority": "HOLD",
+      "lifecycle_stage": "STAGE_0_ASSET_IDENTIFIED",
+      "product_promise": "A technically substantial AI developer-tool lineage retained on hold.",
+      "primary_buyer": "Unresolved.",
+      "problem": "Unresolved.",
+      "product_boundary": [
+        "AI developer-tool assets"
+      ],
+      "exclusions": [
+        "active execution",
+        "near-term portfolio priority"
+      ],
+      "source_assets": [
+        {
+          "name": "VisionForge / AI-DAN assets",
+          "classification": "held lineage",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Technically substantial but commercially deprioritised."
+        }
+      ],
+      "source_repository_links": [],
+      "current_execution_gate": "No execution scheduled.",
+      "condition_to_clear": "",
+      "destination_product": "",
+      "teamframe_relationship": "unrelated",
+      "owner_current_workstream": "hold",
+      "evidence_confidence": "VERIFIED",
+      "important_remarks": "Do not reopen during normal execution. Revisit only with material new commercial evidence."
+    }
+  ],
+  "components": [
+    {
+      "name": "Candidate Pass workflow",
+      "best_source": "Talent-Flow",
+      "destination_product": "HirePass",
+      "why_retained": "Core external candidate workflow already materially implemented.",
+      "reuse_instruction": "Reuse workflow concepts; harden token security and document access before production."
+    },
+    {
+      "name": "Manager Pass workflow",
+      "best_source": "Talent-Flow",
+      "destination_product": "HirePass",
+      "why_retained": "Core external manager workflow already materially implemented.",
+      "reuse_instruction": "Reuse flow; centralise permissions, expiry and audit logging."
+    },
+    {
+      "name": "JWT auth and audit scaffolding",
+      "best_source": "BaynunahPass-1",
+      "destination_product": "HirePass",
+      "why_retained": "Stronger security primitives than other recruitment variants.",
+      "reuse_instruction": "Port patterns only after replacing unsafe defaults and adding tenant isolation."
+    },
+    {
+      "name": "HR Operations Inbox",
+      "best_source": "HR workflow assets",
+      "destination_product": "TeamFrame",
+      "why_retained": "Useful HR request intake/case-management module.",
+      "reuse_instruction": "Absorb into TeamFrame only through authorised TeamFrame module work."
+    },
+    {
+      "name": "Attendance and timesheet exceptions",
+      "best_source": "Attendance/time assets",
+      "destination_product": "TeamFrame",
+      "why_retained": "Useful HR operations workflow if source and scope are confirmed.",
+      "reuse_instruction": "Keep as component; do not treat as standalone product."
+    }
+  ],
+  "archive_policy": {
+    "status": "active",
+    "rule": "Archived lineages remain closed unless genuinely new assets, intentional product creation or material new evidence justifies reopening."
+  }
+}
