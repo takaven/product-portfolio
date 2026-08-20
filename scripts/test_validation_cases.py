@@ -57,14 +57,24 @@ def test_conditional_without_condition(base: dict) -> None:
     data = copy.deepcopy(base)
     product = next(item for item in data["products"] if item["status"] == "SHORTLIST_CONDITIONAL")
     product["condition_to_clear"] = ""
-    assert_fails("conditional without condition", data, "condition_to_clear")
+    assert_fails("conditional with empty condition", data, "condition_to_clear")
+
+    data = copy.deepcopy(base)
+    product = next(item for item in data["products"] if item["status"] == "SHORTLIST_CONDITIONAL")
+    del product["condition_to_clear"]
+    assert_fails("conditional with omitted condition", data, "condition_to_clear")
 
 
 def test_component_without_destination(base: dict) -> None:
     data = copy.deepcopy(base)
     product = next(item for item in data["products"] if item["status"] == "COMPONENT_ABSORB")
     product["destination_product"] = ""
-    assert_fails("component without destination", data, "destination_product")
+    assert_fails("component with empty destination", data, "destination_product")
+
+    data = copy.deepcopy(base)
+    product = next(item for item in data["products"] if item["status"] == "COMPONENT_ABSORB")
+    del product["destination_product"]
+    assert_fails("component with omitted destination", data, "destination_product")
 
 
 def test_orphan_product_folder(base: dict) -> None:

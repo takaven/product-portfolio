@@ -203,11 +203,17 @@
       "allOf": [
         {
           "if": { "properties": { "status": { "const": "SHORTLIST_CONDITIONAL" } } },
-          "then": { "properties": { "condition_to_clear": { "type": "string", "minLength": 1 } } }
+          "then": {
+            "required": ["condition_to_clear"],
+            "properties": { "condition_to_clear": { "type": "string", "minLength": 1 } }
+          }
         },
         {
           "if": { "properties": { "status": { "const": "COMPONENT_ABSORB" } } },
-          "then": { "properties": { "destination_product": { "type": "string", "minLength": 1 } } }
+          "then": {
+            "required": ["destination_product"],
+            "properties": { "destination_product": { "type": "string", "minLength": 1 } }
+          }
         }
       ]
     },
