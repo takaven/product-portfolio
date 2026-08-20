@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements.txt
+
       - name: Validate portfolio registry
         run: python scripts/validate_portfolio.py
 
@@ -25,6 +28,9 @@ jobs:
 
       - name: Check generated product docs
         run: python scripts/generate_product_docs.py --check
+
+      - name: Run validation failure-case tests
+        run: python scripts/test_validation_cases.py
 
       - name: Check documentation links
         run: python scripts/check_docs.py

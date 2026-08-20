@@ -39,3 +39,8 @@ conditional; could be TeamFrame add-on or independent control-layer product
 ## Remarks
 
 Must not become full payroll software. Boundary is payroll change control and document intelligence.
+
+## Product Principles
+
+No additional canonical product principles recorded.
+

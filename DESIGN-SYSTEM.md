@@ -43,4 +43,6 @@ No full frontend rollout before visual foundation and critical screens are appro
 - D3 - Component primitives: tables, forms, cards, navigation, states, modals and drawers.
 - D4 - Full frontend implementation.
 
+D2 requires approved D1 evidence. D3 requires approved D1 and D2 evidence. D4 requires approved D1, D2 and D3 evidence.
+
 For HirePass, likely critical surfaces are HR / Pass management view, Candidate Pass and Manager Pass. Do not design them until the relevant gate is opened.

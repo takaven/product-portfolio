@@ -4,7 +4,11 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Commercial-product completion after validation/demo readiness.
+Commercial-product completion after validation/demo readiness; source locator/revision must be verified before the next execution issue.
+
+## Execution Ready
+
+`false`
 
 ## Condition To Clear
 

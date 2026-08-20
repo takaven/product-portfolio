@@ -45,3 +45,10 @@ body:
       label: Approval criteria
     validations:
       required: true
+  - type: textarea
+    id: prerequisite_evidence
+    attributes:
+      label: Prerequisite approval evidence
+      description: D1 may state "not applicable". D2 requires approved D1 evidence. D3 requires D1 and D2 evidence. D4 requires D1, D2 and D3 evidence. Link approval issues, PRs or decision records.
+    validations:
+      required: true

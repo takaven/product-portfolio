@@ -25,8 +25,9 @@ def row(values: list[str]) -> str:
 def render(data: dict) -> str:
     portfolio = data["portfolio"]
     products = data["products"]
-    active = [p for p in products if p["priority"] in {"P0", "P1"}]
-    queue = sorted(products, key=lambda p: p["priority"])
+    independent_products = [p for p in products if p["status"] != "COMPONENT_ABSORB"]
+    component_records = [p for p in products if p["status"] == "COMPONENT_ABSORB"]
+    queue = sorted(independent_products, key=lambda p: p["priority"])
 
     lines: list[str] = [
         "<!-- GENERATED FROM PORTFOLIO.yaml. DO NOT EDIT DIRECTLY. -->",
@@ -60,13 +61,13 @@ def render(data: dict) -> str:
         "",
         f"> {portfolio['operating_principle']}",
         "",
-        "## Current Products",
+        "## Active / Independent Products",
         "",
         row(["ID", "Product", "Category", "Status", "Priority", "Execution Gate"]),
         row(["--", "-------", "--------", "------", "--------", "--------------"]),
         ]
     )
-    for product in products:
+    for product in independent_products:
         lines.append(
             row(
                 [
@@ -83,7 +84,31 @@ def render(data: dict) -> str:
     lines.extend(
         [
             "",
-            "## Active Queue",
+            "## Retained Component Records",
+            "",
+            "These records are retained modules/components, not independent product workstreams.",
+            "",
+            row(["ID", "Component", "Destination", "Priority", "Execution Gate"]),
+            row(["--", "---------", "-----------", "--------", "--------------"]),
+        ]
+    )
+    for product in component_records:
+        lines.append(
+            row(
+                [
+                    product["id"],
+                    product["name"],
+                    product.get("destination_product", ""),
+                    f"`{product['priority']}`",
+                    product["current_execution_gate"],
+                ]
+            )
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Active Product Queue",
             "",
             row(["Priority", "Products"]),
             row(["--------", "--------"]),

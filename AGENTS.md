@@ -43,3 +43,12 @@ Do not modify product repositories from this repository. That includes TeamFrame
 - PayrollFlowEngine is conditional and must not become a full payroll system.
 - HR Operations Inbox and Attendance & Timesheet Exceptions are retained component records whose destination is the separate TeamFrame repository; they are not independent product workstreams.
 - VisionForge / AI-DAN is on hold.
+
+## Design Gate Enforcement
+
+- D2 work requires explicit approved D1 evidence.
+- D3 work requires explicit approved D1 and D2 evidence.
+- D4 work requires explicit approved D1, D2 and D3 evidence.
+- If a design issue lacks the required prerequisite approval links or decision references, stop and ask for the missing governance evidence.
+- `DESIGN.md` is manually maintained durable design history, not generated state.
+- `DECISIONS.md` is append-only material decision history, not generated state.

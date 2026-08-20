@@ -6,6 +6,10 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 Only execute inside authorised TeamFrame work in the separate TeamFrame repository after source confirmation.
 
+## Execution Ready
+
+`false`
+
 ## Condition To Clear
 
 None.

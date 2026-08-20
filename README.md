@@ -8,23 +8,11 @@ TeamFrame is an active product handled independently by the founder in a separat
 
 ## Current Products
 
-The canonical registry is `PORTFOLIO.yaml`. The generated human-readable view is `PORTFOLIO.md`.
-
-- `TKV-002` - LeaseDesk: revival in progress.
-- `TKV-003` - HirePass: next shortlisted build.
-- `TKV-004` - PayrollFlowEngine: conditional shortlist.
-- `TKV-005` - HR Operations Inbox: component to absorb into TeamFrame.
-- `TKV-006` - Attendance & Timesheet Exceptions: component to absorb into TeamFrame.
-- `TKV-007` - VisionForge / AI-DAN: hold.
+The canonical registry is `PORTFOLIO.yaml`. The generated human-readable product and component view is `PORTFOLIO.md`.
 
 ## Active Queue
 
-- `P0`: LeaseDesk
-- `P1`: HirePass
-- `P2`: PayrollFlowEngine
-- `P2_MODULE`: HR Operations Inbox
-- `P3_MODULE`: Attendance & Timesheet Exceptions
-- `HOLD`: VisionForge / AI-DAN
+See `PORTFOLIO.md`. Do not manually maintain product status, priority or queue summaries in this README.
 
 ## Where Agents Start
 

@@ -2,10 +2,10 @@
 
 This file records safe source metadata only. Do not copy source code, real records, uploads, secrets or raw audit exports into this repository.
 
-| Source | Classification | Confidence | Remarks |
-| ------ | -------------- | ---------- | ------- |
-| AJM-Tenant-Management | original source asset | `VERIFIED` | Original family-property system; do not touch live data. |
-| leasedesk-demo | isolated validation/demo environment | `VERIFIED` | Fictional-data demo environment prepared separately. |
+| Source | Role | Type | Locator Status | Branch | Pinned Revision | Confidence | Remarks |
+| ------ | ---- | ---- | -------------- | ------ | --------------- | ---------- | ------- |
+| AJM-Tenant-Management | `PRIMARY` | `REPLIT_EXPORT_OR_LOCAL_ASSET` | `LOCATOR_REQUIRED` | - | - | `VERIFIED` | Original family-property system; do not touch live data. |
+| leasedesk-demo | `COMPONENT` | `REPLIT_EXPORT_OR_LOCAL_ASSET` | `UNVERIFIED` | - | - | `VERIFIED` | Fictional-data demo environment prepared separately. |
 
 ## Repository Links
 
