@@ -6,6 +6,12 @@
 
 Takaven is a software portfolio for revived and active products with bounded execution gates. This repository is the operating memory for portfolio decisions, source hierarchy, product boundaries and authorised next steps.
 
+## External Products
+
+| Product | Relationship | Governance Rule |
+| ------- | ------------ | --------------- |
+| TeamFrame | active product handled independently by the founder in a separate repository | TeamFrame is not part of this portfolio operating repository and must not be modified or executed from here. |
+
 ## Operating Principle
 
 > Portfolio repository -> product source-of-truth -> bounded GitHub issue -> agent execution -> pull request -> automated checks -> status/register update
@@ -14,19 +20,18 @@ Takaven is a software portfolio for revived and active products with bounded exe
 
 | ID | Product | Category | Status | Priority | Execution Gate |
 | -- | ------- | -------- | ------ | -------- | -------------- |
-| TKV-001 | TeamFrame | People Operations | `EXISTING_CORE` | `P0` | Founder-managed workstream only; no execution authorised from this repository. |
 | TKV-002 | LeaseDesk | Property Operations | `REVIVAL_IN_PROGRESS` | `P0` | Commercial-product completion after validation/demo readiness. |
 | TKV-003 | HirePass | Recruitment Workflow | `SHORTLIST_BUILD` | `P1` | Phase 1 - sanitisation and foundation extraction. |
 | TKV-004 | PayrollFlowEngine | Payroll Operations / Document Intelligence | `SHORTLIST_CONDITIONAL` | `P2` | Resolve product boundary decision. |
-| TKV-005 | HR Operations Inbox | HR Workflow | `COMPONENT_ABSORB` | `P2_MODULE` | Only execute inside authorised TeamFrame module work. |
-| TKV-006 | Attendance & Timesheet Exceptions | HR Operations | `COMPONENT_ABSORB` | `P3_MODULE` | Only execute inside authorised TeamFrame module work after source confirmation. |
+| TKV-005 | HR Operations Inbox | HR Workflow | `COMPONENT_ABSORB` | `P2_MODULE` | Only execute inside authorised TeamFrame work in the separate TeamFrame repository. |
+| TKV-006 | Attendance & Timesheet Exceptions | HR Operations | `COMPONENT_ABSORB` | `P3_MODULE` | Only execute inside authorised TeamFrame work in the separate TeamFrame repository after source confirmation. |
 | TKV-007 | VisionForge / AI-DAN | AI Developer Tools | `HOLD` | `HOLD` | No execution scheduled. |
 
 ## Active Queue
 
 | Priority | Products |
 | -------- | -------- |
-| `P0` | TeamFrame, LeaseDesk |
+| `P0` | LeaseDesk |
 | `P1` | HirePass |
 | `P2` | PayrollFlowEngine |
 | `P2_MODULE` | HR Operations Inbox |

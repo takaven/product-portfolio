@@ -2,13 +2,14 @@
 
 This is the central operating repository for the Takaven product portfolio.
 
-Takaven is the parent software portfolio for active and revived products including TeamFrame, LeaseDesk, HirePass and selected retained components. This repository is not a product application. It is the source of truth for what Takaven is building, what has already been decided, where each product stands and what execution step is authorised next.
+Takaven is the parent software portfolio for revived and governed product work including LeaseDesk, HirePass and selected retained components. This repository is not a product application. It is the source of truth for what this portfolio repository governs, what has already been decided, where each retained record stands and what execution step is authorised next.
+
+TeamFrame is an active product handled independently by the founder in a separate repository. It is referenced here only where retained components may later be absorbed into TeamFrame.
 
 ## Current Products
 
 The canonical registry is `PORTFOLIO.yaml`. The generated human-readable view is `PORTFOLIO.md`.
 
-- `TKV-001` - TeamFrame: existing core product.
 - `TKV-002` - LeaseDesk: revival in progress.
 - `TKV-003` - HirePass: next shortlisted build.
 - `TKV-004` - PayrollFlowEngine: conditional shortlist.
@@ -18,7 +19,7 @@ The canonical registry is `PORTFOLIO.yaml`. The generated human-readable view is
 
 ## Active Queue
 
-- `P0`: TeamFrame, LeaseDesk
+- `P0`: LeaseDesk
 - `P1`: HirePass
 - `P2`: PayrollFlowEngine
 - `P2_MODULE`: HR Operations Inbox
@@ -37,4 +38,4 @@ The canonical registry is `PORTFOLIO.yaml`. The generated human-readable view is
 
 Portfolio discovery is closed. Do not reopen broad product discovery, change product scope, alter product status, or start a new execution phase unless an authorised GitHub issue explicitly allows it.
 
-No product repositories may be modified from this setup repository.
+No product repositories, including TeamFrame, may be modified from this setup repository.

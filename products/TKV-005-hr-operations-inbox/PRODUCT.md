@@ -33,4 +33,4 @@ should be absorbed
 
 ## Remarks
 
-Retained portfolio record only. Future agents must not create standalone execution issues unless governance changes this status.
+Retained component record only. TeamFrame itself is external to this repository. Future agents must not create standalone execution issues unless governance changes this status.

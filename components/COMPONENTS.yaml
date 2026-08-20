@@ -19,12 +19,12 @@
     },
     {
       "component": "HR Operations Inbox",
-      "destination_product": "TeamFrame",
+      "destination_product": "TeamFrame (external repository)",
       "decision": "absorb"
     },
     {
       "component": "Attendance and timesheet exceptions",
-      "destination_product": "TeamFrame",
+      "destination_product": "TeamFrame (external repository)",
       "decision": "absorb"
     }
   ]

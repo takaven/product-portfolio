@@ -37,6 +37,25 @@ def render(data: dict) -> str:
         "",
         "Takaven is a software portfolio for revived and active products with bounded execution gates. This repository is the operating memory for portfolio decisions, source hierarchy, product boundaries and authorised next steps.",
         "",
+        "## External Products",
+        "",
+    ]
+    external_products = portfolio.get("external_products", [])
+    if external_products:
+        lines.extend(
+            [
+                row(["Product", "Relationship", "Governance Rule"]),
+                row(["-------", "------------", "---------------"]),
+            ]
+        )
+        for item in external_products:
+            lines.append(row([item["name"], item["relationship"], item["governance_rule"]]))
+        lines.append("")
+    else:
+        lines.extend(["No external products recorded.", ""])
+
+    lines.extend(
+        [
         "## Operating Principle",
         "",
         f"> {portfolio['operating_principle']}",
@@ -45,7 +64,8 @@ def render(data: dict) -> str:
         "",
         row(["ID", "Product", "Category", "Status", "Priority", "Execution Gate"]),
         row(["--", "-------", "--------", "------", "--------", "--------------"]),
-    ]
+        ]
+    )
     for product in products:
         lines.append(
             row(

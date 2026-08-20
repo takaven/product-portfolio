@@ -4,7 +4,7 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Only execute inside authorised TeamFrame module work after source confirmation.
+Only execute inside authorised TeamFrame work in the separate TeamFrame repository after source confirmation.
 
 ## Condition To Clear
 

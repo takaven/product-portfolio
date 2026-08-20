@@ -9,7 +9,7 @@ This repository is intended to be the central operating memory for Takaven produ
 - Canonical registry: `PORTFOLIO.yaml`
 - Schema/constants: `schema/portfolio.schema.json`
 - Generated human view: `PORTFOLIO.md`
-- Product folders for all seven retained records
+- Product folders for retained governed records except TeamFrame, which is external
 - Component and archive registers
 - Root governance files
 - Issue templates, PR template, CODEOWNERS and validation workflow
@@ -18,11 +18,11 @@ This repository is intended to be the central operating memory for Takaven produ
 ## Locked Decisions Imported
 
 - Portfolio discovery is closed.
-- TeamFrame is existing core.
+- TeamFrame is external to this repository and handled independently by the founder.
 - LeaseDesk is revival in progress.
 - HirePass is shortlist build, P1, foundation `Talent-Flow`, controlled consolidation.
 - PayrollFlowEngine is conditional pending TeamFrame add-on vs independent control-layer decision.
-- HR Operations Inbox and Attendance & Timesheet Exceptions are TeamFrame components/modules.
+- HR Operations Inbox and Attendance & Timesheet Exceptions are component records whose destination is the separate TeamFrame repository.
 - VisionForge / AI-DAN is on hold.
 
 ## Intentionally Incomplete

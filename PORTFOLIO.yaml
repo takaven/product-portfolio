@@ -9,47 +9,16 @@
       "genuinely new source assets are discovered",
       "Takaven intentionally creates a new product",
       "materially new evidence justifies reopening an archived lineage"
+    ],
+    "external_products": [
+      {
+        "name": "TeamFrame",
+        "relationship": "active product handled independently by the founder in a separate repository",
+        "governance_rule": "TeamFrame is not part of this portfolio operating repository and must not be modified or executed from here."
+      }
     ]
   },
   "products": [
-    {
-      "id": "TKV-001",
-      "name": "TeamFrame",
-      "slug": "teamframe",
-      "category": "People Operations",
-      "status": "EXISTING_CORE",
-      "priority": "P0",
-      "lifecycle_stage": "STAGE_3_PRODUCTION_HARDENING",
-      "product_promise": "A people-operations product for structured HR workflows and employee lifecycle management.",
-      "primary_buyer": "HR lead or operator responsible for employee operations.",
-      "problem": "People operations require reliable workflows, records and management visibility after employment begins.",
-      "product_boundary": [
-        "employee lifecycle workflows",
-        "people operations records",
-        "post-hire HR operations"
-      ],
-      "exclusions": [
-        "pre-hire recruitment pass workflows owned by HirePass",
-        "property operations",
-        "payroll calculation engine"
-      ],
-      "source_assets": [
-        {
-          "name": "TeamFrame",
-          "classification": "primary implementation",
-          "evidence_confidence": "VERIFIED",
-          "remarks": "Active product handled separately by the founder."
-        }
-      ],
-      "source_repository_links": [],
-      "current_execution_gate": "Founder-managed workstream only; no execution authorised from this repository.",
-      "condition_to_clear": "",
-      "destination_product": "",
-      "teamframe_relationship": "self",
-      "owner_current_workstream": "founder",
-      "evidence_confidence": "VERIFIED",
-      "important_remarks": "Portfolio record exists for visibility and boundary control. Do not create TeamFrame execution issues from this setup."
-    },
     {
       "id": "TKV-002",
       "name": "LeaseDesk",
@@ -260,13 +229,13 @@
         }
       ],
       "source_repository_links": [],
-      "current_execution_gate": "Only execute inside authorised TeamFrame module work.",
+      "current_execution_gate": "Only execute inside authorised TeamFrame work in the separate TeamFrame repository.",
       "condition_to_clear": "",
       "destination_product": "TeamFrame",
       "teamframe_relationship": "should be absorbed",
       "owner_current_workstream": "not scheduled",
       "evidence_confidence": "VERIFIED",
-      "important_remarks": "Retained portfolio record only. Future agents must not create standalone execution issues unless governance changes this status."
+      "important_remarks": "Retained component record only. TeamFrame itself is external to this repository. Future agents must not create standalone execution issues unless governance changes this status."
     },
     {
       "id": "TKV-006",
@@ -305,13 +274,13 @@
         }
       ],
       "source_repository_links": [],
-      "current_execution_gate": "Only execute inside authorised TeamFrame module work after source confirmation.",
+      "current_execution_gate": "Only execute inside authorised TeamFrame work in the separate TeamFrame repository after source confirmation.",
       "condition_to_clear": "",
       "destination_product": "TeamFrame",
       "teamframe_relationship": "should be absorbed",
       "owner_current_workstream": "not scheduled",
       "evidence_confidence": "INFERRED",
-      "important_remarks": "Retained portfolio record only. Source attribution remains partly unverified."
+      "important_remarks": "Retained component record only. TeamFrame itself is external to this repository. Source attribution remains partly unverified."
     },
     {
       "id": "TKV-007",

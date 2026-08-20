@@ -9,7 +9,7 @@ A retained attendance and timesheet exception-handling component for TeamFrame.
 - Status: `COMPONENT_ABSORB`
 - Priority: `P3_MODULE`
 - Lifecycle stage: `STAGE_1_PRODUCT_DEFINITION`
-- Current execution gate: Only execute inside authorised TeamFrame module work after source confirmation.
+- Current execution gate: Only execute inside authorised TeamFrame work in the separate TeamFrame repository after source confirmation.
 - Evidence confidence: `INFERRED`
 
 ## Important Warning

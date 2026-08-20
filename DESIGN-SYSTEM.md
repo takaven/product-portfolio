@@ -28,10 +28,11 @@ Written HEX values are authoritative. Do not sample colours from images.
 
 ## Product Personalities
 
-- TeamFrame: calm, structured, spacious.
 - HirePass: pass-centric, identity/status-driven, sharper, more progressive.
 - LeaseDesk: operational, property-oriented, controlled information density.
 - PayrollFlowEngine: precise, analytical, audit/control-oriented.
+
+TeamFrame may have its own design direction in its separate repository. This file must not be treated as TeamFrame governance.
 
 ## Frontend Gates
 

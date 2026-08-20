@@ -6,7 +6,9 @@ The portfolio operating hierarchy is:
 
 ## Source of Truth
 
-`PORTFOLIO.yaml` is the canonical machine-readable register. Generated views such as `PORTFOLIO.md` must be regenerated from it.
+`PORTFOLIO.yaml` is the canonical machine-readable register for products and component records governed by this repository. Generated views such as `PORTFOLIO.md` must be regenerated from it.
+
+TeamFrame is handled outside this repository. References to TeamFrame exist only to identify external destination context for retained components.
 
 ## Execution Flow
 
