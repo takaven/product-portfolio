@@ -40,11 +40,14 @@ This repository is intended to be the central operating memory for Takaven produ
 
 ## GitHub Settings Successfully Applied
 
-Pending repository creation/push verification.
+- Repository created as private: `takaven/product-portfolio`
+- Default branch pushed as `main`
+- Portfolio Validation workflow created and first push run completed successfully
 
 ## Settings Not Applied
 
-Record any unverified GitHub settings here after push.
+- Branch protection on `main` was not applied. GitHub returned a plan/permission restriction for branch protection on a private repository.
+- Required status checks were not enforced through branch protection for the same reason.
 
 ## Assumptions
 
@@ -58,7 +61,8 @@ Record any unverified GitHub settings here after push.
 
 ## Manual Actions Required
 
-Pending final setup result.
+- Enable branch protection for `main` if the GitHub organisation/account plan allows it later.
+- When branch protection is available, require pull requests and the `validate` status check from the Portfolio Validation workflow.
 
 ## Product Repository Safety Confirmation
 
