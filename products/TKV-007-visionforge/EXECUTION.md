@@ -6,6 +6,10 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 No execution scheduled.
 
+## Execution Ready
+
+`false`
+
 ## Condition To Clear
 
 None.

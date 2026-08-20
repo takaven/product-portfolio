@@ -26,6 +26,32 @@ body:
     validations:
       required: true
   - type: textarea
+    id: source_asset_locator
+    attributes:
+      label: Actual source asset locator
+      description: Provide repository URL, Replit/export/local locator, and any access notes needed to locate the exact source without chat history.
+    validations:
+      required: true
+  - type: input
+    id: source_revision
+    attributes:
+      label: Branch / revision / pinned commit
+      description: Provide branch and commit SHA where applicable. Use LOCATOR_REQUIRED only when this issue is specifically to resolve missing locator evidence.
+      placeholder: main @ abc123... or LOCATOR_REQUIRED
+    validations:
+      required: true
+  - type: dropdown
+    id: source_evidence_status
+    attributes:
+      label: Source evidence status
+      options:
+        - VERIFIED
+        - INFERRED
+        - UNVERIFIED
+        - LOCATOR_REQUIRED
+    validations:
+      required: true
+  - type: textarea
     id: objective
     attributes:
       label: Objective
@@ -67,4 +93,6 @@ body:
         - label: This issue states whether PORTFOLIO.yaml or product docs may be updated.
           required: true
         - label: The agent must stop at this issue's acceptance gate.
+          required: true
+        - label: The source locator and revision are sufficient for an independent agent to find the source without historical chat context, unless this issue is explicitly about resolving missing locator evidence.
           required: true

@@ -33,4 +33,9 @@ should be absorbed
 
 ## Remarks
 
-Retained portfolio record only. Source attribution remains partly unverified.
+Retained component record only. TeamFrame itself is external to this repository. Source attribution remains partly unverified.
+
+## Product Principles
+
+No additional canonical product principles recorded.
+

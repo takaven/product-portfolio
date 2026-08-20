@@ -4,7 +4,11 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Phase 1 - sanitisation and foundation extraction.
+BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction.
+
+## Execution Ready
+
+`false`
 
 ## Condition To Clear
 

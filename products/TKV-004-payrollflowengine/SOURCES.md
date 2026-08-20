@@ -2,9 +2,9 @@
 
 This file records safe source metadata only. Do not copy source code, real records, uploads, secrets or raw audit exports into this repository.
 
-| Source | Classification | Confidence | Remarks |
-| ------ | -------------- | ---------- | ------- |
-| PayrollFlowEngine source assets | source lineage | `VERIFIED` | Retained as conditional product asset. |
+| Source | Role | Type | Locator Status | Branch | Pinned Revision | Confidence | Remarks |
+| ------ | ---- | ---- | -------------- | ------ | --------------- | ---------- | ------- |
+| PayrollFlowEngine source assets | `PRIMARY` | `REPLIT_EXPORT_OR_LOCAL_ASSET` | `LOCATOR_REQUIRED` | - | - | `VERIFIED` | Retained as conditional product asset. |
 
 ## Repository Links
 

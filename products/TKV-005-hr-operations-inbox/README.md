@@ -9,7 +9,7 @@ A retained HR request intake and case-management component for TeamFrame.
 - Status: `COMPONENT_ABSORB`
 - Priority: `P2_MODULE`
 - Lifecycle stage: `STAGE_1_PRODUCT_DEFINITION`
-- Current execution gate: Only execute inside authorised TeamFrame module work.
+- Current execution gate: Only execute inside authorised TeamFrame work in the separate TeamFrame repository.
 - Evidence confidence: `VERIFIED`
 
 ## Important Warning

@@ -7,6 +7,7 @@
     "portfolio": {
       "type": "object",
       "required": ["name", "discovery_status", "canonical_source", "last_reviewed"],
+      "additionalProperties": false,
       "properties": {
         "name": { "type": "string" },
         "discovery_status": { "const": "PORTFOLIO_DISCOVERY_CLOSED" },
@@ -16,6 +17,14 @@
         "new_product_policy": {
           "type": "array",
           "items": { "type": "string" }
+        },
+        "external_products": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/external_product" }
+        },
+        "reserved_product_ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/reserved_product_id" }
         }
       }
     },
@@ -57,12 +66,72 @@
     "evidence_confidence": {
       "enum": ["VERIFIED", "INFERRED", "UNVERIFIED"]
     },
+    "source_role": {
+      "enum": ["PRIMARY", "COMPONENT", "REFERENCE", "OBSOLETE"]
+    },
+    "source_type": {
+      "enum": ["GITHUB_REPOSITORY", "REPLIT_EXPORT_OR_LOCAL_ASSET", "REFERENCE_ASSET", "OTHER"]
+    },
+    "locator_status": {
+      "enum": ["VERIFIED", "UNVERIFIED", "LOCATOR_REQUIRED"]
+    },
+    "external_product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "relationship", "governance_rule"],
+      "properties": {
+        "name": { "type": "string" },
+        "relationship": { "type": "string" },
+        "governance_rule": { "type": "string" }
+      }
+    },
+    "reserved_product_id": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "reason"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^TKV-[0-9]{3}$" },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    },
+    "product_principle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "status", "description", "governance_rule"],
+      "properties": {
+        "name": { "type": "string" },
+        "status": { "enum": ["REQUIRED", "PROVISIONAL", "DEFERRED"] },
+        "description": { "type": "string" },
+        "provisional_terms": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "governance_rule": { "type": "string" }
+      }
+    },
     "source_asset": {
       "type": "object",
-      "required": ["name", "classification", "evidence_confidence", "remarks"],
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "classification",
+        "role",
+        "source_type",
+        "locator_status",
+        "evidence_confidence",
+        "remarks"
+      ],
       "properties": {
         "name": { "type": "string" },
         "classification": { "type": "string" },
+        "role": { "$ref": "#/$defs/source_role" },
+        "source_type": { "$ref": "#/$defs/source_type" },
+        "owner_repository": { "type": "string" },
+        "repository_url": { "type": "string" },
+        "branch": { "type": "string" },
+        "pinned_commit_sha": { "type": "string" },
+        "local_or_replit_locator": { "type": "string" },
+        "locator_status": { "$ref": "#/$defs/locator_status" },
         "evidence_confidence": { "$ref": "#/$defs/evidence_confidence" },
         "remarks": { "type": "string" }
       }
@@ -86,9 +155,11 @@
         "current_execution_gate",
         "teamframe_relationship",
         "owner_current_workstream",
+        "execution_ready",
         "evidence_confidence",
         "important_remarks"
       ],
+      "additionalProperties": false,
       "properties": {
         "id": { "type": "string", "pattern": "^TKV-[0-9]{3}$" },
         "name": { "type": "string" },
@@ -121,12 +192,34 @@
         "destination_product": { "type": "string" },
         "teamframe_relationship": { "type": "string" },
         "owner_current_workstream": { "type": "string" },
+        "execution_ready": { "type": "boolean" },
         "evidence_confidence": { "$ref": "#/$defs/evidence_confidence" },
-        "important_remarks": { "type": "string" }
-      }
+        "important_remarks": { "type": "string" },
+        "product_principles": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/product_principle" }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "SHORTLIST_CONDITIONAL" } } },
+          "then": {
+            "required": ["condition_to_clear"],
+            "properties": { "condition_to_clear": { "type": "string", "minLength": 1 } }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "COMPONENT_ABSORB" } } },
+          "then": {
+            "required": ["destination_product"],
+            "properties": { "destination_product": { "type": "string", "minLength": 1 } }
+          }
+        }
+      ]
     },
     "component": {
       "type": "object",
+      "additionalProperties": false,
       "required": ["name", "best_source", "destination_product", "why_retained", "reuse_instruction"],
       "properties": {
         "name": { "type": "string" },

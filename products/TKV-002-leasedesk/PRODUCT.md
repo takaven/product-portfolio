@@ -39,3 +39,8 @@ unrelated
 ## Remarks
 
 Substantive product asset. Do not downgrade to disposable validation software.
+
+## Product Principles
+
+No additional canonical product principles recorded.
+

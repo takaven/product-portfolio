@@ -9,7 +9,7 @@ A simple operating system for small commercial landlords to manage units, tenant
 - Status: `REVIVAL_IN_PROGRESS`
 - Priority: `P0`
 - Lifecycle stage: `STAGE_4_MARKET_READY_PREPARATION`
-- Current execution gate: Commercial-product completion after validation/demo readiness.
+- Current execution gate: Commercial-product completion after validation/demo readiness; source locator/revision must be verified before the next execution issue.
 - Evidence confidence: `VERIFIED`
 
 ## Important Warning

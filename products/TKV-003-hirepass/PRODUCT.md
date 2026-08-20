@@ -44,3 +44,13 @@ complementary; possible later integration at hire-to-employee handoff
 ## Remarks
 
 Do not rebuild from zero. Use Talent-Flow as the base, consolidate controlled modules, and remove full ATS/broad HR scope.
+
+## Product Principles
+
+### Pass concept
+
+- Status: `REQUIRED`
+- Description: HirePass must preserve distinct controlled external passes such as Candidate Pass and Manager Pass.
+- Governance rule: Do not dilute the Pass concept into generic portal terminology or freeze detailed terminology without the relevant design/product gate.
+- Provisional terms: Issue Pass, Open Pass, Revoke Pass, Pass Status, Pass Activity
+

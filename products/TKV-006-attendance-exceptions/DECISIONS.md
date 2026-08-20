@@ -6,5 +6,5 @@ Append only material decisions for Attendance & Timesheet Exceptions.
 
 - Status: `COMPONENT_ABSORB`
 - Priority: `P3_MODULE`
-- Current execution gate: Only execute inside authorised TeamFrame module work after source confirmation.
+- Current execution gate: Only execute inside authorised TeamFrame work in the separate TeamFrame repository after source confirmation.
 - Evidence confidence: `INFERRED`

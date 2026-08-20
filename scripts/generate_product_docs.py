@@ -66,6 +66,26 @@ Canonical state lives in `../../PORTFOLIO.yaml`. If this folder and the registry
 
 
 def product_md(product: dict) -> str:
+    principles = product.get("product_principles", [])
+    if principles:
+        principle_lines = ["## Product Principles", ""]
+        for principle in principles:
+            principle_lines.extend(
+                [
+                    f"### {principle['name']}",
+                    "",
+                    f"- Status: `{principle['status']}`",
+                    f"- Description: {principle['description']}",
+                    f"- Governance rule: {principle['governance_rule']}",
+                ]
+            )
+            if principle.get("provisional_terms"):
+                principle_lines.append(f"- Provisional terms: {', '.join(principle['provisional_terms'])}")
+            principle_lines.append("")
+        principles_text = "\n".join(principle_lines)
+    else:
+        principles_text = "## Product Principles\n\nNo additional canonical product principles recorded.\n"
+
     return f"""# Product Definition
 
 Canonical state lives in `../../PORTFOLIO.yaml`.
@@ -97,25 +117,8 @@ Canonical state lives in `../../PORTFOLIO.yaml`.
 ## Remarks
 
 {product['important_remarks']}
-"""
 
-
-def design_md(product: dict) -> str:
-    return f"""# Design Notes
-
-Use `../../DESIGN-SYSTEM.md` as the portfolio-level design governance source.
-
-## Product Direction
-
-{product['name']} should follow its product boundary and avoid borrowing patterns that imply excluded scope.
-
-## Frontend Gate Rule
-
-No full frontend rollout before D1-D3 are approved.
-
-## Current State
-
-No final product design is created by this operating-repository setup.
+{principles_text}
 """
 
 
@@ -125,12 +128,12 @@ def sources_md(product: dict) -> str:
         "",
         "This file records safe source metadata only. Do not copy source code, real records, uploads, secrets or raw audit exports into this repository.",
         "",
-        "| Source | Classification | Confidence | Remarks |",
-        "| ------ | -------------- | ---------- | ------- |",
+        "| Source | Role | Type | Locator Status | Branch | Pinned Revision | Confidence | Remarks |",
+        "| ------ | ---- | ---- | -------------- | ------ | --------------- | ---------- | ------- |",
     ]
     for source in product["source_assets"]:
         lines.append(
-            f"| {source['name']} | {source['classification']} | `{source['evidence_confidence']}` | {source['remarks']} |"
+            f"| {source['name']} | `{source['role']}` | `{source['source_type']}` | `{source['locator_status']}` | {source.get('branch', '') or '-'} | {source.get('pinned_commit_sha', '') or '-'} | `{source['evidence_confidence']}` | {source['remarks']} |"
         )
     if product.get("source_repository_links"):
         lines.extend(["", "## Repository Links", ""])
@@ -150,6 +153,10 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 {product['current_execution_gate']}
 
+## Execution Ready
+
+`{str(product.get('execution_ready', False)).lower()}`
+
 ## Condition To Clear
 
 {product.get('condition_to_clear') or 'None.'}
@@ -167,27 +174,11 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 """
 
 
-def decisions_md(product: dict) -> str:
-    return f"""# Decisions
-
-Append only material decisions for {product['name']}.
-
-## 2026-08-20 - Initial Portfolio Record
-
-- Status: `{product['status']}`
-- Priority: `{product['priority']}`
-- Current execution gate: {product['current_execution_gate']}
-- Evidence confidence: `{product['evidence_confidence']}`
-"""
-
-
 DOCS = {
     "README.md": readme,
     "PRODUCT.md": product_md,
-    "DESIGN.md": design_md,
     "SOURCES.md": sources_md,
     "EXECUTION.md": execution_md,
-    "DECISIONS.md": decisions_md,
 }
 
 

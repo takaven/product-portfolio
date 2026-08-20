@@ -30,3 +30,8 @@ unrelated
 ## Remarks
 
 Do not reopen during normal execution. Revisit only with material new commercial evidence.
+
+## Product Principles
+
+No additional canonical product principles recorded.
+

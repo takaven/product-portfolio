@@ -9,7 +9,7 @@ A secure hiring pass workflow that lets HR, managers and candidates complete hir
 - Status: `SHORTLIST_BUILD`
 - Priority: `P1`
 - Lifecycle stage: `STAGE_2_BUILD_COMPLETION`
-- Current execution gate: Phase 1 - sanitisation and foundation extraction.
+- Current execution gate: BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction.
 - Evidence confidence: `VERIFIED`
 
 ## Important Warning

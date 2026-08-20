@@ -28,10 +28,11 @@ Written HEX values are authoritative. Do not sample colours from images.
 
 ## Product Personalities
 
-- TeamFrame: calm, structured, spacious.
 - HirePass: pass-centric, identity/status-driven, sharper, more progressive.
 - LeaseDesk: operational, property-oriented, controlled information density.
 - PayrollFlowEngine: precise, analytical, audit/control-oriented.
+
+TeamFrame may have its own design direction in its separate repository. This file must not be treated as TeamFrame governance.
 
 ## Frontend Gates
 
@@ -41,5 +42,7 @@ No full frontend rollout before visual foundation and critical screens are appro
 - D2 - Critical screens: approximately three highest-value screens.
 - D3 - Component primitives: tables, forms, cards, navigation, states, modals and drawers.
 - D4 - Full frontend implementation.
+
+D2 requires approved D1 evidence. D3 requires approved D1 and D2 evidence. D4 requires approved D1, D2 and D3 evidence.
 
 For HirePass, likely critical surfaces are HR / Pass management view, Candidate Pass and Manager Pass. Do not design them until the relevant gate is opened.
