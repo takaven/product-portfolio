@@ -61,8 +61,6 @@ def primary_source_ready(product: dict) -> bool:
             return True
         if source.get("local_or_replit_locator") and source.get("pinned_commit_sha"):
             return True
-        if source.get("local_or_replit_locator") and source.get("source_type") == "REPLIT_EXPORT_OR_LOCAL_ASSET":
-            return True
     return False
 
 
