@@ -17,7 +17,7 @@ This generated dashboard is the operating snapshot for portfolio execution readi
 
 | Priority | ID | Product | Status | Stage | Execution Ready | Current Gate |
 | -------- | -- | ------- | ------ | ----- | --------------- | ------------ |
-| `P0` | TKV-002 | LeaseDesk | `REVIVAL_IN_PROGRESS` | `STAGE_4_MARKET_READY_PREPARATION` | `false` | Commercial-product completion after validation/demo readiness; source locator/revision must be verified before the next execution issue. |
+| `P0` | TKV-002 | LeaseDesk | `REVIVAL_IN_PROGRESS` | `STAGE_4_MARKET_READY_PREPARATION` | `true` | Gate 1/8 source registration complete; next LeaseDesk work requires explicit Gate 2/8 authorisation. |
 | `P1` | TKV-003 | HirePass | `SHORTLIST_BUILD` | `STAGE_2_BUILD_COMPLETION` | `false` | BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction. |
 | `P2` | TKV-004 | PayrollFlowEngine | `SHORTLIST_CONDITIONAL` | `STAGE_1_PRODUCT_DEFINITION` | `false` | Resolve product boundary decision. |
 
@@ -25,7 +25,7 @@ This generated dashboard is the operating snapshot for portfolio execution readi
 
 | ID | Product | Primary Source Status |
 | -- | ------- | --------------------- |
-| TKV-002 | LeaseDesk | AJM-Tenant-Management: `LOCATOR_REQUIRED` / `VERIFIED` |
+| TKV-002 | LeaseDesk | leasedesk-demo: `VERIFIED` / `VERIFIED` |
 | TKV-003 | HirePass | Talent-Flow: `LOCATOR_REQUIRED` / `UNVERIFIED` |
 | TKV-004 | PayrollFlowEngine | PayrollFlowEngine source assets: `LOCATOR_REQUIRED` / `VERIFIED` |
 | TKV-005 | HR Operations Inbox | No primary source recorded |
@@ -56,7 +56,6 @@ These records are not independent execution workstreams.
 
 | ID | Product | Blocking State |
 | -- | ------- | -------------- |
-| TKV-002 | LeaseDesk | Commercial-product completion after validation/demo readiness; source locator/revision must be verified before the next execution issue. |
 | TKV-003 | HirePass | BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction. |
 | TKV-004 | PayrollFlowEngine | Decide TeamFrame add-on vs independent Takaven control-layer product. |
 | TKV-005 | HR Operations Inbox | Only execute inside authorised TeamFrame work in the separate TeamFrame repository. |
@@ -70,11 +69,12 @@ These records are not independent execution workstreams.
 | Product records | 6 |
 | Active queue records | 3 |
 | Component records | 2 |
-| Execution blocked records | 6 |
+| Execution blocked records | 5 |
 | Status `COMPONENT_ABSORB` | 2 |
 | Status `HOLD` | 1 |
 | Status `REVIVAL_IN_PROGRESS` | 1 |
 | Status `SHORTLIST_BUILD` | 1 |
 | Status `SHORTLIST_CONDITIONAL` | 1 |
 | Source locator `LOCATOR_REQUIRED` | 4 |
-| Source locator `UNVERIFIED` | 10 |
+| Source locator `UNVERIFIED` | 9 |
+| Source locator `VERIFIED` | 1 |
