@@ -19,9 +19,10 @@ See `PORTFOLIO.md`. Do not manually maintain product status, priority or queue s
 1. Read `AGENTS.md`.
 2. Read `PORTFOLIO.yaml`.
 3. Read `DASHBOARD.md` for current blockers and execution readiness.
-4. Read the relevant folder under `products/`.
-5. Read the active GitHub issue.
-6. Inspect actual source assets before execution.
+4. Read `GITHUB-AUTOMATION.md`.
+5. Read the relevant folder under `products/`.
+6. Read the active GitHub issue.
+7. Inspect actual source assets before execution.
 
 ## Governance Lock
 

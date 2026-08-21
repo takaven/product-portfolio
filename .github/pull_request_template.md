@@ -16,6 +16,10 @@
 
 <!-- State the exact acceptance gate this PR reaches, and where work stops. -->
 
+## Governance Approval
+
+<!-- Required for sensitive PORTFOLIO.yaml transitions. Use N/A when no canonical transition is made. -->
+
 ## What Changed
 
 
@@ -58,4 +62,3 @@
 <!-- Name only known gates still blocked. Do not start the next phase here. -->
 
 ## Deferred Issues
-
