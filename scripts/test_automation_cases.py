@@ -64,7 +64,7 @@ PORTFOLIO.yaml not changed.
 
 ## Governance Approval
 
-Founder-approved governance work.
+decision:phase-2-automation
 """
 
 
@@ -80,13 +80,50 @@ def assert_transition_fails(name: str, base: dict, head: dict, body: str, expect
         raise AssertionError(f"{name} did not fail with {expected!r}. Errors: {errors}")
 
 
+def test_canonical_product_id_passes() -> None:
+    errors = validate_pr_governance.validate_pr(
+        pr_event(governance_body("TKV-003", "#42")),
+        ["products/TKV-003-hirepass/README.md"],
+    )
+    if errors:
+        raise AssertionError(f"canonical product ID should pass. Errors: {errors}")
+
+
+def test_na_product_id_passes_for_governance_pr() -> None:
+    errors = validate_pr_governance.validate_pr(
+        pr_event(governance_body("N/A")),
+        ["GITHUB-AUTOMATION.md"],
+    )
+    if errors:
+        raise AssertionError(f"N/A product ID should pass for governance PR. Errors: {errors}")
+
+
+def test_unknown_product_id_fails() -> None:
+    assert_pr_fails(
+        "unknown product ID",
+        pr_event(governance_body("TKV-999", "#42")),
+        ["products/TKV-999-fake/README.md"],
+        "not recorded in canonical PORTFOLIO.yaml",
+    )
+
+
 def test_product_pr_requires_authorised_issue_reference() -> None:
     body = governance_body("TKV-003", "No issue reference here")
     assert_pr_fails(
-        "product PR without issue reference",
+        "product PR without work-item reference",
         pr_event(body),
         ["products/TKV-003-hirepass/README.md"],
-        "authorised GitHub issue",
+        "work-item reference",
+    )
+
+
+def test_product_pr_rejects_malformed_work_item_reference() -> None:
+    body = governance_body("TKV-003", "issue forty two")
+    assert_pr_fails(
+        "product PR with malformed work-item reference",
+        pr_event(body),
+        ["products/TKV-003-hirepass/README.md"],
+        "work-item reference",
     )
 
 
@@ -138,7 +175,20 @@ def test_sensitive_transition_requires_governance_approval(base: dict) -> None:
         "sensitive status transition without approval",
         base,
         head,
-        governance_body("N/A").replace("Founder-approved governance work.", ""),
+        governance_body("N/A").replace("decision:phase-2-automation", ""),
+        "Governance Approval",
+    )
+
+
+def test_sensitive_transition_rejects_arbitrary_approval_prose(base: dict) -> None:
+    head = copy.deepcopy(base)
+    product = next(item for item in head["products"] if item["id"] == "TKV-007")
+    product["status"] = "SHORTLIST_BUILD"
+    assert_transition_fails(
+        "sensitive status transition with arbitrary approval prose",
+        base,
+        head,
+        governance_body("N/A").replace("decision:phase-2-automation", "I approve this myself"),
         "Governance Approval",
     )
 
@@ -165,6 +215,12 @@ def test_sensitive_transition_with_governance_approval_passes(base: dict) -> Non
         raise AssertionError(f"governance-approved sensitive transition should pass. Errors: {errors}")
 
 
+def test_missing_base_portfolio_fails_closed(base: dict) -> None:
+    errors = validate_portfolio_transitions.validate_transition(None, base, governance_body("N/A"))
+    if not any("Base PORTFOLIO.yaml" in error for error in errors):
+        raise AssertionError(f"missing base portfolio should fail closed. Errors: {errors}")
+
+
 def test_pr_governance_happy_path() -> None:
     errors = validate_pr_governance.validate_pr(pr_event(governance_body("TKV-003", "#42")), ["products/TKV-003-hirepass/README.md"])
     if errors:
@@ -174,7 +230,11 @@ def test_pr_governance_happy_path() -> None:
 def main() -> int:
     base = load_registry()
     tests_without_base = [
+        test_canonical_product_id_passes,
+        test_na_product_id_passes_for_governance_pr,
+        test_unknown_product_id_fails,
         test_product_pr_requires_authorised_issue_reference,
+        test_product_pr_rejects_malformed_work_item_reference,
         test_product_pr_cannot_change_other_product_folder,
         test_portfolio_change_requires_canonical_acknowledgement,
         test_workflow_change_requires_permissions_note,
@@ -186,8 +246,10 @@ def main() -> int:
 
     tests_with_base = [
         test_sensitive_transition_requires_governance_approval,
+        test_sensitive_transition_rejects_arbitrary_approval_prose,
         test_execution_ready_transition_requires_source_evidence,
         test_sensitive_transition_with_governance_approval_passes,
+        test_missing_base_portfolio_fails_closed,
     ]
     for test in tests_with_base:
         test(copy.deepcopy(base))

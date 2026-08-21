@@ -6,7 +6,7 @@
 
 ## Issue / Execution Gate
 
-<!-- Link the authorised issue. -->
+<!-- Link the work item. CI checks reference format; human review confirms authorisation and scope. -->
 
 ## Review Classification
 
@@ -18,7 +18,7 @@
 
 ## Governance Approval
 
-<!-- Required for sensitive PORTFOLIO.yaml transitions. Use N/A when no canonical transition is made. -->
+<!-- Required for sensitive PORTFOLIO.yaml transitions. Use a concrete issue/PR/decision reference. CI checks reference format; human review confirms approval substance. Use N/A when no canonical transition is made. -->
 
 ## What Changed
 

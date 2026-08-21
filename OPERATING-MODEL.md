@@ -72,9 +72,9 @@ Phase 2 GitHub automation is documented in `GITHUB-AUTOMATION.md`.
 
 The automation layer is limited to deterministic repository administration checks:
 
-- PR metadata and authorised issue traceability.
+- PR metadata and work-item reference traceability.
 - Sensitive canonical transition detection.
 - Generated-view freshness.
 - Existing registry/schema/product-folder validation.
 
-It must remain read-only unless a later governance phase explicitly authorises a narrow write operation. Merge never starts the next product phase automatically.
+It must remain read-only unless a later governance phase explicitly authorises a narrow write operation. CI validates reference format and metadata structure; human review validates authorisation substance. Merge never starts the next product phase automatically.

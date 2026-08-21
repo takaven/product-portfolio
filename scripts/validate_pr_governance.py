@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Validate pull request governance metadata from the GitHub event payload."""
+"""Validate pull request governance metadata from the GitHub event payload.
+
+This validates reference presence and format. Human review validates whether the
+referenced work item actually authorises the PR.
+"""
 
 from __future__ import annotations
 
@@ -14,7 +18,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PRODUCT_ID_RE = re.compile(r"\b(?:TKV-[0-9]{3}|N/A)\b", re.IGNORECASE)
-ISSUE_REF_RE = re.compile(r"(?:#\d+|https://github\.com/[^/\s]+/[^/\s]+/issues/\d+)", re.IGNORECASE)
+WORK_ITEM_REF_RE = re.compile(r"(?:#\d+|https://github\.com/[^/\s]+/[^/\s]+/(?:issues|pull)/\d+)", re.IGNORECASE)
 SECTION_RE = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
 PRODUCT_FOLDER_RE = re.compile(r"^products/(TKV-[0-9]{3})-")
 REQUIRED_SECTIONS = [
@@ -29,6 +33,12 @@ REQUIRED_SECTIONS = [
 def load_event(path: Path) -> dict:
     with path.open(encoding="utf-8") as file:
         return json.load(file)
+
+
+def canonical_product_ids(root: Path = ROOT) -> set[str]:
+    with (root / "PORTFOLIO.yaml").open(encoding="utf-8") as file:
+        data = json.load(file)
+    return {product["id"] for product in data.get("products", [])}
 
 
 def section_body(markdown: str, heading: str) -> str:
@@ -54,12 +64,13 @@ def changed_files_from_git(base_ref: str) -> list[str]:
     return [line.strip().replace("\\", "/") for line in result.stdout.splitlines() if line.strip()]
 
 
-def validate_pr(event: dict, changed_files: list[str]) -> list[str]:
+def validate_pr(event: dict, changed_files: list[str], product_ids: set[str] | None = None) -> list[str]:
     pull_request = event.get("pull_request")
     if not pull_request:
         return []
 
     errors: list[str] = []
+    product_ids = product_ids or canonical_product_ids()
     body = pull_request.get("body") or ""
     head_repo = pull_request.get("head", {}).get("repo", {}).get("full_name")
     base_repo = pull_request.get("base", {}).get("repo", {}).get("full_name")
@@ -76,10 +87,12 @@ def validate_pr(event: dict, changed_files: list[str]) -> list[str]:
     product_id = product_match.group(0).upper() if product_match else ""
     if not product_id:
         errors.append("PR Product ID must be a canonical TKV-000 value or N/A for repository-only governance work.")
+    elif product_id != "N/A" and product_id not in product_ids:
+        errors.append(f"PR Product ID {product_id} is not recorded in canonical PORTFOLIO.yaml.")
 
     issue_section = section_body(body, "Issue / Execution Gate")
-    if product_id and product_id != "N/A" and not ISSUE_REF_RE.search(issue_section):
-        errors.append("Product-scoped PRs must reference the authorised GitHub issue in Issue / Execution Gate.")
+    if product_id and product_id != "N/A" and not WORK_ITEM_REF_RE.search(issue_section):
+        errors.append("Product-scoped PRs must include a concrete work-item reference in Issue / Execution Gate.")
 
     changed_product_ids = sorted(
         {match.group(1) for path in changed_files for match in [PRODUCT_FOLDER_RE.match(path)] if match}

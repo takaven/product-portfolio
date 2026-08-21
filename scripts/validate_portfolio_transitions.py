@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Validate deterministic PORTFOLIO.yaml transitions between base and head."""
+"""Validate deterministic PORTFOLIO.yaml transitions between base and head.
+
+This validates approval-reference presence. Human review validates whether the
+referenced evidence actually authorises the canonical transition.
+"""
 
 from __future__ import annotations
 
@@ -28,6 +32,12 @@ SENSITIVE_PRODUCT_FIELDS = {
 }
 SENSITIVE_DESIGN_FIELDS = {"design_stage"}
 SECTION_RE = re.compile(r"^##\s+(.+?)\s*$", re.MULTILINE)
+APPROVAL_REF_RE = re.compile(
+    r"(?:#\d+|https://github\.com/[^/\s]+/[^/\s]+/(?:issues|pull)/\d+|"
+    r"(?:^|\s)(?:DECISION-LOG\.md|DECISIONS\.md|products/TKV-[0-9]{3}-[^/\s]+/DECISIONS\.md)"
+    r"(?:$|\s|#)|decision:[A-Za-z0-9._/-]+)",
+    re.IGNORECASE,
+)
 
 
 def section_body(markdown: str, heading: str) -> str:
@@ -122,15 +132,16 @@ def hard_transition_errors(base: dict, head: dict) -> list[str]:
 
 def validate_transition(base: dict | None, head: dict, pr_body: str = "") -> list[str]:
     if base is None:
-        return []
+        return ["Base PORTFOLIO.yaml could not be loaded; transition validation must fail closed."]
 
     errors = hard_transition_errors(base, head)
     changes = sensitive_changes(base, head)
     if changes:
         approval = section_body(pr_body, "Governance Approval")
-        if not approval or approval.upper() in {"N/A", "NONE"}:
+        if not approval or approval.upper() in {"N/A", "NONE"} or not APPROVAL_REF_RE.search(approval):
             errors.append(
-                "Sensitive PORTFOLIO.yaml transitions require a non-empty Governance Approval PR section: "
+                "Sensitive PORTFOLIO.yaml transitions require a concrete Governance Approval reference "
+                "(GitHub issue/PR, decision-log reference, product DECISIONS.md reference, or decision:<id>): "
                 + "; ".join(changes)
             )
     return errors
@@ -146,9 +157,20 @@ def main() -> int:
     args = parser.parse_args()
 
     if args.base_file:
-        base = json.loads(args.base_file.read_text(encoding="utf-8"))
+        try:
+            base = json.loads(args.base_file.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as error:
+            print(f"ERROR: Base PORTFOLIO.yaml could not be loaded: {error}", file=sys.stderr)
+            return 1
     else:
-        base = load_json_text(git_show(args.base_ref, "PORTFOLIO.yaml"))
+        try:
+            base = load_json_text(git_show(args.base_ref, "PORTFOLIO.yaml"))
+        except json.JSONDecodeError as error:
+            print(f"ERROR: Base PORTFOLIO.yaml could not be parsed: {error}", file=sys.stderr)
+            return 1
+        if base is None:
+            print("ERROR: Base PORTFOLIO.yaml could not be loaded; transition validation must fail closed.", file=sys.stderr)
+            return 1
 
     if args.head_file:
         head = json.loads(args.head_file.read_text(encoding="utf-8"))

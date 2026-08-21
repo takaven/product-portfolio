@@ -27,7 +27,7 @@ Markdown files may explain context but must not introduce conflicting canonical 
 - Never start the next execution phase automatically.
 - Stop at the GitHub issue acceptance gate.
 - Work through pull requests rather than direct default-branch changes.
-- Product-scoped pull requests must reference the authorised GitHub issue.
+- Product-scoped pull requests must include a concrete work-item reference; CI checks reference format and human review confirms authorisation.
 - Update canonical state only when the issue authorises it.
 - Record material decisions in the relevant `DECISIONS.md` and root `DECISION-LOG.md`.
 - Distinguish `VERIFIED`, `INFERRED` and `UNVERIFIED` claims.
