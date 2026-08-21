@@ -1,12 +1,45 @@
 # Autonomous Agent Operating Model
 
-Phase 3/3 records the proposed autonomous-agent operating design for Takaven. It does not install, configure, assign or authorise any autonomous agent.
+Phase 3/3 and Autonomous Agent Enablement Phase 2/2 are complete. This document records the frozen autonomous-agent operating model for Takaven.
 
 ## Position
 
 Autonomous agents may be useful only inside bounded GitHub issues with clear acceptance gates, source locators, PR review and CI. The goal is not maximum autonomy. The goal is useful autonomy that preserves portfolio governance, source pinning, design gates, auditability and least privilege.
 
 No product execution is authorised by this document.
+
+## Programme State
+
+- Product-Portfolio Setup Programme: 3/3 COMPLETE.
+- Autonomous Agent Enablement: 2/2 COMPLETE.
+- Copilot Builder pilot: VALIDATED for governance-only work.
+- Independent Reviewer model: VALIDATED.
+- Governance hardening: COMPLETE.
+- Current operating loop: authorised issue -> Builder -> CI -> independent review where required -> bounded correction -> human merge -> hard stop.
+- Product execution requires separate explicit authorisation.
+
+Current platform posture:
+
+- `product-portfolio`: PUBLIC + protected.
+- Copilot Pro: active.
+- GitHub Team: deferred.
+- Private protected posture may be reconsidered only if real product execution creates a material confidentiality or enforcement need.
+
+## Governance Freeze
+
+The current governance architecture is considered sufficient for first-product execution. Future governance changes require at least one of:
+
+- a material defect observed during product execution;
+- a repeated manual-friction pattern;
+- a material security or permission issue;
+- a platform behaviour change affecting controls.
+
+The following are not sufficient reasons by themselves:
+
+- theoretical improvement;
+- additional automation possibility;
+- cleaner architecture preference;
+- cosmetic documentation refinement.
 
 ## Official Evidence Reviewed
 
@@ -36,7 +69,7 @@ Use a hybrid model:
 2. Codex is the preferred Independent Reviewer for high-signal PR review because it can follow `AGENTS.md` and review PR diffs without becoming the builder of record.
 3. Product governance remains in this repository, CI and human review. No agent may approve its own material work.
 
-Do not install either integration until this Phase 3 design receives independent review and the founder explicitly authorises a pilot.
+Do not grant new agent permissions, enable new repositories or start product execution unless a bounded issue explicitly authorises that action.
 
 ## Autonomy Levels
 
@@ -153,9 +186,9 @@ Passed findings remain closed. Cosmetic findings do not force another correction
 
 ## Governance-Only Pilot
 
-Recommended pilot after independent review and explicit founder approval:
+Validated pilot:
 
-> Create one governance-only issue in `product-portfolio` asking an agent to make a bounded documentation wording correction in `AUTONOMOUS-AGENTS.md`, open a draft PR, pass existing CI, respond to one independent reviewer correction, and stop after the PR is ready for merge.
+> One governance-only issue in `product-portfolio` asked an agent to make a bounded documentation wording correction in `AUTONOMOUS-AGENTS.md`, open a draft PR, pass existing CI, respond to an independent reviewer correction, and stop before merge.
 
 Pilot acceptance checks:
 
@@ -168,7 +201,7 @@ Pilot acceptance checks:
 - no product source repository is accessed or modified;
 - no next issue or phase starts automatically.
 
-Do not run this pilot until separately authorised.
+The pilot validated the operating loop for governance-only work. It does not authorise product execution.
 
 ## Explicit Prohibitions
 

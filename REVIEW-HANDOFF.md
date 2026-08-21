@@ -51,7 +51,8 @@ This repository is intended to be the central operating memory for Takaven produ
 
 ## Settings Not Applied
 
-- None currently known for pre-freeze governance hardening.
+- GitHub Team upgrade is deferred.
+- Repository visibility remains public for now.
 
 ## Assumptions
 
@@ -102,7 +103,7 @@ CI does not prove work-item authorisation or approval substance. Human/governanc
 
 ## Phase 3 Autonomous Agent Integration Design
 
-This branch records a proposed autonomous-agent model only:
+This phase recorded the autonomous-agent model:
 
 - Hybrid recommendation: GitHub Copilot cloud agent as future Builder Agent, Codex as future Independent Reviewer.
 - Autonomy levels 0-3, with release/deploy disabled by default.
@@ -110,6 +111,20 @@ This branch records a proposed autonomous-agent model only:
 - Cross-repository flow for `product-portfolio` issues and product source repository PRs.
 - Context bootstrap order for fresh agents without chat history.
 - Data and secret safety rules.
-- Governance-only pilot definition, not executed.
+- Governance-only pilot definition.
 
-No autonomous agent has been installed, configured, assigned or piloted. No product execution has started.
+## Autonomous Agent Enablement Closure
+
+Autonomous Agent Enablement is 2/2 complete.
+
+- Copilot Builder pilot: VALIDATED for governance-only work.
+- Independent Reviewer model: VALIDATED.
+- Governance hardening: COMPLETE.
+- Current operating loop: authorised issue -> Builder -> CI -> independent review where required -> bounded correction -> human merge -> hard stop.
+- `product-portfolio` currently remains PUBLIC + protected.
+- Copilot Pro is active.
+- GitHub Team is deferred unless real product execution creates a material confidentiality or enforcement need.
+
+Governance is frozen for first-product execution. Future governance infrastructure changes require a material defect observed during product execution, repeated manual friction, a material security or permission issue, or a platform behaviour change affecting controls. Theoretical improvements, extra automation possibilities, cleaner architecture preferences and cosmetic documentation refinement are not sufficient reasons by themselves.
+
+No product execution has started.

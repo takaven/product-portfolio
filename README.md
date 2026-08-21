@@ -31,8 +31,20 @@ Portfolio discovery is closed. Do not reopen broad product discovery, change pro
 
 No product repositories, including TeamFrame, may be modified from this setup repository.
 
+## Operating State
+
+Product-Portfolio Setup is 3/3 complete. Autonomous Agent Enablement is 2/2 complete. The Copilot Builder pilot and Independent Reviewer model have been validated for governance-only work.
+
+`product-portfolio` is intentionally public and protected for now. GitHub Team and a private protected repository posture are deferred unless real product execution creates a material confidentiality or enforcement need.
+
 ## Automation Boundary
 
 Automation may validate canonical state, regenerate views, and support bounded issue execution. It must not approve product boundaries, advance design gates, create execution issues, deploy products, or modify external product repositories without explicit governance authority.
 
-Autonomous-agent integration is design-only until separately approved. No agent installation, pilot or product execution is authorised by the repository documentation alone.
+Autonomous-agent operation is enabled only inside authorised issues and pull requests. Product execution is never authorised by repository documentation alone.
+
+## Governance Freeze
+
+The current governance architecture is sufficient for first-product execution. Future governance infrastructure changes require a material defect observed during product execution, a repeated manual-friction pattern, a material security or permission issue, or a platform behaviour change affecting controls.
+
+Theoretical improvement, additional automation possibility, cleaner architecture preference or cosmetic documentation refinement are not sufficient reasons by themselves.
