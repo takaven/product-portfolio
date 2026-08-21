@@ -165,7 +165,7 @@ Pilot acceptance checks:
 - PR template is completed;
 - CI runs, after human workflow approval if GitHub requires it;
 - reviewer correction loop is bounded;
-- no product repository is touched;
+- no product source repository is accessed or modified;
 - no next issue or phase starts automatically.
 
 Do not run this pilot until separately authorised.
