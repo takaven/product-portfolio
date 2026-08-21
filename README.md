@@ -20,9 +20,10 @@ See `PORTFOLIO.md`. Do not manually maintain product status, priority or queue s
 2. Read `PORTFOLIO.yaml`.
 3. Read `DASHBOARD.md` for current blockers and execution readiness.
 4. Read `GITHUB-AUTOMATION.md`.
-5. Read the relevant folder under `products/`.
-6. Read the active GitHub issue.
-7. Inspect actual source assets before execution.
+5. Read `AUTONOMOUS-AGENTS.md` when agent operation or review is involved.
+6. Read the relevant folder under `products/`.
+7. Read the active GitHub issue.
+8. Inspect actual source assets before execution.
 
 ## Governance Lock
 
@@ -33,3 +34,5 @@ No product repositories, including TeamFrame, may be modified from this setup re
 ## Automation Boundary
 
 Automation may validate canonical state, regenerate views, and support bounded issue execution. It must not approve product boundaries, advance design gates, create execution issues, deploy products, or modify external product repositories without explicit governance authority.
+
+Autonomous-agent integration is design-only until separately approved. No agent installation, pilot or product execution is authorised by the repository documentation alone.

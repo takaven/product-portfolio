@@ -9,9 +9,10 @@ Before acting, every agent must read:
 1. `PORTFOLIO.yaml`
 2. `DASHBOARD.md`
 3. `GITHUB-AUTOMATION.md`
-4. The relevant folder under `products/`
-5. The active GitHub issue
-6. The actual source repository or source asset named in the issue
+4. `AUTONOMOUS-AGENTS.md` when the work involves autonomous-agent operation or review
+5. The relevant folder under `products/`
+6. The active GitHub issue
+7. The actual source repository or source asset named in the issue
 
 ## Canonical Source
 
@@ -33,6 +34,7 @@ Markdown files may explain context but must not introduce conflicting canonical 
 - Distinguish `VERIFIED`, `INFERRED` and `UNVERIFIED` claims.
 - Classify review findings as `BLOCKING`, `MATERIAL`, `NON_BLOCKING` or `COSMETIC`.
 - Apply correction loops only for `BLOCKING` or `MATERIAL` findings unless the issue explicitly authorises broader cleanup.
+- Autonomous agents may not be installed, assigned, piloted or granted new permissions unless an authorised issue explicitly permits that action.
 
 ## Safety Rules
 
@@ -47,6 +49,8 @@ Agents may autonomously inspect authorised source assets, create working branche
 Founder or governance approval is required for product boundary changes, commercial positioning changes, product activation/archive, D1-D3 design approval, D4 frontend rollout authorisation, Takaven master brand changes, production deployment/release and significant external-service spend.
 
 Builder, Independent Reviewer and Governance Reviewer are separate roles. A builder must not self-approve a material governance change.
+
+For autonomous-agent work, GitHub Copilot cloud agent is the preferred future Builder candidate and Codex is the preferred Independent Reviewer candidate. This is a design recommendation only, not an activation.
 
 ## Product-Specific Guardrails
 

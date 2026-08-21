@@ -78,3 +78,15 @@ The automation layer is limited to deterministic repository administration check
 - Existing registry/schema/product-folder validation.
 
 It must remain read-only unless a later governance phase explicitly authorises a narrow write operation. CI validates reference format and metadata structure; human review validates authorisation substance. Merge never starts the next product phase automatically.
+
+## Autonomous Agent Integration
+
+Phase 3 autonomous-agent design is documented in `AUTONOMOUS-AGENTS.md`.
+
+The recommended operating model is hybrid and conservative:
+
+- GitHub Copilot cloud agent is the preferred future Builder Agent for bounded GitHub issue-to-PR work.
+- Codex is the preferred Independent Reviewer for high-signal PR review.
+- Human/governance approval remains mandatory for product-boundary changes, design gates, releases, destructive operations, external spend and any agent installation or pilot.
+
+No autonomous agent integration is installed or authorised by this documentation. Any pilot must be separately approved and must use a governance-only task before any product execution.

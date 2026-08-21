@@ -100,3 +100,17 @@ This branch adds deterministic read-only GitHub automation only:
 It deliberately does not add automatic issue closure, labels, stale bots, autonomous agent assignment, deployments or product execution.
 
 CI does not prove work-item authorisation or approval substance. Human/governance review remains responsible for those judgments.
+
+## Phase 3 Autonomous Agent Integration Design
+
+This branch records a proposed autonomous-agent model only:
+
+- Hybrid recommendation: GitHub Copilot cloud agent as future Builder Agent, Codex as future Independent Reviewer.
+- Autonomy levels 0-3, with release/deploy disabled by default.
+- Mandatory human approval points for product scope, design gates, releases, destructive operations, spend and any agent installation or pilot.
+- Cross-repository flow for `product-portfolio` issues and product source repository PRs.
+- Context bootstrap order for fresh agents without chat history.
+- Data and secret safety rules.
+- Governance-only pilot definition, not executed.
+
+No autonomous agent has been installed, configured, assigned or piloted. No product execution has started.
