@@ -11,6 +11,8 @@ A payroll change-control and document-intelligence layer for intake, extraction,
 - Lifecycle stage: `STAGE_1_PRODUCT_DEFINITION`
 - Current execution gate: Resolve product boundary decision.
 - Evidence confidence: `VERIFIED`
+- Design stage: `NOT_STARTED`
+- Design system version: `takaven-design-system-v1`
 
 ## Important Warning
 

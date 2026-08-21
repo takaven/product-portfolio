@@ -45,10 +45,38 @@ body:
       description: Distinguish VERIFIED, INFERRED and UNVERIFIED claims.
     validations:
       required: true
+  - type: dropdown
+    id: review_classification
+    attributes:
+      label: Review classification
+      description: Use BLOCKING or MATERIAL for changes that alter execution; use NON_BLOCKING or COSMETIC only for non-state corrections.
+      options:
+        - BLOCKING
+        - MATERIAL
+        - NON_BLOCKING
+        - COSMETIC
+    validations:
+      required: true
+  - type: textarea
+    id: approval_authority
+    attributes:
+      label: Approval authority
+      description: Name the founder/governance approval or linked decision record authorising this change.
+    validations:
+      required: true
+  - type: textarea
+    id: final_endpoint
+    attributes:
+      label: Final endpoint
+      description: State the exact registry or documentation state after the change, and where the agent must stop.
+    validations:
+      required: true
   - type: checkboxes
     id: acknowledgement
     attributes:
       label: Acknowledgement
       options:
+        - label: This change does not reopen portfolio discovery unless explicitly authorised under PORTFOLIO.yaml new-product policy.
+          required: true
         - label: I understand ordinary implementation PRs must not silently change canonical portfolio state.
           required: true

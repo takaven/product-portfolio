@@ -59,6 +59,13 @@ body:
     validations:
       required: true
   - type: textarea
+    id: final_endpoint
+    attributes:
+      label: Final endpoint
+      description: State exactly where the agent must stop when the issue is complete.
+    validations:
+      required: true
+  - type: textarea
     id: allowed_changes
     attributes:
       label: Allowed changes
@@ -90,6 +97,8 @@ body:
     attributes:
       label: Status update requirement
       options:
+        - label: This issue is authorised by the current execution gate in PORTFOLIO.yaml.
+          required: true
         - label: This issue states whether PORTFOLIO.yaml or product docs may be updated.
           required: true
         - label: The agent must stop at this issue's acceptance gate.

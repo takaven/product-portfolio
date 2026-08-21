@@ -37,6 +37,7 @@ def component_warning(product: dict) -> str:
 
 
 def readme(product: dict) -> str:
+    design = product["design_governance"]
     return f"""<!-- GENERATED FROM PORTFOLIO.yaml. DO NOT EDIT STRUCTURED STATE DIRECTLY. -->
 # {product['id']} - {product['name']}
 
@@ -50,6 +51,8 @@ def readme(product: dict) -> str:
 - Lifecycle stage: `{product['lifecycle_stage']}`
 - Current execution gate: {product['current_execution_gate']}
 - Evidence confidence: `{product['evidence_confidence']}`
+- Design stage: `{design['design_stage']}`
+- Design system version: `{design['design_system_version']}`
 
 ## Important Warning
 
@@ -145,6 +148,7 @@ def sources_md(product: dict) -> str:
 
 
 def execution_md(product: dict) -> str:
+    design = product["design_governance"]
     return f"""# Execution
 
 Canonical execution state lives in `../../PORTFOLIO.yaml`.
@@ -164,6 +168,12 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 ## Destination Product
 
 {product.get('destination_product') or 'Not applicable.'}
+
+## Design Governance
+
+- Design stage: `{design['design_stage']}`
+- Design system version: `{design['design_system_version']}`
+- Visual profile version: `{design['visual_profile_version']}`
 
 ## Prohibited During Unauthorised Work
 

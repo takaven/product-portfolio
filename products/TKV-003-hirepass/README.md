@@ -11,6 +11,8 @@ A secure hiring pass workflow that lets HR, managers and candidates complete hir
 - Lifecycle stage: `STAGE_2_BUILD_COMPLETION`
 - Current execution gate: BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction.
 - Evidence confidence: `VERIFIED`
+- Design stage: `NOT_STARTED`
+- Design system version: `takaven-design-system-v1`
 
 ## Important Warning
 

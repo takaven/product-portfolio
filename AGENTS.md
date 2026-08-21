@@ -7,9 +7,10 @@ This repository governs Takaven product portfolio execution. It is a control rep
 Before acting, every agent must read:
 
 1. `PORTFOLIO.yaml`
-2. The relevant folder under `products/`
-3. The active GitHub issue
-4. The actual source repository or source asset named in the issue
+2. `DASHBOARD.md`
+3. The relevant folder under `products/`
+4. The active GitHub issue
+5. The actual source repository or source asset named in the issue
 
 ## Canonical Source
 
@@ -28,12 +29,22 @@ Markdown files may explain context but must not introduce conflicting canonical 
 - Update canonical state only when the issue authorises it.
 - Record material decisions in the relevant `DECISIONS.md` and root `DECISION-LOG.md`.
 - Distinguish `VERIFIED`, `INFERRED` and `UNVERIFIED` claims.
+- Classify review findings as `BLOCKING`, `MATERIAL`, `NON_BLOCKING` or `COSMETIC`.
+- Apply correction loops only for `BLOCKING` or `MATERIAL` findings unless the issue explicitly authorises broader cleanup.
 
 ## Safety Rules
 
 Do not copy real candidate, employee, payroll, tenant, property, uploaded-document, credential or environment data into this repository.
 
 Do not modify product repositories from this repository. That includes TeamFrame, LeaseDesk, Talent-Flow, HirePass source variants, PayrollFlowEngine, Replit exports, demo apps, databases, deployment configuration and uploaded assets.
+
+## Authority Model
+
+Agents may autonomously inspect authorised source assets, create working branches, modify authorised files, run checks, fix in-scope CI defects, prepare pull requests and regenerate generated views.
+
+Founder or governance approval is required for product boundary changes, commercial positioning changes, product activation/archive, D1-D3 design approval, D4 frontend rollout authorisation, Takaven master brand changes, production deployment/release and significant external-service spend.
+
+Builder, Independent Reviewer and Governance Reviewer are separate roles. A builder must not self-approve a material governance change.
 
 ## Product-Specific Guardrails
 
@@ -46,6 +57,7 @@ Do not modify product repositories from this repository. That includes TeamFrame
 
 ## Design Gate Enforcement
 
+- Product design governance state is recorded in `PORTFOLIO.yaml`.
 - D2 work requires explicit approved D1 evidence.
 - D3 work requires explicit approved D1 and D2 evidence.
 - D4 work requires explicit approved D1, D2 and D3 evidence.

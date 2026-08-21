@@ -61,8 +61,6 @@ def primary_source_ready(product: dict) -> bool:
             return True
         if source.get("local_or_replit_locator") and source.get("pinned_commit_sha"):
             return True
-        if source.get("local_or_replit_locator") and source.get("source_type") == "REPLIT_EXPORT_OR_LOCAL_ASSET":
-            return True
     return False
 
 
@@ -70,7 +68,9 @@ def validate_cross_record_invariants(data: dict, root: Path = ROOT) -> list[str]
     errors: list[str] = []
     products = data.get("products", [])
     ids = [product.get("id") for product in products]
-    reserved_ids = {item.get("id") for item in data.get("portfolio", {}).get("reserved_product_ids", [])}
+    portfolio = data.get("portfolio", {})
+    reserved_ids = {item.get("id") for item in portfolio.get("reserved_product_ids", [])}
+    design_system_version = portfolio.get("design_system", {}).get("current_version")
 
     if data.get("portfolio", {}).get("discovery_status") != "PORTFOLIO_DISCOVERY_CLOSED":
         fail("Portfolio discovery status must be PORTFOLIO_DISCOVERY_CLOSED.", errors)
@@ -92,11 +92,21 @@ def validate_cross_record_invariants(data: dict, root: Path = ROOT) -> list[str]
     for product in products:
         pid = product.get("id", "")
         status = product.get("status")
+        design_governance = product.get("design_governance", {})
+        design_stage = design_governance.get("design_stage", "")
 
         if status == "ARCHIVE" and product.get("priority") != "HOLD":
             fail(f"{pid}: archived products must use HOLD priority.", errors)
         if product.get("execution_ready") is True and not primary_source_ready(product):
             fail(f"{pid}: execution-ready products require a verified primary source locator and revision.", errors)
+        if design_governance.get("design_system_version") != design_system_version:
+            fail(f"{pid}: design governance must reference the current portfolio design system version.", errors)
+        if design_stage in {"D2_APPROVED", "D3_APPROVED", "D4_AUTHORISED"} and not design_governance.get("approved_d1_reference", "").strip():
+            fail(f"{pid}: D2 or later design stage requires approved D1 reference.", errors)
+        if design_stage in {"D3_APPROVED", "D4_AUTHORISED"} and not design_governance.get("approved_d2_reference", "").strip():
+            fail(f"{pid}: D3 or later design stage requires approved D2 reference.", errors)
+        if design_stage == "D4_AUTHORISED" and not design_governance.get("approved_d3_reference", "").strip():
+            fail(f"{pid}: D4 design stage requires approved D3 reference.", errors)
 
         folder = product_folder(product, root)
         if not folder.exists():

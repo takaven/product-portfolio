@@ -73,3 +73,16 @@ This repository is intended to be the central operating memory for Takaven produ
 ## Product Repository Safety Confirmation
 
 No product repositories, exports, demo applications, databases or uploaded assets should be modified by this setup.
+
+## Phase 1 Operating Model Hardening
+
+This branch adds bounded governance hardening only:
+
+- Canonical gate, authority and design-governance metadata in `PORTFOLIO.yaml`.
+- Generated operating dashboard in `DASHBOARD.md`.
+- Schema and validation checks for design-system version drift and D1-D4 gate progression.
+- Issue and PR template fields for final endpoint, review classification and authority evidence.
+- Conservative autonomous-agent guidance in `AUTONOMOUS-AGENTS.md`.
+- Deferred automation candidates in `PHASE-2-AUTOMATION-CANDIDATES.md`.
+
+No product execution, product source modification, autonomous-agent installation, deployment or execution issue creation is authorised by this phase.
