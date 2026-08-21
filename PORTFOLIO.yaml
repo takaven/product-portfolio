@@ -128,16 +128,16 @@
         {
           "name": "Talent-Flow",
           "classification": "production foundation",
-          "evidence_confidence": "UNVERIFIED",
-          "remarks": "Selected foundation remains valid, but exact source locator and pinned revision must be supplied before execution.",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Verified local Replit-export Git repository matching the audited HirePass foundation. Working tree clean at pinned commit; contains employer-specific/candidate-related material and must be sanitised before product execution output is shared.",
           "role": "PRIMARY",
           "source_type": "REPLIT_EXPORT_OR_LOCAL_ASSET",
           "owner_repository": "",
           "repository_url": "",
-          "branch": "",
-          "pinned_commit_sha": "",
-          "local_or_replit_locator": "",
-          "locator_status": "LOCATOR_REQUIRED"
+          "branch": "main",
+          "pinned_commit_sha": "11411f3566e39760bb50d4936a45450b814b8554",
+          "local_or_replit_locator": "C:\\Users\\isuda\\Documents\\Codex\\2026-08-20\\full-replit-product-portfolio-audit-local\\work\\replit-export\\Talent-Flow",
+          "locator_status": "VERIFIED"
         },
         {
           "name": "BaynunahPass-1",
@@ -225,14 +225,14 @@
         }
       ],
       "source_repository_links": [],
-      "current_execution_gate": "BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction.",
+      "current_execution_gate": "Phase 1 - sanitisation and foundation extraction.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "complementary; possible later integration at hire-to-employee handoff",
       "owner_current_workstream": "awaiting execution",
       "evidence_confidence": "VERIFIED",
       "important_remarks": "Do not rebuild from zero. Use Talent-Flow as the base, consolidate controlled modules, and remove full ATS/broad HR scope.",
-      "execution_ready": false,
+      "execution_ready": true,
       "product_principles": [
         {
           "name": "Pass concept",
