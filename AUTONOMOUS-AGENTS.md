@@ -1,59 +1,181 @@
-# Autonomous Agent Options
+# Autonomous Agent Operating Model
 
-This repository may later use autonomous coding agents for bounded work. No autonomous agent integration is installed or configured by this document.
+Phase 3/3 records the proposed autonomous-agent operating design for Takaven. It does not install, configure, assign or authorise any autonomous agent.
 
 ## Position
 
-Autonomous agents are suitable for narrow, reviewable tasks once the source locator, issue scope, acceptance gate and validation checks are clear.
+Autonomous agents may be useful only inside bounded GitHub issues with clear acceptance gates, source locators, PR review and CI. The goal is not maximum autonomy. The goal is useful autonomy that preserves portfolio governance, source pinning, design gates, auditability and least privilege.
 
-They are not suitable for:
+No product execution is authorised by this document.
 
-- reopening product discovery;
-- changing product boundaries;
-- approving design gates;
-- deciding commercial positioning;
-- deploying products;
-- modifying source repositories without an authorised execution issue.
+## Official Evidence Reviewed
 
-## GitHub Copilot Coding Agent
+The current recommendation is based on official vendor documentation reviewed during Phase 3:
 
-Official documentation indicates GitHub Copilot coding agent can work from assigned issues, create branches and pull requests, and run in an ephemeral GitHub Actions-powered environment.
+- GitHub Copilot cloud agent can research a repository, create a plan, make changes on a branch, run tests in an ephemeral GitHub Actions-powered environment, and optionally open a pull request. It is available for paid Copilot plans and can work in GitHub-hosted repositories unless disabled. Source: [GitHub Copilot cloud agent overview](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent).
+- GitHub Copilot cloud agent can be started from GitHub, assigned to issues, and can raise a pull request and request review. Source: [Using Copilot cloud agent on GitHub](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/use-cloud-agent-on-github).
+- GitHub Copilot cloud agent access depends on plan and repository policy. Business and Enterprise administrators must enable it; Pro, Pro+ and Max accounts have it enabled by default unless a repository is opted out. Source: [Managing access to GitHub Copilot cloud agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/access-management).
+- GitHub Copilot cloud agent environment setup can be customised through setup steps, but this repository does not configure that yet. Source: [Configure the Copilot cloud agent environment](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment).
+- Codex code review can review GitHub pull request diffs, follow repository guidance and post review feedback focused on serious issues. Source: [Review GitHub pull requests with Codex](https://learn.chatgpt.com/docs/third-party/github).
+- Codex GitHub Action can automate Codex feedback in CI, but examples require additional write permissions to post PR comments. This remains deferred. Source: [Codex GitHub Action](https://learn.chatgpt.com/docs/github-action).
+- Codex reads `AGENTS.md` files before work and can use repository-specific instructions. Source: [Custom instructions with AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
-References:
+## Vendor Assessment
 
-- [About Copilot coding agent](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-cloud-agent)
-- [Use Copilot coding agent on GitHub](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/use-cloud-agent-on-github)
-- [Copilot coding agent access management](https://docs.github.com/en/copilot/concepts/agents/cloud-agent/access-management)
-- [Customise the Copilot coding agent environment](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/customize-the-agent-environment)
+| Option | GitHub Fit | Private Repo | Issue to PR | Permissions | Auditability | Recommendation |
+| --- | ---: | ---: | ---: | --- | ---: | --- |
+| GitHub Copilot cloud agent | High | Supported on GitHub repos where enabled | Strong | Requires repo write access for branches/PRs; no default-branch write should be granted | High through GitHub branches, commits, PRs and logs | Primary Builder candidate after review and pilot |
+| OpenAI Codex cloud / GitHub workflows | Medium | Supported where GitHub connection is configured | Partial, depending on workflow | Good for review; CI comment posting needs write permissions if automated | High for PR reviews and GitHub Action logs | Primary Independent Reviewer candidate; secondary Builder only where GitHub-native Copilot is insufficient |
+| Third-party GitHub agents | Unknown until individually reviewed | Unknown | Unknown | Often broader or app-specific | Varies | Do not install unless Copilot/Codex cannot cover a concrete need |
 
-Suggested use here: later pilot on one low-risk repository-governance issue after this operating model is reviewed.
+## Recommended Model
 
-Do not enable broad automation from this repository until issue templates, CI and review flow have proven stable.
+Use a hybrid model:
 
-## OpenAI Codex Cloud
+1. GitHub Copilot cloud agent is the preferred future Builder Agent for bounded implementation issues because it is GitHub-native, issue-driven, branch/PR-oriented and visible in the normal GitHub review flow.
+2. Codex is the preferred Independent Reviewer for high-signal PR review because it can follow `AGENTS.md` and review PR diffs without becoming the builder of record.
+3. Product governance remains in this repository, CI and human review. No agent may approve its own material work.
 
-Official documentation indicates OpenAI Codex cloud runs coding tasks in isolated cloud environments, can be started from connected tools such as GitHub, and supports reviewing summaries/diffs before opening a pull request.
+Do not install either integration until this Phase 3 design receives independent review and the founder explicitly authorises a pilot.
 
-References:
+## Autonomy Levels
 
-- [Codex cloud tasks](https://learn.chatgpt.com/docs/cloud)
-- [OpenAI Codex in GitHub](https://docs.github.com/en/copilot/concepts/agents/openai-codex)
+| Level | Name | Permitted Actions | Default Status |
+| --- | --- | --- | --- |
+| 0 | Read-only review | Inspect issue, docs, source and PR; report findings only | Allowed when assigned |
+| 1 | PR preparation | Create branch, edit authorised files, run checks, open draft PR | Allowed only after issue authorisation and agent enablement |
+| 2 | Iterative PR maintenance | Respond to CI and `BLOCKING` or `MATERIAL` reviewer findings within the same issue scope | Allowed only within an existing authorised PR |
+| 3 | Release/deploy | Deploy, release, migrate production data or change live services | Disabled by default |
 
-Suggested use here: bounded implementation or audit tasks where a human can review the pull request before merge.
+## Mandatory Human Approval Points
 
-## Third-Party GitHub Agents
+Human/founder/governance approval remains mandatory for:
 
-Third-party agents should not be added until this repository has a clear need that GitHub Copilot coding agent or OpenAI Codex cloud cannot cover.
+- activating a new product;
+- changing product boundary;
+- changing commercial positioning;
+- clearing conditional status;
+- D1 UX principles approval;
+- D2 critical screens approval;
+- D3 component primitives approval;
+- D4 full frontend implementation authorisation;
+- Takaven master brand changes;
+- production deployment or release;
+- destructive data or schema operations;
+- material external spend;
+- granting a new agent integration or repository permission;
+- starting any pilot.
 
-Any third-party agent must be reviewed for repository permissions, data exposure, audit logs, branch behaviour and secret access before installation.
+Routine implementation inside an already authorised issue should not require repeated approval unless it hits one of these gates.
 
-## Minimum Activation Criteria
+## Cross-Repository Flow
 
-Before any autonomous agent receives portfolio work:
+The recommended cross-repository model is:
 
-- the issue has a finite final endpoint;
-- `PORTFOLIO.yaml` identifies the product and gate;
-- the source locator and revision are verified where source code is involved;
-- the agent is limited to the authorised repository and files;
-- CI validates generated views and governance checks;
-- the pull request is human-reviewed before merge.
+`product-portfolio issue -> source repo execution -> source repo PR -> independent review -> merge -> product-portfolio governance update, if authorised`
+
+Rules:
+
+1. The control issue lives in `takaven/product-portfolio` when the work is governance, source-resolution, gate approval or portfolio-state related.
+2. Product implementation issues should live in the product source repository once that repository is pinned and governed.
+3. Every product source issue or PR must carry the Product ID, execution gate, source locator and final endpoint copied from the controlling portfolio record or issue.
+4. Implementation PRs belong in the source repository. Canonical portfolio updates belong in `product-portfolio`.
+5. If an agent cannot safely access both the control repo and source repo, split the work: one issue/PR for product-source changes and a separate governance PR for canonical updates.
+6. Because GitHub Copilot cloud agent can only make changes in the selected repository for a task, do not assign it a cross-repository implementation task that requires edits in both repositories.
+
+## Context Bootstrap
+
+A fresh autonomous agent must reconstruct context in this order:
+
+1. Root `AGENTS.md`
+2. `PORTFOLIO.yaml`
+3. `DASHBOARD.md`
+4. `GITHUB-AUTOMATION.md`
+5. This `AUTONOMOUS-AGENTS.md`
+6. Relevant product folder under `products/`
+7. Active GitHub issue
+8. Exact source repository or source asset named by the issue
+9. Pinned baseline revision or export hash
+10. Product-specific `DESIGN.md` and `DECISIONS.md`
+11. Relevant previous PR or review evidence linked from the issue
+
+If any required source locator, pinned revision, prerequisite design approval or governance reference is missing, the agent must stop and report the blocker.
+
+## Permission Model
+
+Minimum permissions:
+
+- Builder Agent: write access only to the specific repository for branch and PR creation; no direct default-branch write; no deployment permission; no production secrets; no billing/admin access; no organisation-wide write access.
+- Independent Reviewer: read or review permission where practical; if automated comments are later enabled, restrict write permission to PR comments only.
+- Governance Layer: existing read-only CI checks remain authoritative. Any future write automation must be separately reviewed and approved.
+
+## Data and Secret Safety
+
+Agents may identify the existence and category of sensitive material, but must not copy values or records into issues, PRs, logs or this repository.
+
+Sensitive categories include:
+
+- `.env` files and credentials;
+- API keys and tokens;
+- candidate, employee, payroll, tenant or property records;
+- uploaded CVs, passports, visas, contracts and private documents;
+- production databases or storage buckets.
+
+If a source contains unsanitised sensitive data and the task requires sharing, external review, migration or public logs, stop at the sanitisation gate. Do not continue by redacting ad hoc in a PR description.
+
+## Review Loop
+
+Default flow:
+
+1. Human creates or approves a bounded issue.
+2. Builder prepares a branch and draft PR.
+3. CI runs deterministic checks.
+4. Independent Reviewer reviews the PR.
+5. Builder fixes `BLOCKING` and `MATERIAL` findings within scope.
+6. Focused re-review checks only the corrected findings and regressions.
+7. Human/governance merges when satisfied.
+
+Passed findings remain closed. Cosmetic findings do not force another correction loop. Merge does not begin the next phase.
+
+## Concurrency Rules
+
+- One active Builder PR per product and execution gate.
+- One active design gate per product at a time.
+- Do not run redesign and implementation branches simultaneously for the same surface.
+- Do not assign two agents to the same issue unless one is explicitly Builder and the other is Reviewer.
+- If two branches touch the same canonical product record, pause one until the other merges or closes.
+- Product-source changes and portfolio-governance changes should be split unless a single authorised issue explicitly permits both.
+
+## Governance-Only Pilot
+
+Recommended pilot after independent review and explicit founder approval:
+
+> Create one governance-only issue in `product-portfolio` asking an agent to make a bounded documentation wording correction in `AUTONOMOUS-AGENTS.md`, open a draft PR, pass existing CI, respond to one independent reviewer correction, and stop after the PR is ready for merge.
+
+Pilot acceptance checks:
+
+- issue assignment works;
+- agent reads `AGENTS.md`;
+- branch and draft PR are created;
+- PR template is completed;
+- CI runs;
+- reviewer correction loop is bounded;
+- no product repository is touched;
+- no next issue or phase starts automatically.
+
+Do not run this pilot until separately authorised.
+
+## Explicit Prohibitions
+
+Autonomous agents must not automatically:
+
+- begin the next phase;
+- expand product scope;
+- change product status, priority or boundary unless the issue explicitly authorises the canonical change;
+- approve design gates;
+- redesign after D-gate approval;
+- deploy or release;
+- add external integrations;
+- access production secrets;
+- alter sensitive source data;
+- create product execution issues from this repository without authorisation.
