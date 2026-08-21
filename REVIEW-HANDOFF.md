@@ -30,7 +30,7 @@ This repository is intended to be the central operating memory for Takaven produ
 - No product execution issues were created.
 - No product application code was copied or modified.
 - No final product UI designs were created.
-- GitHub branch protection may require manual verification depending on permissions.
+- GitHub branch protection has been applied to `main` while the repository is public.
 
 ## Automation Created
 
@@ -47,11 +47,11 @@ This repository is intended to be the central operating memory for Takaven produ
 - Repository created as private: `takaven/product-portfolio`
 - Default branch pushed as `main`
 - Portfolio Validation workflow created and first push run completed successfully
+- Branch protection on `main` requiring pull requests and the `validate` status check, with admin enforcement enabled
 
 ## Settings Not Applied
 
-- Branch protection on `main` was not applied. GitHub returned a plan/permission restriction for branch protection on a private repository.
-- Required status checks were not enforced through branch protection for the same reason.
+- None currently known for pre-freeze governance hardening.
 
 ## Assumptions
 
@@ -63,12 +63,11 @@ This repository is intended to be the central operating memory for Takaven produ
 
 - `TKV-006` source attribution such as `PassGuard-Pipeline` remains `UNVERIFIED`.
 - `TKV-003` primary source `Talent-Flow` remains selected but has `LOCATOR_REQUIRED` until an exact source locator and pinned revision are supplied.
-- GitHub branch protection and required checks are unverified until applied and confirmed after repository creation.
+- Repository visibility is currently public. If the repository is made private again under a plan that does not support private-repo branch protection, `main` protection and required checks must be reverified before autonomous product execution.
 
 ## Manual Actions Required
 
-- Enable branch protection for `main` if the GitHub organisation/account plan allows it later.
-- When branch protection is available, require pull requests and the `validate` status check from the Portfolio Validation workflow.
+- Reverify `main` protection after any repository visibility or GitHub base-plan change.
 
 ## Product Repository Safety Confirmation
 

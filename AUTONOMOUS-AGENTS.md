@@ -123,6 +123,8 @@ Sensitive categories include:
 
 If a source contains unsanitised sensitive data and the task requires sharing, external review, migration or public logs, stop at the sanitisation gate. Do not continue by redacting ad hoc in a PR description.
 
+A cloud autonomous Builder must not be granted access to a source repository containing unsanitised real candidate, employee, payroll, tenant, financial, identity-document or similarly sensitive operational data unless a separately approved data-processing or security decision explicitly authorises that access. The normal path is to sanitise or isolate the source first, verify the safe source, and only then grant Builder access.
+
 ## Review Loop
 
 Default flow:

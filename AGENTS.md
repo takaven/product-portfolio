@@ -4,15 +4,16 @@ This repository governs Takaven product portfolio execution. It is a control rep
 
 ## Required Reading Order
 
-Before acting, every agent must read:
+Before acting, every agent must read the task-relevant context:
 
-1. `PORTFOLIO.yaml`
-2. `DASHBOARD.md`
-3. `GITHUB-AUTOMATION.md`
-4. `AUTONOMOUS-AGENTS.md` when the work involves autonomous-agent operation or review
-5. The relevant folder under `products/`
-6. The active GitHub issue
-7. The actual source repository or source asset named in the issue
+1. The active GitHub issue.
+2. `PORTFOLIO.yaml`, focused on the relevant canonical product record or component record.
+3. The relevant folder under `products/`, when the work concerns a retained product or component.
+4. The exact source repository or source asset named in the issue, including its pinned revision when applicable.
+5. Product-specific `DESIGN.md` and `DECISIONS.md` evidence when design or prior decisions are relevant.
+6. `DASHBOARD.md` when execution readiness, blockers or queue state matter.
+7. `GITHUB-AUTOMATION.md` only when the task involves automation, PR governance or CI behaviour.
+8. `AUTONOMOUS-AGENTS.md` only when the task involves autonomous-agent operation or review.
 
 ## Canonical Source
 

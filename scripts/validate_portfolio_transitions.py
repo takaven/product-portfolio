@@ -38,6 +38,7 @@ APPROVAL_REF_RE = re.compile(
     r"(?:$|\s|#)|decision:[A-Za-z0-9._/-]+)",
     re.IGNORECASE,
 )
+PRODUCT_ID_RE = re.compile(r"\bTKV-[0-9]{3}\b", re.IGNORECASE)
 
 
 def section_body(markdown: str, heading: str) -> str:
@@ -111,6 +112,10 @@ def sensitive_changes(base: dict, head: dict) -> list[str]:
     return changes
 
 
+def changed_product_ids(changes: list[str]) -> set[str]:
+    return {match.group(0).upper() for change in changes for match in [PRODUCT_ID_RE.search(change)] if match}
+
+
 def hard_transition_errors(base: dict, head: dict) -> list[str]:
     errors: list[str] = []
     base_products = product_map(base)
@@ -137,6 +142,16 @@ def validate_transition(base: dict | None, head: dict, pr_body: str = "") -> lis
     errors = hard_transition_errors(base, head)
     changes = sensitive_changes(base, head)
     if changes:
+        declared_product = PRODUCT_ID_RE.search(section_body(pr_body, "Product ID"))
+        declared_product_id = declared_product.group(0).upper() if declared_product else ""
+        changed_products = changed_product_ids(changes)
+        if declared_product_id and any(product_id != declared_product_id for product_id in changed_products):
+            errors.append(
+                f"Product-scoped PR {declared_product_id} changes canonical state for other products: "
+                + ", ".join(sorted(changed_products))
+                + "."
+            )
+
         approval = section_body(pr_body, "Governance Approval")
         if not approval or approval.upper() in {"N/A", "NONE"} or not APPROVAL_REF_RE.search(approval):
             errors.append(
