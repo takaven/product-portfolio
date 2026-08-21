@@ -27,7 +27,10 @@ def render(data: dict) -> str:
     products = data["products"]
     independent_products = [p for p in products if p["status"] != "COMPONENT_ABSORB"]
     component_records = [p for p in products if p["status"] == "COMPONENT_ABSORB"]
-    queue = sorted(independent_products, key=lambda p: p["priority"])
+    queue = sorted(
+        [p for p in independent_products if p["priority"] != "HOLD"],
+        key=lambda p: p["priority"],
+    )
 
     lines: list[str] = [
         "<!-- GENERATED FROM PORTFOLIO.yaml. DO NOT EDIT DIRECTLY. -->",
@@ -35,6 +38,8 @@ def render(data: dict) -> str:
         "# Takaven Product Portfolio",
         "",
         f"**Discovery status:** `{portfolio['discovery_status']}`",
+        "",
+        "**Dashboard:** `DASHBOARD.md`",
         "",
         "Takaven is a software portfolio for revived and active products with bounded execution gates. This repository is the operating memory for portfolio decisions, source hierarchy, product boundaries and authorised next steps.",
         "",
@@ -61,7 +66,7 @@ def render(data: dict) -> str:
         "",
         f"> {portfolio['operating_principle']}",
         "",
-        "## Active / Independent Products",
+        "## Independent Product Records",
         "",
         row(["ID", "Product", "Category", "Status", "Priority", "Execution Gate"]),
         row(["--", "-------", "--------", "------", "--------", "--------------"]),
@@ -114,7 +119,7 @@ def render(data: dict) -> str:
             row(["--------", "--------"]),
         ]
     )
-    priorities = ["P0", "P1", "P2", "P3", "P2_MODULE", "P3_MODULE", "HOLD"]
+    priorities = ["P0", "P1", "P2", "P3"]
     for priority in priorities:
         names = [p["name"] for p in queue if p["priority"] == priority]
         if names:

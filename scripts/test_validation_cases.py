@@ -9,6 +9,7 @@ import tempfile
 from pathlib import Path
 
 import generate_portfolio
+import generate_dashboard
 import generate_product_docs
 import validate_portfolio
 
@@ -104,10 +105,43 @@ def test_execution_ready_without_source_locator(base: dict) -> None:
     assert_fails("execution-ready without locator", data, "verified primary source locator")
 
 
+def test_design_system_version_must_match(base: dict) -> None:
+    data = copy.deepcopy(base)
+    data["products"][0]["design_governance"]["design_system_version"] = "unknown-design-system"
+    assert_fails("unknown design-system version", data, "current portfolio design system version")
+
+
+def test_design_gate_progression_requires_references(base: dict) -> None:
+    data = copy.deepcopy(base)
+    product = next(item for item in data["products"] if item["status"] != "COMPONENT_ABSORB")
+    product["design_governance"]["design_stage"] = "D4_AUTHORISED"
+    assert_fails("D4 without prior design approvals", data, "approved D1 reference")
+
+
+def test_component_design_stage_not_applicable(base: dict) -> None:
+    data = copy.deepcopy(base)
+    product = next(item for item in data["products"] if item["status"] == "COMPONENT_ABSORB")
+    product["design_governance"]["design_stage"] = "NOT_STARTED"
+    assert_fails("component with active design stage", data, "NOT_APPLICABLE")
+
+
 def test_stale_generated_portfolio(base: dict) -> None:
     rendered = generate_portfolio.render(base)
     if rendered == "# stale\n":
         raise AssertionError("stale portfolio fixture unexpectedly matched generated output")
+
+
+def test_stale_generated_dashboard(base: dict) -> None:
+    rendered = generate_dashboard.render(base)
+    if rendered == "# stale\n":
+        raise AssertionError("stale dashboard fixture unexpectedly matched generated output")
+
+
+def test_active_queue_excludes_hold_and_components(base: dict) -> None:
+    rendered = generate_dashboard.render(base)
+    active_queue = rendered.split("## Active Execution Queue", 1)[1].split("## Source Locator Health", 1)[0]
+    if "TKV-005" in active_queue or "TKV-006" in active_queue or "TKV-007" in active_queue:
+        raise AssertionError("Active execution queue must exclude component and HOLD records.")
 
 
 def test_design_and_decisions_not_generated() -> None:
@@ -127,7 +161,12 @@ def main() -> int:
         test_orphan_product_folder,
         test_duplicate_or_reused_permanent_id,
         test_execution_ready_without_source_locator,
+        test_design_system_version_must_match,
+        test_design_gate_progression_requires_references,
+        test_component_design_stage_not_applicable,
         test_stale_generated_portfolio,
+        test_stale_generated_dashboard,
+        test_active_queue_excludes_hold_and_components,
     ]
     for test in tests:
         test(copy.deepcopy(base))

@@ -11,6 +11,8 @@ A technically substantial AI developer-tool lineage retained on hold.
 - Lifecycle stage: `STAGE_0_ASSET_IDENTIFIED`
 - Current execution gate: No execution scheduled.
 - Evidence confidence: `VERIFIED`
+- Design stage: `NOT_STARTED`
+- Design system version: `takaven-design-system-v1`
 
 ## Important Warning
 

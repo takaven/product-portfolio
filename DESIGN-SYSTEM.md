@@ -4,6 +4,12 @@ Takaven products should clearly belong to the same company without becoming resk
 
 This is governance, not a finished UI kit.
 
+## Version
+
+Current governed design-system version: `takaven-design-system-v1`
+
+Product records in `PORTFOLIO.yaml` must reference this version in their `design_governance` block. Changing this version is a governance change, not an implementation convenience.
+
 ## Colour Tokens
 
 Written HEX values are authoritative. Do not sample colours from images.
@@ -46,3 +52,16 @@ No full frontend rollout before visual foundation and critical screens are appro
 D2 requires approved D1 evidence. D3 requires approved D1 and D2 evidence. D4 requires approved D1, D2 and D3 evidence.
 
 For HirePass, likely critical surfaces are HR / Pass management view, Candidate Pass and Manager Pass. Do not design them until the relevant gate is opened.
+
+## Product Design Stages
+
+`PORTFOLIO.yaml` tracks product design stage using:
+
+- `NOT_STARTED`
+- `D1_APPROVED`
+- `D2_APPROVED`
+- `D3_APPROVED`
+- `D4_AUTHORISED`
+- `NOT_APPLICABLE`
+
+`NOT_APPLICABLE` is reserved for retained component records such as TeamFrame-destined modules. Independent product records must not use it.

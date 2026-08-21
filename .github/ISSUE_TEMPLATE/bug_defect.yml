@@ -18,6 +18,18 @@ body:
       description: What is wrong?
     validations:
       required: true
+  - type: dropdown
+    id: review_classification
+    attributes:
+      label: Review classification
+      description: Classify the defect so correction loops are limited to blocking/material issues.
+      options:
+        - BLOCKING
+        - MATERIAL
+        - NON_BLOCKING
+        - COSMETIC
+    validations:
+      required: true
   - type: textarea
     id: expected
     attributes:
@@ -36,3 +48,10 @@ body:
     attributes:
       label: Constraints / exclusions
       description: What must not be changed while fixing this?
+  - type: textarea
+    id: final_endpoint
+    attributes:
+      label: Final endpoint
+      description: State the exact condition that closes this defect.
+    validations:
+      required: true

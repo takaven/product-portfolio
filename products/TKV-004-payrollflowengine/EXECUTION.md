@@ -18,6 +18,12 @@ Decide TeamFrame add-on vs independent Takaven control-layer product.
 
 Not applicable.
 
+## Design Governance
+
+- Design stage: `NOT_STARTED`
+- Design system version: `takaven-design-system-v1`
+- Visual profile version: `payrollflowengine-visual-profile-v0`
+
 ## Prohibited During Unauthorised Work
 
 - Do not modify product source repositories.

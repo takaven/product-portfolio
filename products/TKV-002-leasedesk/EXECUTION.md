@@ -18,6 +18,12 @@ None.
 
 Not applicable.
 
+## Design Governance
+
+- Design stage: `NOT_STARTED`
+- Design system version: `takaven-design-system-v1`
+- Visual profile version: `leasedesk-visual-profile-v0`
+
 ## Prohibited During Unauthorised Work
 
 - Do not modify product source repositories.

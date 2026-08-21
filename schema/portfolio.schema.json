@@ -6,7 +6,15 @@
   "properties": {
     "portfolio": {
       "type": "object",
-      "required": ["name", "discovery_status", "canonical_source", "last_reviewed"],
+      "required": [
+        "name",
+        "discovery_status",
+        "canonical_source",
+        "last_reviewed",
+        "design_system",
+        "gate_model",
+        "authority_model"
+      ],
       "additionalProperties": false,
       "properties": {
         "name": { "type": "string" },
@@ -25,7 +33,10 @@
         "reserved_product_ids": {
           "type": "array",
           "items": { "$ref": "#/$defs/reserved_product_id" }
-        }
+        },
+        "design_system": { "$ref": "#/$defs/design_system" },
+        "gate_model": { "$ref": "#/$defs/gate_model" },
+        "authority_model": { "$ref": "#/$defs/authority_model" }
       }
     },
     "products": {
@@ -74,6 +85,76 @@
     },
     "locator_status": {
       "enum": ["VERIFIED", "UNVERIFIED", "LOCATOR_REQUIRED"]
+    },
+    "design_stage": {
+      "enum": ["NOT_APPLICABLE", "NOT_STARTED", "D1_APPROVED", "D2_APPROVED", "D3_APPROVED", "D4_AUTHORISED"]
+    },
+    "review_classification": {
+      "enum": ["BLOCKING", "MATERIAL", "NON_BLOCKING", "COSMETIC"]
+    },
+    "design_system": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["current_version", "source_file", "brand_tokens_locked"],
+      "properties": {
+        "current_version": { "type": "string", "minLength": 1 },
+        "source_file": { "const": "DESIGN-SYSTEM.md" },
+        "brand_tokens_locked": { "type": "boolean" }
+      }
+    },
+    "gate_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_version",
+        "uses_existing_fields",
+        "review_classifications",
+        "correction_loop_rule",
+        "hard_stop_rule",
+        "no_automatic_next_phase"
+      ],
+      "properties": {
+        "model_version": { "type": "string", "minLength": 1 },
+        "uses_existing_fields": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "review_classifications": {
+          "type": "array",
+          "minItems": 4,
+          "items": { "$ref": "#/$defs/review_classification" }
+        },
+        "correction_loop_rule": { "type": "string", "minLength": 1 },
+        "hard_stop_rule": { "type": "string", "minLength": 1 },
+        "no_automatic_next_phase": { "const": true }
+      }
+    },
+    "authority_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "agent_roles",
+        "agent_autonomous_actions",
+        "founder_or_governance_approval_required"
+      ],
+      "properties": {
+        "agent_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "agent_autonomous_actions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "founder_or_governance_approval_required": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
     },
     "external_product": {
       "type": "object",
@@ -157,7 +238,8 @@
         "owner_current_workstream",
         "execution_ready",
         "evidence_confidence",
-        "important_remarks"
+        "important_remarks",
+        "design_governance"
       ],
       "additionalProperties": false,
       "properties": {
@@ -195,6 +277,7 @@
         "execution_ready": { "type": "boolean" },
         "evidence_confidence": { "$ref": "#/$defs/evidence_confidence" },
         "important_remarks": { "type": "string" },
+        "design_governance": { "$ref": "#/$defs/design_governance" },
         "product_principles": {
           "type": "array",
           "items": { "$ref": "#/$defs/product_principle" }
@@ -214,8 +297,52 @@
             "required": ["destination_product"],
             "properties": { "destination_product": { "type": "string", "minLength": 1 } }
           }
+        },
+        {
+          "if": { "properties": { "status": { "const": "COMPONENT_ABSORB" } } },
+          "then": {
+            "properties": {
+              "design_governance": {
+                "properties": { "design_stage": { "const": "NOT_APPLICABLE" } }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "enum": ["REVIVAL_IN_PROGRESS", "SHORTLIST_BUILD", "SHORTLIST_CONDITIONAL", "HOLD"] } } },
+          "then": {
+            "properties": {
+              "design_governance": {
+                "properties": {
+                  "design_stage": {
+                    "enum": ["NOT_STARTED", "D1_APPROVED", "D2_APPROVED", "D3_APPROVED", "D4_AUTHORISED"]
+                  }
+                }
+              }
+            }
+          }
         }
       ]
+    },
+    "design_governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "design_stage",
+        "design_system_version",
+        "approved_d1_reference",
+        "approved_d2_reference",
+        "approved_d3_reference",
+        "visual_profile_version"
+      ],
+      "properties": {
+        "design_stage": { "$ref": "#/$defs/design_stage" },
+        "design_system_version": { "type": "string", "minLength": 1 },
+        "approved_d1_reference": { "type": "string" },
+        "approved_d2_reference": { "type": "string" },
+        "approved_d3_reference": { "type": "string" },
+        "visual_profile_version": { "type": "string", "minLength": 1 }
+      }
     },
     "component": {
       "type": "object",

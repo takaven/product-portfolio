@@ -22,7 +22,56 @@
         "id": "TKV-001",
         "reason": "Former TeamFrame portfolio record. TeamFrame is external and permanent product IDs are never recycled."
       }
-    ]
+    ],
+    "design_system": {
+      "current_version": "takaven-design-system-v1",
+      "source_file": "DESIGN-SYSTEM.md",
+      "brand_tokens_locked": true
+    },
+    "gate_model": {
+      "model_version": "phase1-governance-v1",
+      "uses_existing_fields": [
+        "status",
+        "lifecycle_stage",
+        "execution_ready",
+        "current_execution_gate"
+      ],
+      "review_classifications": [
+        "BLOCKING",
+        "MATERIAL",
+        "NON_BLOCKING",
+        "COSMETIC"
+      ],
+      "correction_loop_rule": "Only BLOCKING or MATERIAL findings require a correction pass. Passed review areas stay closed unless regression, new evidence or explicit governance reopening occurs.",
+      "hard_stop_rule": "Every execution or review issue must define a finite acceptance endpoint.",
+      "no_automatic_next_phase": true
+    },
+    "authority_model": {
+      "agent_roles": [
+        "Builder",
+        "Independent Reviewer",
+        "Governance Reviewer"
+      ],
+      "agent_autonomous_actions": [
+        "inspect authorised source assets",
+        "create working branch",
+        "modify authorised files",
+        "run validation and documentation checks",
+        "fix in-scope CI defects",
+        "prepare pull request",
+        "update generated views"
+      ],
+      "founder_or_governance_approval_required": [
+        "product boundary changes",
+        "commercial positioning changes",
+        "product activation or archive decisions",
+        "D1, D2 or D3 design approval",
+        "D4 full frontend implementation authorisation",
+        "Takaven master brand changes",
+        "production deployment or release",
+        "significant external-service spend"
+      ]
+    }
   },
   "products": [
     {
@@ -90,7 +139,15 @@
       "owner_current_workstream": "revival in progress",
       "evidence_confidence": "VERIFIED",
       "important_remarks": "Substantive product asset. Do not downgrade to disposable validation software.",
-      "execution_ready": false
+      "execution_ready": false,
+      "design_governance": {
+        "design_stage": "NOT_STARTED",
+        "design_system_version": "takaven-design-system-v1",
+        "approved_d1_reference": "",
+        "approved_d2_reference": "",
+        "approved_d3_reference": "",
+        "visual_profile_version": "leasedesk-visual-profile-v0"
+      }
     },
     {
       "id": "TKV-003",
@@ -247,7 +304,15 @@
           ],
           "governance_rule": "Do not dilute the Pass concept into generic portal terminology or freeze detailed terminology without the relevant design/product gate."
         }
-      ]
+      ],
+      "design_governance": {
+        "design_stage": "NOT_STARTED",
+        "design_system_version": "takaven-design-system-v1",
+        "approved_d1_reference": "",
+        "approved_d2_reference": "",
+        "approved_d3_reference": "",
+        "visual_profile_version": "hirepass-visual-profile-v0"
+      }
     },
     {
       "id": "TKV-004",
@@ -300,7 +365,15 @@
       "owner_current_workstream": "not scheduled",
       "evidence_confidence": "VERIFIED",
       "important_remarks": "Must not become full payroll software. Boundary is payroll change control and document intelligence.",
-      "execution_ready": false
+      "execution_ready": false,
+      "design_governance": {
+        "design_stage": "NOT_STARTED",
+        "design_system_version": "takaven-design-system-v1",
+        "approved_d1_reference": "",
+        "approved_d2_reference": "",
+        "approved_d3_reference": "",
+        "visual_profile_version": "payrollflowengine-visual-profile-v0"
+      }
     },
     {
       "id": "TKV-005",
@@ -348,7 +421,15 @@
       "owner_current_workstream": "not scheduled",
       "evidence_confidence": "VERIFIED",
       "important_remarks": "Retained component record only. TeamFrame itself is external to this repository. Future agents must not create standalone execution issues unless governance changes this status.",
-      "execution_ready": false
+      "execution_ready": false,
+      "design_governance": {
+        "design_stage": "NOT_APPLICABLE",
+        "design_system_version": "takaven-design-system-v1",
+        "approved_d1_reference": "",
+        "approved_d2_reference": "",
+        "approved_d3_reference": "",
+        "visual_profile_version": "hr-operations-inbox-visual-profile-v0"
+      }
     },
     {
       "id": "TKV-006",
@@ -410,7 +491,15 @@
       "owner_current_workstream": "not scheduled",
       "evidence_confidence": "INFERRED",
       "important_remarks": "Retained component record only. TeamFrame itself is external to this repository. Source attribution remains partly unverified.",
-      "execution_ready": false
+      "execution_ready": false,
+      "design_governance": {
+        "design_stage": "NOT_APPLICABLE",
+        "design_system_version": "takaven-design-system-v1",
+        "approved_d1_reference": "",
+        "approved_d2_reference": "",
+        "approved_d3_reference": "",
+        "visual_profile_version": "attendance-exceptions-visual-profile-v0"
+      }
     },
     {
       "id": "TKV-007",
@@ -454,7 +543,15 @@
       "owner_current_workstream": "hold",
       "evidence_confidence": "VERIFIED",
       "important_remarks": "Do not reopen during normal execution. Revisit only with material new commercial evidence.",
-      "execution_ready": false
+      "execution_ready": false,
+      "design_governance": {
+        "design_stage": "NOT_STARTED",
+        "design_system_version": "takaven-design-system-v1",
+        "approved_d1_reference": "",
+        "approved_d2_reference": "",
+        "approved_d3_reference": "",
+        "visual_profile_version": "visionforge-visual-profile-v0"
+      }
     }
   ],
   "components": [

@@ -18,6 +18,12 @@ None.
 
 TeamFrame
 
+## Design Governance
+
+- Design stage: `NOT_APPLICABLE`
+- Design system version: `takaven-design-system-v1`
+- Visual profile version: `hr-operations-inbox-visual-profile-v0`
+
 ## Prohibited During Unauthorised Work
 
 - Do not modify product source repositories.

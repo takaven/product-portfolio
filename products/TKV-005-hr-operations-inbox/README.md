@@ -11,6 +11,8 @@ A retained HR request intake and case-management component for TeamFrame.
 - Lifecycle stage: `STAGE_1_PRODUCT_DEFINITION`
 - Current execution gate: Only execute inside authorised TeamFrame work in the separate TeamFrame repository.
 - Evidence confidence: `VERIFIED`
+- Design stage: `NOT_APPLICABLE`
+- Design system version: `takaven-design-system-v1`
 
 ## Important Warning
 

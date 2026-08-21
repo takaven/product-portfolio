@@ -4,6 +4,8 @@
 
 **Discovery status:** `PORTFOLIO_DISCOVERY_CLOSED`
 
+**Dashboard:** `DASHBOARD.md`
+
 Takaven is a software portfolio for revived and active products with bounded execution gates. This repository is the operating memory for portfolio decisions, source hierarchy, product boundaries and authorised next steps.
 
 ## External Products
@@ -16,7 +18,7 @@ Takaven is a software portfolio for revived and active products with bounded exe
 
 > Portfolio repository -> product source-of-truth -> bounded GitHub issue -> agent execution -> pull request -> automated checks -> status/register update
 
-## Active / Independent Products
+## Independent Product Records
 
 | ID | Product | Category | Status | Priority | Execution Gate |
 | -- | ------- | -------- | ------ | -------- | -------------- |
@@ -41,7 +43,6 @@ These records are retained modules/components, not independent product workstrea
 | `P0` | LeaseDesk |
 | `P1` | HirePass |
 | `P2` | PayrollFlowEngine |
-| `HOLD` | VisionForge / AI-DAN |
 
 ## Components
 
