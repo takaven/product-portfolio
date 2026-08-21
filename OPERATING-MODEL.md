@@ -65,3 +65,16 @@ Design gate status is recorded per product in `PORTFOLIO.yaml`. Components absor
 ## Loop Prevention
 
 This repository should prevent repeated rediscovery and endless correction cycles. Future work should begin from the active issue and dashboard, not from a broad product search. Correction passes should name the specific defect class and final endpoint. Once a gate passes, it stays passed unless a concrete regression or authorised governance change reopens it.
+
+## GitHub Automation
+
+Phase 2 GitHub automation is documented in `GITHUB-AUTOMATION.md`.
+
+The automation layer is limited to deterministic repository administration checks:
+
+- PR metadata and work-item reference traceability.
+- Sensitive canonical transition detection.
+- Generated-view freshness.
+- Existing registry/schema/product-folder validation.
+
+It must remain read-only unless a later governance phase explicitly authorises a narrow write operation. CI validates reference format and metadata structure; human review validates authorisation substance. Merge never starts the next product phase automatically.

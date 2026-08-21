@@ -86,3 +86,17 @@ This branch adds bounded governance hardening only:
 - Deferred automation candidates in `PHASE-2-AUTOMATION-CANDIDATES.md`.
 
 No product execution, product source modification, autonomous-agent installation, deployment or execution issue creation is authorised by this phase.
+
+## Phase 2 GitHub Automation
+
+This branch adds deterministic read-only GitHub automation only:
+
+- PR governance metadata validation for canonical Product ID, required sections and work-item reference format.
+- Sensitive `PORTFOLIO.yaml` transition validation for concrete approval-reference presence.
+- Read-only workflow permissions.
+- Automation failure-case tests.
+- `GITHUB-AUTOMATION.md` as the operating description for implemented and deferred controls.
+
+It deliberately does not add automatic issue closure, labels, stale bots, autonomous agent assignment, deployments or product execution.
+
+CI does not prove work-item authorisation or approval substance. Human/governance review remains responsible for those judgments.

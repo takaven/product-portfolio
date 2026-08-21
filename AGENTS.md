@@ -8,9 +8,10 @@ Before acting, every agent must read:
 
 1. `PORTFOLIO.yaml`
 2. `DASHBOARD.md`
-3. The relevant folder under `products/`
-4. The active GitHub issue
-5. The actual source repository or source asset named in the issue
+3. `GITHUB-AUTOMATION.md`
+4. The relevant folder under `products/`
+5. The active GitHub issue
+6. The actual source repository or source asset named in the issue
 
 ## Canonical Source
 
@@ -26,6 +27,7 @@ Markdown files may explain context but must not introduce conflicting canonical 
 - Never start the next execution phase automatically.
 - Stop at the GitHub issue acceptance gate.
 - Work through pull requests rather than direct default-branch changes.
+- Product-scoped pull requests must include a concrete work-item reference; CI checks reference format and human review confirms authorisation.
 - Update canonical state only when the issue authorises it.
 - Record material decisions in the relevant `DECISIONS.md` and root `DECISION-LOG.md`.
 - Distinguish `VERIFIED`, `INFERRED` and `UNVERIFIED` claims.

@@ -6,7 +6,7 @@
 
 ## Issue / Execution Gate
 
-<!-- Link the authorised issue. -->
+<!-- Link the work item. CI checks reference format; human review confirms authorisation and scope. -->
 
 ## Review Classification
 
@@ -15,6 +15,10 @@
 ## Final Endpoint
 
 <!-- State the exact acceptance gate this PR reaches, and where work stops. -->
+
+## Governance Approval
+
+<!-- Required for sensitive PORTFOLIO.yaml transitions. Use a concrete issue/PR/decision reference. CI checks reference format; human review confirms approval substance. Use N/A when no canonical transition is made. -->
 
 ## What Changed
 
@@ -58,4 +62,3 @@
 <!-- Name only known gates still blocked. Do not start the next phase here. -->
 
 ## Deferred Issues
-

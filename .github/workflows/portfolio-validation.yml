@@ -5,12 +5,18 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+  pull-requests: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -23,6 +29,14 @@ jobs:
       - name: Validate portfolio registry
         run: python scripts/validate_portfolio.py
 
+      - name: Validate PR governance metadata
+        if: github.event_name == 'pull_request'
+        run: python scripts/validate_pr_governance.py
+
+      - name: Validate portfolio transitions
+        if: github.event_name == 'pull_request'
+        run: python scripts/validate_portfolio_transitions.py --base-ref origin/${{ github.base_ref }} --head-ref HEAD
+
       - name: Check generated portfolio view
         run: python scripts/generate_portfolio.py --check
 
@@ -34,6 +48,9 @@ jobs:
 
       - name: Run validation failure-case tests
         run: python scripts/test_validation_cases.py
+
+      - name: Run automation governance tests
+        run: python scripts/test_automation_cases.py
 
       - name: Check documentation links
         run: python scripts/check_docs.py
