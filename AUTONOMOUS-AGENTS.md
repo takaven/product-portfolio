@@ -129,11 +129,14 @@ Default flow:
 
 1. Human creates or approves a bounded issue.
 2. Builder prepares a branch and draft PR.
-3. CI runs deterministic checks.
-4. Independent Reviewer reviews the PR.
-5. Builder fixes `BLOCKING` and `MATERIAL` findings within scope.
-6. Focused re-review checks only the corrected findings and regressions.
-7. Human/governance merges when satisfied.
+3. Human approves the GitHub Actions workflow run if GitHub requires approval for the agent-created or agent-updated PR.
+4. CI runs deterministic checks.
+5. Independent Reviewer reviews the PR.
+6. Builder fixes `BLOCKING` and `MATERIAL` findings within scope.
+7. Focused re-review checks only the corrected findings and regressions.
+8. Human/governance merges when satisfied.
+
+For Copilot-created or Copilot-updated PRs, GitHub Actions may require a human to approve workflow runs before CI executes. This is a GitHub safety gate and does not constitute product execution, design approval, agent installation or authorisation of the next phase.
 
 Passed findings remain closed. Cosmetic findings do not force another correction loop. Merge does not begin the next phase.
 
@@ -158,7 +161,7 @@ Pilot acceptance checks:
 - agent reads `AGENTS.md`;
 - branch and draft PR are created;
 - PR template is completed;
-- CI runs;
+- CI runs, after human workflow approval if GitHub requires it;
 - reviewer correction loop is bounded;
 - no product repository is touched;
 - no next issue or phase starts automatically.
