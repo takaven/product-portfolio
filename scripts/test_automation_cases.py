@@ -19,6 +19,10 @@ def load_registry() -> dict:
         return json.load(file)
 
 
+def load_workflow() -> str:
+    return (ROOT / ".github" / "workflows" / "portfolio-validation.yml").read_text(encoding="utf-8")
+
+
 def pr_event(body: str, head_repo: str = "takaven/product-portfolio", base_repo: str = "takaven/product-portfolio") -> dict:
     return {
         "pull_request": {
@@ -98,6 +102,15 @@ def test_na_product_id_passes_for_governance_pr() -> None:
         raise AssertionError(f"N/A product ID should pass for governance PR. Errors: {errors}")
 
 
+def test_na_product_id_cannot_change_product_folder() -> None:
+    assert_pr_fails(
+        "N/A product ID changes product folder",
+        pr_event(governance_body("N/A")),
+        ["products/TKV-003-hirepass/README.md"],
+        "must not change product folders",
+    )
+
+
 def test_unknown_product_id_fails() -> None:
     assert_pr_fails(
         "unknown product ID",
@@ -137,6 +150,16 @@ def test_product_pr_cannot_change_other_product_folder() -> None:
     )
 
 
+def test_product_pr_cannot_change_multiple_product_folders() -> None:
+    body = governance_body("TKV-003", "#42")
+    assert_pr_fails(
+        "product PR changes multiple product folders",
+        pr_event(body),
+        ["products/TKV-002-leasedesk/README.md", "products/TKV-003-hirepass/README.md"],
+        "must not change multiple product folders",
+    )
+
+
 def test_portfolio_change_requires_canonical_acknowledgement() -> None:
     body = governance_body("N/A").replace("PORTFOLIO.yaml not changed.", "")
     assert_pr_fails(
@@ -165,6 +188,15 @@ def test_cross_repository_pr_rejected() -> None:
         ["README.md"],
         "Cross-repository",
     )
+
+
+def test_pull_request_metadata_edits_trigger_validation() -> None:
+    workflow = load_workflow()
+    required = "types: [opened, synchronize, reopened, edited]"
+    if required not in workflow:
+        raise AssertionError("Portfolio Validation must run when PR metadata is edited.")
+    if "contents: read" not in workflow or "pull-requests: read" not in workflow:
+        raise AssertionError("Portfolio Validation workflow permissions must remain read-only.")
 
 
 def test_sensitive_transition_requires_governance_approval(base: dict) -> None:
@@ -215,6 +247,19 @@ def test_sensitive_transition_with_governance_approval_passes(base: dict) -> Non
         raise AssertionError(f"governance-approved sensitive transition should pass. Errors: {errors}")
 
 
+def test_product_scoped_canonical_change_cannot_affect_other_product(base: dict) -> None:
+    head = copy.deepcopy(base)
+    product = next(item for item in head["products"] if item["id"] == "TKV-002")
+    product["current_execution_gate"] = "Changed by wrong product-scoped PR."
+    assert_transition_fails(
+        "product-scoped canonical change affects other product",
+        base,
+        head,
+        governance_body("TKV-003", "#42"),
+        "changes canonical state for other products",
+    )
+
+
 def test_missing_base_portfolio_fails_closed(base: dict) -> None:
     errors = validate_portfolio_transitions.validate_transition(None, base, governance_body("N/A"))
     if not any("Base PORTFOLIO.yaml" in error for error in errors):
@@ -232,13 +277,16 @@ def main() -> int:
     tests_without_base = [
         test_canonical_product_id_passes,
         test_na_product_id_passes_for_governance_pr,
+        test_na_product_id_cannot_change_product_folder,
         test_unknown_product_id_fails,
         test_product_pr_requires_authorised_issue_reference,
         test_product_pr_rejects_malformed_work_item_reference,
         test_product_pr_cannot_change_other_product_folder,
+        test_product_pr_cannot_change_multiple_product_folders,
         test_portfolio_change_requires_canonical_acknowledgement,
         test_workflow_change_requires_permissions_note,
         test_cross_repository_pr_rejected,
+        test_pull_request_metadata_edits_trigger_validation,
         test_pr_governance_happy_path,
     ]
     for test in tests_without_base:
@@ -249,6 +297,7 @@ def main() -> int:
         test_sensitive_transition_rejects_arbitrary_approval_prose,
         test_execution_ready_transition_requires_source_evidence,
         test_sensitive_transition_with_governance_approval_passes,
+        test_product_scoped_canonical_change_cannot_affect_other_product,
         test_missing_base_portfolio_fails_closed,
     ]
     for test in tests_with_base:

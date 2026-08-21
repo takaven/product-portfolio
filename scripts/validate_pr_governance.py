@@ -97,7 +97,19 @@ def validate_pr(event: dict, changed_files: list[str], product_ids: set[str] | N
     changed_product_ids = sorted(
         {match.group(1) for path in changed_files for match in [PRODUCT_FOLDER_RE.match(path)] if match}
     )
-    if product_id.startswith("TKV-") and any(item != product_id for item in changed_product_ids):
+    if changed_product_ids and product_id == "N/A":
+        errors.append(
+            "Repository-only PRs with Product ID N/A must not change product folders: "
+            + ", ".join(changed_product_ids)
+            + "."
+        )
+    elif len(changed_product_ids) > 1:
+        errors.append(
+            "PRs must not change multiple product folders under one Product ID: "
+            + ", ".join(changed_product_ids)
+            + "."
+        )
+    elif product_id.startswith("TKV-") and any(item != product_id for item in changed_product_ids):
         errors.append(
             f"Product-scoped PR {product_id} changes other product folders: {', '.join(changed_product_ids)}."
         )
