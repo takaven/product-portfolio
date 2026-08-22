@@ -139,7 +139,7 @@ Preserve these existing patterns unless D2 evidence shows they materially fail:
 
 - Authorised issue: #17
 - Endpoint: `GATE 4/8 D2 READY FOR ORCHESTRATOR/FOUNDER DESIGN DECISION`
-- Design status: proposed D2 critical screens only. `PORTFOLIO.yaml` must not move to `D2_APPROVED` until explicit founder/orchestrator approval is recorded.
+- Design status: approved by founder decision recorded for Issue #17 / PR #18. `PORTFOLIO.yaml` records `D2_APPROVED`.
 
 ### D2 Design Decisions
 
