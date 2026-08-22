@@ -167,3 +167,9 @@ LeaseDesk completed the governed Gate 6/8 implementation programme, Gate 7/8 pro
 - This closeout does not provision production infrastructure, DNS, databases, storage, secrets, backups or paid services.
 - This closeout does not announce a commercial release.
 - This closeout does not change the LeaseDesk product boundary, priority or portfolio status.
+
+### UI / Visual Harmonisation Decision
+
+LeaseDesk product/code completion is complete. Final UI and visual harmonisation is intentionally deferred to a later portfolio-wide visual alignment programme after the selected Takaven products are complete.
+
+Do not reopen LeaseDesk implementation for cosmetic UI polish before that phase unless a material usability defect appears. The later portfolio-wide visual phase should make LeaseDesk feel related to the Takaven family while preserving its operational, property-oriented and controlled-density personality.

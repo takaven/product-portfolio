@@ -19,7 +19,7 @@ This repository is intended to be the central operating memory for Takaven produ
 
 - Portfolio discovery is closed.
 - TeamFrame is external to this repository and handled independently by the founder.
-- LeaseDesk is revival in progress.
+- LeaseDesk is 8/8 complete. Product code is ready for a founder production-release decision, but LeaseDesk is not deployed, released or commercially live.
 - HirePass is shortlist build, P1, foundation `Talent-Flow`, controlled consolidation.
 - PayrollFlowEngine is conditional pending TeamFrame add-on vs independent control-layer decision.
 - HR Operations Inbox and Attendance & Timesheet Exceptions are component records whose destination is the separate TeamFrame repository.
@@ -27,9 +27,10 @@ This repository is intended to be the central operating memory for Takaven produ
 
 ## Intentionally Incomplete
 
-- No product execution issues were created.
+- No new product execution issue is open from this handoff.
 - No product application code was copied or modified.
-- No final product UI designs were created.
+- LeaseDesk source execution has completed in the separate source repository; no product source code lives in this control repository.
+- Final product visual harmonisation is intentionally deferred to a later portfolio-wide UI alignment programme.
 - GitHub branch protection has been applied to `main` while the repository is public.
 
 ## Automation Created
@@ -127,4 +128,24 @@ Autonomous Agent Enablement is 2/2 complete.
 
 Governance is frozen for first-product execution. Future governance infrastructure changes require a material defect observed during product execution, repeated manual friction, a material security or permission issue, or a platform behaviour change affecting controls. Theoretical improvements, extra automation possibilities, cleaner architecture preferences and cosmetic documentation refinement are not sufficient reasons by themselves.
 
-No product execution has started.
+## Current Product Handover
+
+### LeaseDesk
+
+- Product record: `TKV-002`
+- Source repository: `isudally/leasedesk-demo`
+- Final source `main` SHA: `d2ce8e988f2d8726fde3dc7e3529e84e0d27db78`
+- Source closeout: `isudally/leasedesk-demo#6`, Issue `#5`
+- Control closeout: Issue `#21`, PR `#22`, merge SHA `86e3330b05a58e61423ca457b056e446b7361367`
+- Programme state: Phase 1/4 COMPLETE, Phase 2/4 COMPLETE, Phase 3/4 COMPLETE, Phase 4/4 COMPLETE, Gates 8/8 COMPLETE, Gate 6 slices 5/5 COMPLETE, Gate 7 PASS, Gate 8 PASS.
+- Current gate: product code ready for production release; production deployment/release requires founder approval.
+- Not done: production deployment, release, infrastructure provisioning, DNS, production secrets, production database, durable document storage/backups, and final production smoke test.
+- UI decision: functional D1/D2/D3 direction and sufficient D4 implementation exist, but final visual harmonisation is intentionally deferred to the later portfolio-wide visual phase.
+
+### Next Product Queue
+
+- `TKV-003 HirePass` is the next P1 product priority, but execution remains blocked until the authoritative `Talent-Flow` source locator, pinned baseline, sanitisation/secrets state and governed boundary are verified.
+- `TKV-004 PayrollFlowEngine` remains P2 / conditional. The exact condition is deciding TeamFrame add-on versus independent Takaven control-layer product. It is Payroll Change Control / Payroll Document Intelligence, not full payroll software.
+- TeamFrame remains external and founder-managed.
+
+No product deployment or next-product execution is authorised by this handoff.
