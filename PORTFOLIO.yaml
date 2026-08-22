@@ -134,7 +134,7 @@
       "source_repository_links": [
         "https://github.com/isudally/leasedesk-demo"
       ],
-      "current_execution_gate": "Gate 3/8 D1 UX principles approved; next LeaseDesk work requires explicit Gate 4/8 D2 authorisation.",
+      "current_execution_gate": "Gate 4/8 D2 critical screens proposed; awaiting orchestrator/founder design decision before Gate 5/8.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "unrelated",

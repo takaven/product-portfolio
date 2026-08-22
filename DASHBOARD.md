@@ -17,7 +17,7 @@ This generated dashboard is the operating snapshot for portfolio execution readi
 
 | Priority | ID | Product | Status | Stage | Execution Ready | Current Gate |
 | -------- | -- | ------- | ------ | ----- | --------------- | ------------ |
-| `P0` | TKV-002 | LeaseDesk | `REVIVAL_IN_PROGRESS` | `STAGE_4_MARKET_READY_PREPARATION` | `true` | Gate 3/8 D1 UX principles approved; next LeaseDesk work requires explicit Gate 4/8 D2 authorisation. |
+| `P0` | TKV-002 | LeaseDesk | `REVIVAL_IN_PROGRESS` | `STAGE_4_MARKET_READY_PREPARATION` | `true` | Gate 4/8 D2 critical screens proposed; awaiting orchestrator/founder design decision before Gate 5/8. |
 | `P1` | TKV-003 | HirePass | `SHORTLIST_BUILD` | `STAGE_2_BUILD_COMPLETION` | `false` | BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction. |
 | `P2` | TKV-004 | PayrollFlowEngine | `SHORTLIST_CONDITIONAL` | `STAGE_1_PRODUCT_DEFINITION` | `false` | Resolve product boundary decision. |
 

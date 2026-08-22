@@ -4,7 +4,7 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Gate 3/8 D1 UX principles approved; next LeaseDesk work requires explicit Gate 4/8 D2 authorisation.
+Gate 4/8 D2 critical screens proposed; awaiting orchestrator/founder design decision before Gate 5/8.
 
 ## Execution Ready
 
