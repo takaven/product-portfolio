@@ -43,3 +43,11 @@ Append only material decisions for HirePass.
 - D2 proposes three critical experiences: Candidate Pass, Manager Pass and HR Pass Control / Hiring Action Workspace.
 - D2 records source reuse direction only; no HirePass source code or frontend was modified.
 - D2 remains pending orchestrator/founder approval and does not authorise D3 components or Pass implementation.
+
+## 2026-08-22 - D2 Approved / D3 Pass Component System Proposed
+
+- Founder approval prompt approved the D2 critical experiences from Issue #33 / PR #34.
+- Canonical design stage moved to `D2_APPROVED`.
+- D3 proposes the reusable Pass interaction/component primitive system required for Candidate Pass, Manager Pass and HR Pass Control.
+- D3 records primitive behaviour and source reuse direction only; no HirePass source code or frontend was modified.
+- D3 remains pending orchestrator/founder approval and does not authorise D4 implementation.

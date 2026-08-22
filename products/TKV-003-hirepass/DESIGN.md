@@ -228,3 +228,172 @@ HR issues a Candidate Pass for a shortlisted applicant. The candidate opens the 
 ## D2 Visual Direction Concept
 
 HirePass should make identity and state prominent before navigation. External Passes should use controlled density, one dominant action, strong status hierarchy and selective Electric Signal Green for meaningful action/state moments. Motion should be minimal and purposeful, used only to confirm state transitions or completed actions. The Pass should be recognisable as an issued, personal, time-bound object without relying on decorative card tricks.
+
+## D3 Pass Component System Proposal
+
+This D3 proposal defines interaction/component primitives only. It does not approve final visual styling, D4 implementation, portfolio-wide visual harmonisation or changes to `takaven/hirepass` source.
+
+### 1. Pass Shell
+
+- **Purpose:** Provide the recognisable external Pass frame for Candidate and Manager experiences.
+- **Required content:** recipient identity, role/requisition context, Pass/action state, hiring stage, dominant next action, expiry/access state, secondary details and recent meaningful activity.
+- **States/variants:** candidate, manager, active, waiting, action required, expired, revoked, completed.
+- **Primary behaviour:** open directly to status plus the next action; keep access/security context visible without dominating the page.
+- **Applicability:** Candidate and Manager primary; HR uses related metadata but not the external shell as its main workspace.
+- **Mobile behaviour:** single-column hierarchy; identity/state/action above the fold; secondary details collapsible.
+- **Source mapping:** ADAPT existing `candidate-portal-pass.tsx`, `manager-recruitment-pass.tsx`, token routes and pass payloads.
+- **Anti-patterns:** identical candidate/manager pages with swapped text, full ATS dashboard, decorative card with no workflow value.
+
+### 2. Action Card
+
+- **Purpose:** Centre the one action that matters now.
+- **Required content:** action title, why it matters, deadline/urgency, required context, primary action, optional justified secondary action, completion/error feedback.
+- **States/variants:** action required, waiting, upcoming, completed, unavailable, expired.
+- **Primary behaviour:** one dominant action per card; successful action visibly changes Pass state.
+- **Applicability:** Candidate, Manager and HR exception/action rows.
+- **Mobile behaviour:** primary action reachable without scrolling where practical; sticky action only when the page is long and action remains current.
+- **Source mapping:** ADAPT existing interview booking, document upload, message, offer response, JD approval, shortlist/reject and evaluation actions.
+- **Anti-patterns:** multiple competing primary buttons, dashboard action grids, silent completion.
+
+### 3. Pass State System
+
+- **Purpose:** Separate access/action state from hiring-stage status.
+- **Required content:** Pass/action state plus hiring stage shown together but visually distinct.
+- **States/variants:** `ACTION REQUIRED`, `WAITING`, `UPCOMING`, `COMPLETED`, `EXPIRED`, `REVOKED`; hiring stages Application, Screening, Interview, Assessment, Decision, Offer, Handoff.
+- **Primary behaviour:** Pass/action state drives urgency and primary action; hiring stage provides process context.
+- **Applicability:** Candidate, Manager and HR.
+- **Mobile behaviour:** compact state block near top; avoid multi-colour overload.
+- **Source mapping:** ADAPT existing pass/candidate statuses, token expiry/active flags and stage data.
+- **Anti-patterns:** status proliferation, using green for every positive state, confusing stage with action need.
+
+### 4. Journey / Progress
+
+- **Purpose:** Show where the candidate/requisition is without exposing internal detail.
+- **Required content:** completed stages, current stage, likely next stage and waiting/action ownership.
+- **States/variants:** not started, current, completed, skipped/not applicable, blocked.
+- **Primary behaviour:** answer “where am I in the process?” quickly.
+- **Applicability:** Candidate primary; HR and Manager secondary.
+- **Mobile behaviour:** horizontal compact stepper or stacked short list; long history hidden behind details.
+- **Source mapping:** ADAPT existing candidate timeline, passCandidate status and hiring-stage data.
+- **Anti-patterns:** enterprise workflow map, internal scoring/rank detail, dense timeline as first screen.
+
+### 5. Decision Card
+
+- **Purpose:** Let managers make one structured hiring decision without navigating elsewhere.
+- **Required content:** required decision, relevant evidence, urgency/deadline, structured options, confirmation and post-submit state.
+- **States/variants:** approve/request changes, shortlist/reject, evaluation rating, final hire/no-hire, pending confirmation, completed.
+- **Primary behaviour:** decision surface plus confirmation; update Manager Pass and HR queue after completion.
+- **Applicability:** Manager primary; HR sees resulting decision state.
+- **Mobile behaviour:** evidence summary first, decision controls next, confirmation in sheet/dialog where useful.
+- **Source mapping:** ADAPT manager JD, shortlist/reject, evaluation and final decision endpoints; REBUILD evidence compression.
+- **Anti-patterns:** full candidate profile before action, multi-page decision flow, free-text-only decisions.
+
+### 6. Evidence Summary
+
+- **Purpose:** Show only the evidence needed for the current manager decision.
+- **Required content:** candidate summary, role fit evidence, CV/profile highlights, interview/evaluation summary, decision-relevant documents.
+- **States/variants:** compact, expanded, missing evidence, confidential/internal-only.
+- **Primary behaviour:** progressive disclosure from summary to detail.
+- **Applicability:** Manager primary; HR secondary; Candidate must not see internal-only evidence.
+- **Mobile behaviour:** summary chips/cards with expandable details.
+- **Source mapping:** ADAPT candidate profile, documents, interviews, evaluations and offers; REBUILD filtering/visibility rules.
+- **Anti-patterns:** dumping entire ATS record, leaking manager notes to candidate, analytics-first evidence.
+
+### 7. Interview Primitives
+
+- **Purpose:** Handle interview scheduling and status clearly for each role.
+- **Required content:** available slots, selected slot, confirmed interview, upcoming interview, completed interview, cancellation/reschedule state where justified.
+- **States/variants:** choose slot, confirm attendance, scheduled, completed, unavailable, reschedule requested.
+- **Primary behaviour:** Candidate books/confirm slots; Manager provides availability/preparation; HR monitors completion.
+- **Applicability:** Candidate, Manager and HR.
+- **Mobile behaviour:** slot cards, clear date/time hierarchy, one-tap selection plus confirmation.
+- **Source mapping:** ADAPT existing interviewSlots, booking endpoint, interview setup and interview records.
+- **Anti-patterns:** calendar-heavy desktop-only UI, hidden time zone/context, no confirmation state.
+
+### 8. Document Primitives
+
+- **Purpose:** Make requested documents feel controlled and purposeful, not like a generic file manager.
+- **Required content:** request, required/optional label, upload state, received state, rejected/replacement requested state, secure access/download state.
+- **States/variants:** requested, uploading, received, approved, rejected, replacement needed, unavailable.
+- **Primary behaviour:** show why the document is needed, current status and next action.
+- **Applicability:** Candidate primary; HR reviews/requests; Manager may see decision-relevant documents only.
+- **Mobile behaviour:** one document per card; upload progress and error recovery visible.
+- **Source mapping:** ADAPT candidateDocuments and document upload endpoints; later security hardening required before broad release.
+- **Anti-patterns:** generic folder UI, unclear required status, exposing documents across candidates/roles.
+
+### 9. Message / Update Primitive
+
+- **Purpose:** Communicate process updates without becoming a chat product.
+- **Required content:** update type, sender/context, timestamp, action link if relevant and read/acknowledged state.
+- **States/variants:** action-triggering update, informational update, recent status change, read/unread.
+- **Primary behaviour:** updates either explain state change or direct the user to an action.
+- **Applicability:** Candidate and HR primary; Manager secondary.
+- **Mobile behaviour:** compact recent update near top; older updates in collapsible history.
+- **Source mapping:** ADAPT candidateMessages, notifications and timeline events.
+- **Anti-patterns:** full chat platform, noisy message feed, status changes buried in free text.
+
+### 10. Access / Security Primitives
+
+- **Purpose:** Make the Pass feel issued, personal, time-bound, controlled and traceable.
+- **Required content:** Pass identity, recipient identity, role/requisition, expiry indicator, revoked/expired state, access problem state, secure-document warning where appropriate.
+- **States/variants:** valid, expiring soon, expired, revoked, invalid token, secure document access.
+- **Primary behaviour:** external users understand access status without seeing technical errors.
+- **Applicability:** Candidate, Manager and HR.
+- **Mobile behaviour:** compact security/access strip; expired/revoked states replace normal actions.
+- **Source mapping:** PRESERVE active/expiry token mechanics; ADAPT token error pages and access metadata; NEW clearer user-facing states.
+- **Anti-patterns:** raw 404/500 errors, treating token as ordinary URL, overexposing internal security detail.
+
+### 11. HR Control Primitives
+
+- **Purpose:** Give HR an operational view of external action health.
+- **Required content:** Pass queue/table, stalled-action indicator, candidate-awaiting-action, manager-awaiting-action, issue Pass, resend/nudge, revoke, extend expiry, activity summary and exception state.
+- **States/variants:** active, stalled, overdue, waiting, completed, expired, revoked, exception.
+- **Primary behaviour:** sort/filter by who must act next and let HR control the Pass lifecycle.
+- **Applicability:** HR primary.
+- **Mobile behaviour:** desktop-primary, responsive support; tables acceptable internally.
+- **Source mapping:** ADAPT existing pass lists, link creation, activity log and analytics; NEW nudge/revoke/extend/stalled detection workflow.
+- **Anti-patterns:** forcing external Pass-card metaphor into HR table workflows, full ATS analytics console.
+
+### 12. Feedback / Transition States
+
+- **Purpose:** Make completed actions and state changes visible and confidence-building.
+- **Required content:** action submitted, decision completed, interview booked, document received, moved to waiting, new action assigned, Pass completed, expired/revoked.
+- **States/variants:** success, waiting transition, next action assigned, no further action, error/retry.
+- **Primary behaviour:** confirm what changed and who owns the next step.
+- **Applicability:** Candidate, Manager and HR.
+- **Mobile behaviour:** inline confirmation or lightweight sheet; no decorative motion unless it clarifies state transition.
+- **Source mapping:** NEW/ADAPT from existing mutation success states and status payloads.
+- **Anti-patterns:** animation without meaning, toast-only confirmation for material decisions, unclear next owner.
+
+### 13. Empty / Loading / Error States
+
+- **Purpose:** Prevent external users from encountering raw technical or confusing states.
+- **Required content:** loading Pass, invalid token, expired Pass, revoked Pass, no action required, no upcoming event, failed upload, failed decision submission, stale/outdated state.
+- **States/variants:** loading, empty, invalid, expired, revoked, retryable failure, non-retryable access failure.
+- **Primary behaviour:** explain state in human terms and provide the safest next step.
+- **Applicability:** Candidate, Manager and HR.
+- **Mobile behaviour:** full-width focused state with one safe action where possible.
+- **Source mapping:** ADAPT existing route error handling and loading states; NEW consistent external error language.
+- **Anti-patterns:** stack traces, raw API messages, dead-end expired/revoked pages without context.
+
+### 14. Mobile Action Behaviour
+
+- **Purpose:** Keep external Pass participation usable one-handed on mobile where practical.
+- **Required content:** dominant action placement, sticky action rules, collapsible detail sections, modal/sheet usage, long-document handling, timeline/history behaviour and confirmation flows.
+- **States/variants:** short action, long form, document upload, decision confirmation, read-only waiting state.
+- **Primary behaviour:** primary action remains easy to find; secondary detail does not compete with it.
+- **Applicability:** Candidate and Manager primary; HR responsive support only.
+- **Mobile behaviour:** top identity/state/action hierarchy; bottom sticky action only for persistent current action; sheets for confirmation/detail.
+- **Source mapping:** REBUILD external Pass layout patterns while preserving existing data/actions.
+- **Anti-patterns:** desktop sidebar dependence, tiny table controls, multi-tab navigation before action.
+
+## D3 Brand / Visual Use
+
+Use only the governed Takaven palette. Electric Signal Green should mark meaningful active/primary/high-signal action or state, not generic success everywhere. Soft Graphite, Titanium Grey, Deep Support Charcoal, Soft Mist and White should provide controlled premium structure, readable contrast and restrained density. Decorative effects must remain subordinate to identity, status, progress, urgency, transition and action confirmation.
+
+## D3 Source Reuse Summary
+
+- **PRESERVE:** token-based Candidate/Manager access, pass/candidate/manager data models, pass creation/link generation, core routes and source baseline.
+- **ADAPT:** existing Candidate Pass page, Manager Pass page, interview slots, evaluations, documents, messages, offers, timeline, activity log and status payloads.
+- **REBUILD:** external Pass layout hierarchy, manager evidence compression, HR action queue/workspace, mobile action placement and consistent state/error language.
+- **NEW:** nudge/revoke/extend control workflow, stalled-action detection, state-transition feedback model, controlled access presentation and one-dominant-action composition.
