@@ -9,9 +9,9 @@ A simple operating system for small commercial landlords to manage units, tenant
 - Status: `REVIVAL_IN_PROGRESS`
 - Priority: `P0`
 - Lifecycle stage: `STAGE_4_MARKET_READY_PREPARATION`
-- Current execution gate: Gate 5/8 D3 component primitives proposed; awaiting orchestrator/founder design decision before Gate 6/8.
+- Current execution gate: Gate 5/8 D3 component primitives approved; next LeaseDesk work requires explicit Gate 6/8 implementation authorisation.
 - Evidence confidence: `VERIFIED`
-- Design stage: `D2_APPROVED`
+- Design stage: `D3_APPROVED`
 - Design system version: `takaven-design-system-v1`
 
 ## Important Warning

@@ -4,7 +4,7 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Gate 5/8 D3 component primitives proposed; awaiting orchestrator/founder design decision before Gate 6/8.
+Gate 5/8 D3 component primitives approved; next LeaseDesk work requires explicit Gate 6/8 implementation authorisation.
 
 ## Execution Ready
 
@@ -20,7 +20,7 @@ Not applicable.
 
 ## Design Governance
 
-- Design stage: `D2_APPROVED`
+- Design stage: `D3_APPROVED`
 - Design system version: `takaven-design-system-v1`
 - Visual profile version: `leasedesk-visual-profile-v0`
 

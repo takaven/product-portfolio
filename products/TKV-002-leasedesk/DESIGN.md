@@ -426,7 +426,7 @@ Footer:
 
 - Authorised issue: #19
 - Endpoint: `GATE 5/8 D3 READY FOR ORCHESTRATOR/FOUNDER DESIGN DECISION`
-- Design status: proposed D3 component primitives only. `PORTFOLIO.yaml` must not move to `D3_APPROVED` until explicit founder/orchestrator approval is recorded.
+- Design status: accepted by orchestrator decision recorded for Issue #19 / PR #20. `PORTFOLIO.yaml` records `D3_APPROVED`.
 
 ### D3 Scope Principle
 
