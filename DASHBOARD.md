@@ -18,7 +18,7 @@ This generated dashboard is the operating snapshot for portfolio execution readi
 | Priority | ID | Product | Status | Stage | Execution Ready | Current Gate |
 | -------- | -- | ------- | ------ | ----- | --------------- | ------------ |
 | `P0` | TKV-002 | LeaseDesk | `REVIVAL_IN_PROGRESS` | `STAGE_4_MARKET_READY_PREPARATION` | `true` | Gate 8/8 release verification complete; production deployment/release pending founder approval. |
-| `P1` | TKV-003 | HirePass | `SHORTLIST_BUILD` | `STAGE_2_BUILD_COMPLETION` | `false` | BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction. |
+| `P1` | TKV-003 | HirePass | `SHORTLIST_BUILD` | `STAGE_2_BUILD_COMPLETION` | `false` | Source foundation preserved. Next authorised gate must address baseline foundation debt before substantial feature work: fix client/src/pages/manager-form.tsx typecheck failure and establish an automated test baseline. |
 | `P2` | TKV-004 | PayrollFlowEngine | `SHORTLIST_CONDITIONAL` | `STAGE_1_PRODUCT_DEFINITION` | `false` | Resolve product boundary decision. |
 
 ## Source Locator Health
@@ -26,7 +26,7 @@ This generated dashboard is the operating snapshot for portfolio execution readi
 | ID | Product | Primary Source Status |
 | -- | ------- | --------------------- |
 | TKV-002 | LeaseDesk | leasedesk-demo: `VERIFIED` / `VERIFIED` |
-| TKV-003 | HirePass | Talent-Flow: `LOCATOR_REQUIRED` / `UNVERIFIED` |
+| TKV-003 | HirePass | hirepass: `VERIFIED` / `VERIFIED` |
 | TKV-004 | PayrollFlowEngine | PayrollFlowEngine source assets: `LOCATOR_REQUIRED` / `VERIFIED` |
 | TKV-005 | HR Operations Inbox | No primary source recorded |
 | TKV-006 | Attendance & Timesheet Exceptions | No primary source recorded |
@@ -56,7 +56,7 @@ These records are not independent execution workstreams.
 
 | ID | Product | Blocking State |
 | -- | ------- | -------------- |
-| TKV-003 | HirePass | BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction. |
+| TKV-003 | HirePass | Source foundation preserved. Next authorised gate must address baseline foundation debt before substantial feature work: fix client/src/pages/manager-form.tsx typecheck failure and establish an automated test baseline. |
 | TKV-004 | PayrollFlowEngine | Decide TeamFrame add-on vs independent Takaven control-layer product. |
 | TKV-005 | HR Operations Inbox | Only execute inside authorised TeamFrame work in the separate TeamFrame repository. |
 | TKV-006 | Attendance & Timesheet Exceptions | Only execute inside authorised TeamFrame work in the separate TeamFrame repository after source confirmation. |
@@ -75,6 +75,6 @@ These records are not independent execution workstreams.
 | Status `REVIVAL_IN_PROGRESS` | 1 |
 | Status `SHORTLIST_BUILD` | 1 |
 | Status `SHORTLIST_CONDITIONAL` | 1 |
-| Source locator `LOCATOR_REQUIRED` | 4 |
+| Source locator `LOCATOR_REQUIRED` | 3 |
 | Source locator `UNVERIFIED` | 9 |
-| Source locator `VERIFIED` | 1 |
+| Source locator `VERIFIED` | 3 |

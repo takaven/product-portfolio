@@ -4,7 +4,7 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction.
+Source foundation preserved. Next authorised gate must address baseline foundation debt before substantial feature work: fix client/src/pages/manager-form.tsx typecheck failure and establish an automated test baseline.
 
 ## Execution Ready
 
