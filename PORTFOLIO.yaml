@@ -188,13 +188,13 @@
           "name": "hirepass",
           "classification": "current authoritative implementation repository",
           "evidence_confidence": "VERIFIED",
-          "remarks": "Founder-authorised public temporary repository containing the sanitised Talent-Flow working tree as fresh one-commit history. Sanitisation complete; old Git history intentionally not preserved. Known baseline execution debt: typecheck fails in client/src/pages/manager-form.tsx and no automated test script exists.",
+          "remarks": "Founder-authorised public temporary repository containing the sanitised Talent-Flow working tree as fresh history. Sanitisation complete; old Git history intentionally not preserved. Foundation hardening PR #2 resolved the manager-form typecheck defect and established a minimal automated test baseline.",
           "role": "PRIMARY",
           "source_type": "GITHUB_REPOSITORY",
           "owner_repository": "takaven/hirepass",
           "repository_url": "https://github.com/takaven/hirepass",
           "branch": "main",
-          "pinned_commit_sha": "50b7704b732e3309ad5ce3a361b69eb83b2a5777",
+          "pinned_commit_sha": "09ded87dbba0cff8c53a3a764608f96e03f9141b",
           "local_or_replit_locator": "",
           "locator_status": "VERIFIED"
         },
@@ -300,13 +300,13 @@
       "source_repository_links": [
         "https://github.com/takaven/hirepass"
       ],
-      "current_execution_gate": "Source foundation preserved. Next authorised gate must address baseline foundation debt before substantial feature work: fix client/src/pages/manager-form.tsx typecheck failure and establish an automated test baseline.",
+      "current_execution_gate": "Foundation hardening complete. D1 product/UX definition is pending orchestrator/founder approval before D2 critical-screen exploration or any Pass redesign.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "complementary; possible later integration at hire-to-employee handoff",
       "owner_current_workstream": "awaiting execution",
       "evidence_confidence": "VERIFIED",
-      "important_remarks": "Do not rebuild from zero. Use the sanitised takaven/hirepass baseline as the authoritative source, consolidate controlled modules later, and remove full ATS/broad HR scope. Repository is public temporarily by founder instruction for live review and should be made private after execution. Known baseline execution debt: manager-form typecheck failure and no automated test script.",
+      "important_remarks": "Do not rebuild from zero. Use the sanitised takaven/hirepass baseline as the authoritative source, consolidate controlled modules later, and remove full ATS/broad HR scope. Repository is public temporarily by founder instruction for live review and should be made private after execution. Foundation hardening resolved the initial typecheck/test-baseline debt; D1 must be approved before D2 or Pass redesign begins.",
       "execution_ready": false,
       "product_principles": [
         {
@@ -321,6 +321,42 @@
             "Pass Activity"
           ],
           "governance_rule": "Do not dilute the Pass concept into generic portal terminology or freeze detailed terminology without the relevant design/product gate."
+        },
+        {
+          "name": "Pass-first product model",
+          "status": "PROVISIONAL",
+          "description": "External participants should primarily experience HirePass through controlled role-specific Passes, while HR uses an internal operational workspace.",
+          "provisional_terms": [
+            "Candidate Pass",
+            "Manager Pass",
+            "HR Pass Control"
+          ],
+          "governance_rule": "Do not turn Candidate Pass or Manager Pass into generic dashboards, ATS portals or ordinary CRUD workspaces."
+        },
+        {
+          "name": "Next action first",
+          "status": "PROVISIONAL",
+          "description": "Every Pass opening state should immediately show current status, what needs attention, what can be done now and what happens next.",
+          "provisional_terms": [
+            "Action Required",
+            "Waiting",
+            "Completed",
+            "Expired",
+            "Revoked"
+          ],
+          "governance_rule": "Do not require candidates or managers to interpret an administrative dashboard before taking the next useful action."
+        },
+        {
+          "name": "Controlled access",
+          "status": "PROVISIONAL",
+          "description": "A Pass is a controlled-access object with expiry, revocation, role-specific visibility, least-necessary information, traceability and secure document handling.",
+          "provisional_terms": [
+            "Issue Pass",
+            "Expire Pass",
+            "Revoke Pass",
+            "Pass Activity"
+          ],
+          "governance_rule": "Do not treat Pass links as merely shareable URLs or expose cross-candidate/internal recruitment information through external Passes."
         }
       ],
       "design_governance": {
