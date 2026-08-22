@@ -18,7 +18,7 @@ This generated dashboard is the operating snapshot for portfolio execution readi
 | Priority | ID | Product | Status | Stage | Execution Ready | Current Gate |
 | -------- | -- | ------- | ------ | ----- | --------------- | ------------ |
 | `P0` | TKV-002 | LeaseDesk | `REVIVAL_IN_PROGRESS` | `STAGE_4_MARKET_READY_PREPARATION` | `true` | Gate 8/8 release verification complete; production deployment/release pending founder approval. |
-| `P1` | TKV-003 | HirePass | `SHORTLIST_BUILD` | `STAGE_2_BUILD_COMPLETION` | `false` | D1 product/UX definition approved. D2 critical experience definition is pending orchestrator/founder approval before D3 component primitives or any Pass implementation. |
+| `P1` | TKV-003 | HirePass | `SHORTLIST_BUILD` | `STAGE_2_BUILD_COMPLETION` | `false` | D2 critical experiences approved. D3 Pass component system is pending orchestrator/founder approval before D4 implementation. |
 | `P2` | TKV-004 | PayrollFlowEngine | `SHORTLIST_CONDITIONAL` | `STAGE_1_PRODUCT_DEFINITION` | `false` | Resolve product boundary decision. |
 
 ## Source Locator Health
@@ -37,7 +37,7 @@ This generated dashboard is the operating snapshot for portfolio execution readi
 | ID | Product | Design Stage | Design System | Visual Profile |
 | -- | ------- | ------------ | ------------- | -------------- |
 | TKV-002 | LeaseDesk | `D4_AUTHORISED` | `takaven-design-system-v1` | leasedesk-visual-profile-v0 |
-| TKV-003 | HirePass | `D1_APPROVED` | `takaven-design-system-v1` | hirepass-visual-profile-v0 |
+| TKV-003 | HirePass | `D2_APPROVED` | `takaven-design-system-v1` | hirepass-visual-profile-v0 |
 | TKV-004 | PayrollFlowEngine | `NOT_STARTED` | `takaven-design-system-v1` | payrollflowengine-visual-profile-v0 |
 | TKV-005 | HR Operations Inbox | `NOT_APPLICABLE` | `takaven-design-system-v1` | hr-operations-inbox-visual-profile-v0 |
 | TKV-006 | Attendance & Timesheet Exceptions | `NOT_APPLICABLE` | `takaven-design-system-v1` | attendance-exceptions-visual-profile-v0 |
@@ -56,7 +56,7 @@ These records are not independent execution workstreams.
 
 | ID | Product | Blocking State |
 | -- | ------- | -------------- |
-| TKV-003 | HirePass | D1 product/UX definition approved. D2 critical experience definition is pending orchestrator/founder approval before D3 component primitives or any Pass implementation. |
+| TKV-003 | HirePass | D2 critical experiences approved. D3 Pass component system is pending orchestrator/founder approval before D4 implementation. |
 | TKV-004 | PayrollFlowEngine | Decide TeamFrame add-on vs independent Takaven control-layer product. |
 | TKV-005 | HR Operations Inbox | Only execute inside authorised TeamFrame work in the separate TeamFrame repository. |
 | TKV-006 | Attendance & Timesheet Exceptions | Only execute inside authorised TeamFrame work in the separate TeamFrame repository after source confirmation. |

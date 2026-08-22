@@ -4,7 +4,7 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-D1 product/UX definition approved. D2 critical experience definition is pending orchestrator/founder approval before D3 component primitives or any Pass implementation.
+D2 critical experiences approved. D3 Pass component system is pending orchestrator/founder approval before D4 implementation.
 
 ## Execution Ready
 
@@ -20,7 +20,7 @@ Not applicable.
 
 ## Design Governance
 
-- Design stage: `D1_APPROVED`
+- Design stage: `D2_APPROVED`
 - Design system version: `takaven-design-system-v1`
 - Visual profile version: `hirepass-visual-profile-v0`
 
