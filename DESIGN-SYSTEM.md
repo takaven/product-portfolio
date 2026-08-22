@@ -40,6 +40,12 @@ Written HEX values are authoritative. Do not sample colours from images.
 
 TeamFrame may have its own design direction in its separate repository. This file must not be treated as TeamFrame governance.
 
+## Portfolio-Wide Visual Harmonisation
+
+Final visual harmonisation is intentionally deferred until the selected Takaven products are complete. Do not reopen a completed product, including LeaseDesk, merely for cosmetic visual refinement before that portfolio-wide phase unless a material usability defect appears.
+
+The later visual phase should align typography, spacing, component styling, forms, tables, navigation, status patterns, responsive behaviour, Takaven brand use, iconography and visual polish across the portfolio while preserving each product's personality.
+
 ## Frontend Gates
 
 No full frontend rollout before visual foundation and critical screens are approved.

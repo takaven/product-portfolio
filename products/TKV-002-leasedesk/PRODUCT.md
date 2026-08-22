@@ -38,7 +38,7 @@ unrelated
 
 ## Remarks
 
-Substantive product asset. Do not downgrade to disposable validation software.
+Substantive product asset. Gate 8/8 release verification is complete and product code is ready for a founder production-release decision. LeaseDesk is not deployed or commercially released. Final visual harmonisation is intentionally deferred to a later portfolio-wide UI alignment programme after the selected Takaven products are complete.
 
 ## Product Principles
 
