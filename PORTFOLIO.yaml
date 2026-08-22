@@ -126,7 +126,7 @@
           "owner_repository": "isudally/leasedesk-demo",
           "repository_url": "https://github.com/isudally/leasedesk-demo",
           "branch": "main",
-          "pinned_commit_sha": "224a49196167ed77d0f0882f7e438f39ad7a0f5f",
+          "pinned_commit_sha": "d2ce8e988f2d8726fde3dc7e3529e84e0d27db78",
           "local_or_replit_locator": "",
           "locator_status": "VERIFIED"
         }
@@ -134,7 +134,7 @@
       "source_repository_links": [
         "https://github.com/isudally/leasedesk-demo"
       ],
-      "current_execution_gate": "Gate 5/8 D3 component primitives approved; next LeaseDesk work requires explicit Gate 6/8 implementation authorisation.",
+      "current_execution_gate": "Gate 8/8 release verification complete; production deployment/release pending founder approval.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "unrelated",
@@ -143,7 +143,7 @@
       "important_remarks": "Substantive product asset. Do not downgrade to disposable validation software.",
       "execution_ready": true,
       "design_governance": {
-        "design_stage": "D3_APPROVED",
+        "design_stage": "D4_AUTHORISED",
         "design_system_version": "takaven-design-system-v1",
         "approved_d1_reference": "Issue #15 / PR #16 founder decision: D1 APPROVED",
         "approved_d2_reference": "Issue #17 / PR #18 founder decision: D2 APPROVED",

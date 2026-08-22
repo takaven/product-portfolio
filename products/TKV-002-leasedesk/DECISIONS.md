@@ -111,3 +111,59 @@ Append only material decisions for LeaseDesk.
 - Gate 2 does not start D1 or visual design.
 - Gate 2 does not change the LeaseDesk product boundary.
 - Gate 2 does not authorise source-code changes in `isudally/leasedesk-demo`.
+
+## Gate 8/8 - Release Verification Closeout
+
+Date: 2026-08-22
+
+### Decision
+
+LeaseDesk completed the governed Gate 6/8 implementation programme, Gate 7/8 production-readiness review, and Gate 8/8 release verification. The code is ready for a founder production-release decision, but LeaseDesk is not deployed, released, or commercially live from this decision alone.
+
+### Source State
+
+- Authoritative source repository: `isudally/leasedesk-demo`
+- Branch: `main`
+- Final merged source SHA: `d2ce8e988f2d8726fde3dc7e3529e84e0d27db78`
+- Gate 6/8 implementation slices: 5/5 COMPLETE
+- Gate 7/8 production-readiness review: PASS after one bounded correction
+- Gate 8/8 release verification: PASS
+
+### Verified In Code
+
+- Production PostgreSQL mode with explicit production configuration.
+- Minimal authenticated owner/admin access with session regeneration on login and logout invalidation.
+- Demo/production data separation.
+- Required production `LEASEDESK_UPLOAD_DIR` with no production fallback to demo upload storage.
+- Authenticated document upload/download with file type signature validation for supported document types.
+- Safe archive/payment correction model for key operational records.
+- Basic audit events for payment correction, document upload/archive, tenant archive, store archive and expense archive.
+- `/health` and `/ready` operational endpoints.
+- Focused source validation covering core workflows, auth/session, demo/production configuration and production-like Postgres persistence.
+
+### Deployment Prerequisites
+
+- Select hosting/runtime provider and confirm Node/runtime compatibility.
+- Provision production PostgreSQL and apply schema initialisation/migration safely.
+- Provide production `DATABASE_URL`, `SESSION_SECRET`, admin bootstrap credential/hash and other required secrets through secret management.
+- Provide durable persistent document storage for `LEASEDESK_UPLOAD_DIR`.
+- Define document and database backup/restore procedures.
+- Configure HTTPS/TLS and confirm secure-cookie behaviour behind the selected proxy/runtime.
+- Confirm runtime host/port binding works with the selected platform because source release verification did not choose a hosting provider.
+- Establish operational access to `/health` and `/ready`.
+- Run final smoke test with fictional data in the selected production-like runtime.
+
+### Residual Non-Blocking Dependency Items
+
+- `jspdf` and transitive `dompurify` advisories remain a post-launch maintenance item for client-side receipt/contract generation.
+- `drizzle-orm` advisory remains classified non-blocking for this release because current usage relies on static schema/table/column references.
+- Express/transitive HTTP-stack advisories remain a normal internet-exposed-app maintenance item.
+- Unused or not-reachable dependency chains, including `@google-cloud/storage`, Uppy-related packages and `ws`, should be removed or upgraded before any future use.
+- Build/tooling advisories remain outside the reviewed runtime path.
+
+### Explicit Non-Decisions
+
+- This closeout does not deploy LeaseDesk.
+- This closeout does not provision production infrastructure, DNS, databases, storage, secrets, backups or paid services.
+- This closeout does not announce a commercial release.
+- This closeout does not change the LeaseDesk product boundary, priority or portfolio status.
