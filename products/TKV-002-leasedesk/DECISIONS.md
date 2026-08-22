@@ -173,3 +173,13 @@ LeaseDesk completed the governed Gate 6/8 implementation programme, Gate 7/8 pro
 LeaseDesk product/code completion is complete. Final UI and visual harmonisation is intentionally deferred to a later portfolio-wide visual alignment programme after the selected Takaven products are complete.
 
 Do not reopen LeaseDesk implementation for cosmetic UI polish before that phase unless a material usability defect appears. The later portfolio-wide visual phase should make LeaseDesk feel related to the Takaven family while preserving its operational, property-oriented and controlled-density personality.
+
+## 2026-08-22 - Deferred Tenant Pass / Residential Extension Hypothesis
+
+Founder identified Tenant Pass as a potentially material future LeaseDesk differentiator. The concept is a controlled live lease, rent status, payment history/receipts, document, notice/action and key-date experience for tenants, not a decorative digital card or generic portal.
+
+Tenant Pass may be reviewed for commercial tenants, residential tenants, or both. Residential applicability is a hypothesis only and is not current approved scope.
+
+LeaseDesk's current completed 8/8 commercial programme remains closed. The current small-commercial-landlord buyer, product boundary and exclusions remain unchanged, including the exclusion for maintenance ticketing.
+
+No Tenant Pass, residential expansion, shared HirePass architecture, or implementation work is authorised before a later explicit product-extension review. Final portfolio UI/visual harmonisation remains deferred as already documented.
