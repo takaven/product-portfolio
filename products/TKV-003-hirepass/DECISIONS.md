@@ -35,3 +35,11 @@ Append only material decisions for HirePass.
 - Pass/action state must remain distinct from hiring-stage status.
 - External Passes should be next-action-first, controlled-access, mobile-first and progressively disclosed.
 - This proposal does not approve D2 screens, D3 components, D4 implementation, frontend redesign, deployment or product-boundary expansion.
+
+## 2026-08-22 - D1 Approved / D2 Critical Experiences Proposed
+
+- Founder approval prompt approved the D1 principles from Issue #31 / PR #32.
+- Canonical design stage moved to `D1_APPROVED`.
+- D2 proposes three critical experiences: Candidate Pass, Manager Pass and HR Pass Control / Hiring Action Workspace.
+- D2 records source reuse direction only; no HirePass source code or frontend was modified.
+- D2 remains pending orchestrator/founder approval and does not authorise D3 components or Pass implementation.

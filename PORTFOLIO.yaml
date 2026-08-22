@@ -300,7 +300,7 @@
       "source_repository_links": [
         "https://github.com/takaven/hirepass"
       ],
-      "current_execution_gate": "Foundation hardening complete. D1 product/UX definition is pending orchestrator/founder approval before D2 critical-screen exploration or any Pass redesign.",
+      "current_execution_gate": "D1 product/UX definition approved. D2 critical experience definition is pending orchestrator/founder approval before D3 component primitives or any Pass implementation.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "complementary; possible later integration at hire-to-employee handoff",
@@ -324,7 +324,7 @@
         },
         {
           "name": "Pass-first product model",
-          "status": "PROVISIONAL",
+          "status": "REQUIRED",
           "description": "External participants should primarily experience HirePass through controlled role-specific Passes, while HR uses an internal operational workspace.",
           "provisional_terms": [
             "Candidate Pass",
@@ -335,7 +335,7 @@
         },
         {
           "name": "Next action first",
-          "status": "PROVISIONAL",
+          "status": "REQUIRED",
           "description": "Every Pass opening state should immediately show current status, what needs attention, what can be done now and what happens next.",
           "provisional_terms": [
             "Action Required",
@@ -348,7 +348,7 @@
         },
         {
           "name": "Controlled access",
-          "status": "PROVISIONAL",
+          "status": "REQUIRED",
           "description": "A Pass is a controlled-access object with expiry, revocation, role-specific visibility, least-necessary information, traceability and secure document handling.",
           "provisional_terms": [
             "Issue Pass",
@@ -360,9 +360,9 @@
         }
       ],
       "design_governance": {
-        "design_stage": "NOT_STARTED",
+        "design_stage": "D1_APPROVED",
         "design_system_version": "takaven-design-system-v1",
-        "approved_d1_reference": "",
+        "approved_d1_reference": "Founder approval via D1 closeout prompt; Issue #31 / PR #32",
         "approved_d2_reference": "",
         "approved_d3_reference": "",
         "visual_profile_version": "hirepass-visual-profile-v0"
