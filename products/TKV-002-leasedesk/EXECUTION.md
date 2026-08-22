@@ -4,11 +4,11 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Commercial-product completion after validation/demo readiness; source locator/revision must be verified before the next execution issue.
+Gate 1/8 source registration complete; next LeaseDesk work requires explicit Gate 2/8 authorisation.
 
 ## Execution Ready
 
-`false`
+`true`
 
 ## Condition To Clear
 
