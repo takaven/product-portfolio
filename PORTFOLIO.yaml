@@ -134,7 +134,7 @@
       "source_repository_links": [
         "https://github.com/isudally/leasedesk-demo"
       ],
-      "current_execution_gate": "Gate 3/8 D1 UX principles approved; next LeaseDesk work requires explicit Gate 4/8 D2 authorisation.",
+      "current_execution_gate": "Gate 4/8 D2 critical screens approved; next LeaseDesk work requires explicit Gate 5/8 D3 authorisation.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "unrelated",
@@ -143,10 +143,10 @@
       "important_remarks": "Substantive product asset. Do not downgrade to disposable validation software.",
       "execution_ready": true,
       "design_governance": {
-        "design_stage": "D1_APPROVED",
+        "design_stage": "D2_APPROVED",
         "design_system_version": "takaven-design-system-v1",
         "approved_d1_reference": "Issue #15 / PR #16 founder decision: D1 APPROVED",
-        "approved_d2_reference": "",
+        "approved_d2_reference": "Issue #17 / PR #18 founder decision: D2 APPROVED",
         "approved_d3_reference": "",
         "visual_profile_version": "leasedesk-visual-profile-v0"
       }
