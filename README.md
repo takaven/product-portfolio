@@ -10,6 +10,16 @@ TeamFrame is an active product handled independently by the founder in a separat
 
 The canonical registry is `PORTFOLIO.yaml`. The generated human-readable product and component view is `PORTFOLIO.md`. The generated operating snapshot is `DASHBOARD.md`.
 
+## Repository Architecture
+
+`takaven/product-portfolio` is the Takaven control plane. It records portfolio governance, product status, boundaries, priorities, decisions, source locators, execution gates, design governance, handover notes and generated operating views.
+
+It is not an application monorepo and must not contain copies of product source code. Standalone Takaven products should use one dedicated source repository per product unless a later explicit founder/product architecture decision changes that topology.
+
+Current example: `isudally/leasedesk-demo` is the authoritative LeaseDesk application source repository on `main` at `d2ce8e988f2d8726fde3dc7e3529e84e0d27db78`. The files under `products/TKV-002-leasedesk/` are LeaseDesk governance and documentation records only, not another LeaseDesk implementation.
+
+This separation preserves independent deployment, CI/test history, secrets and environment boundaries, database/storage boundaries, release histories, sanitisation controls, agent execution context and future licensing, sale, transfer or spin-out options. Future Takaven organisation normalisation such as `takaven/leasedesk`, `takaven/hirepass` or `takaven/payrollflowengine` is deferred until there is a material operational reason; do not migrate or rename `isudally/leasedesk-demo` merely for tidiness.
+
 ## Active Queue
 
 See `PORTFOLIO.md`. Do not manually maintain product status, priority or queue summaries in this README.

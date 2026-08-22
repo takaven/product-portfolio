@@ -183,3 +183,11 @@ Tenant Pass may be reviewed for commercial tenants, residential tenants, or both
 LeaseDesk's current completed 8/8 commercial programme remains closed. The current small-commercial-landlord buyer, product boundary and exclusions remain unchanged, including the exclusion for maintenance ticketing.
 
 No Tenant Pass, residential expansion, shared HirePass architecture, or implementation work is authorised before a later explicit product-extension review. Final portfolio UI/visual harmonisation remains deferred as already documented.
+
+## 2026-08-22 - Product Repository Separation
+
+`isudally/leasedesk-demo` remains the authoritative LeaseDesk application source repository on `main` at `d2ce8e988f2d8726fde3dc7e3529e84e0d27db78`.
+
+`takaven/product-portfolio` contains LeaseDesk governance and documentation records only. The files under `products/TKV-002-leasedesk/` are not another LeaseDesk implementation, so there is no duplicate-source ambiguity between the control repo and the application source repo.
+
+No LeaseDesk repository migration, rename, source copy, or new `takaven/leasedesk` repository is currently authorised. Future Takaven-organisation repository normalisation is deferred until there is a material operational reason and an explicit founder/product architecture decision.

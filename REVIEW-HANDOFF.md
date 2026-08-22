@@ -4,6 +4,16 @@
 
 This repository is intended to be the central operating memory for Takaven product portfolio execution.
 
+## Product Repository Architecture
+
+`takaven/product-portfolio` is the control plane only. It contains canonical portfolio records, product governance, decisions, execution gates, source locators and generated operating views. Product application source code does not live in this repository.
+
+Standalone Takaven products should normally have one dedicated source repository per product. This keeps deployment, CI/test history, secrets, databases/storage, release history, sanitisation, permissions and agent execution context separated, which is especially important for HR/payroll products that may handle sensitive data.
+
+LeaseDesk's actual source repository is `isudally/leasedesk-demo` on `main` at `d2ce8e988f2d8726fde3dc7e3529e84e0d27db78`. The LeaseDesk files under `products/TKV-002-leasedesk/` are governance/documentation records only; there is no duplicate LeaseDesk application source in the control repository.
+
+Future standalone products such as HirePass and PayrollFlowEngine should receive separate source repositories if activated as standalone products. TeamFrame remains external and founder-managed. Long-term Takaven organisation repository normalisation, such as moving to `takaven/leasedesk`, is deferred and no LeaseDesk migration, rename or new repository creation is currently authorised.
+
 ## What Was Created
 
 - Canonical registry: `PORTFOLIO.yaml`
