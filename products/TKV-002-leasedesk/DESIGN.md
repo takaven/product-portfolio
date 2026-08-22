@@ -421,3 +421,278 @@ Footer:
 - D2 does not select or change database, authentication, storage, deployment or frontend architecture.
 - D2 does not authorise changes in `isudally/leasedesk-demo`.
 - D2 does not approve Gate 5/8.
+
+## Gate 5/8 - D3 Component Primitives
+
+- Authorised issue: #19
+- Endpoint: `GATE 5/8 D3 READY FOR ORCHESTRATOR/FOUNDER DESIGN DECISION`
+- Design status: proposed D3 component primitives only. `PORTFOLIO.yaml` must not move to `D3_APPROVED` until explicit founder/orchestrator approval is recorded.
+
+### D3 Scope Principle
+
+D3 defines the minimum component language needed to implement the approved D1/D2 LeaseDesk direction consistently. It is not a full design system, production frontend, or new brand exercise.
+
+### 1. Application Shell
+
+#### Primitive Definition
+
+- Sidebar/navigation for desktop, collapsing to a bottom or drawer navigation pattern on small screens.
+- Header/top context bar showing product name, building/account context, environment marker and page-level utility actions.
+- Page title/action region with one clear primary action and optional secondary actions.
+- Content area optimised for controlled density, especially tables and operational lists.
+
+#### Behaviour Rules
+
+- Desktop shell should keep primary navigation visible.
+- Tablet shell may collapse labels but retain predictable section order.
+- Mobile shell should prioritise Overview, Tenants, Payments/Arrears and Units access.
+- Page content should use constrained but not overly narrow widths; operational tables may use wider layouts than marketing-style pages.
+
+#### Preserve / Harden
+
+- Preserve the existing simple product header and direct navigation.
+- Harden by adding clearer active navigation, environment marker and consistent page action placement.
+
+### 2. Operational Tables
+
+#### Primitive Definition
+
+- Standard table for record-heavy views.
+- Compact table for payments, arrears, documents and expense history.
+- Sortable/filterable headers where users naturally scan by status, period, tenant, unit or amount.
+- Row status treatment using badges plus text, never colour alone.
+- Row actions grouped at the row end or in a compact action menu.
+- Expandable row or side-panel detail for payment history, document context or correction notes.
+
+#### Behaviour Rules
+
+- Tables are the primary operational work surface.
+- Default ordering should surface exceptions first: overdue, partially paid, expiring, missing, vacant.
+- Empty filtered results should say what filter caused the absence.
+- Mobile should become priority worklists, not horizontally unusable spreadsheets.
+
+#### Preserve / Harden
+
+- Preserve existing list/table/card hybrids where they already expose tenant, payment and expense records clearly.
+- Harden by standardising filters, row actions, status display and responsive fallbacks.
+
+### 3. Status System
+
+#### Primitive Definition
+
+Use a small status system with text labels and restrained visual treatment:
+
+| Status | Visual Intent | Severity |
+| ------ | ------------- | -------- |
+| Paid | Complete / settled | Low |
+| Partially Paid | Some payment received, balance remains | Medium |
+| Outstanding | Open item requiring follow-up | Medium |
+| Overdue | Past due and action required | High |
+| Current Lease | Active and normal | Low |
+| Expiring | Upcoming lease risk | Medium |
+| Expired | Lease date has passed | High |
+| Occupied | Unit currently in use | Low |
+| Vacant | Unit available / revenue gap | Medium |
+| Archived | Retained but inactive | Neutral |
+
+#### Behaviour Rules
+
+- Use badges/chips for row-level status and compact summaries.
+- Use text labels with icons or supporting text when severity matters.
+- Do not use Takaven Electric Signal Green as generic success; reserve it for primary actions, active navigation and high-signal accent.
+- Use colour, text and position together so accessibility does not depend on colour perception.
+
+#### Preserve / Harden
+
+- Preserve the existing payment/lease/arrears status concepts.
+- Harden by removing mixed language and aligning all screens to one status vocabulary.
+
+### 4. Summary / Exception Cards
+
+#### Primitive Definition
+
+Cards should be compact, action-oriented and reserved for high-priority operational signals:
+
+- arrears;
+- payment exceptions;
+- expiring leases;
+- vacancy;
+- missing documents or incomplete records;
+- expense exceptions where operationally important.
+
+#### Behaviour Rules
+
+- Cards must show a number/status, short label, trend/context only where useful, and direct drill-down.
+- Avoid decorative chart cards unless they directly support operational action.
+- Cards should not push exception tables below the fold on common desktop sizes.
+
+#### Preserve / Harden
+
+- Preserve existing dashboard cards that link into tenant/payment/expense workflows.
+- Harden by reducing decorative weight and making exception/action relationship clearer.
+
+### 5. Forms
+
+#### Primitive Definition
+
+- Text input for names, references and notes.
+- Currency/amount field with clear currency display and decimal handling.
+- Date field for lease start/end, payment period, payment date and expense date.
+- Selects for statuses, unit, landlord, tenant, document type and expense category.
+- Text areas for notes.
+- Document upload field with accepted file types, size expectations and record attachment context.
+- Save/cancel actions with predictable placement.
+
+#### Behaviour Rules
+
+- Required fields should be marked clearly without noisy form copy.
+- Validation should appear next to the relevant field and summarise only when necessary.
+- Avoid wizard-style flows unless a future implementation proves a form is too error-prone.
+- Currency and dates must display consistently across forms, tables and generated documents.
+
+#### Preserve / Harden
+
+- Preserve existing direct add/edit forms for tenants, landlords, stores, payments and expenses.
+- Harden by standardising required/optional states, validation messages, save/cancel placement and amount/date formatting.
+
+### 6. Record Detail Components
+
+#### Primitive Definition
+
+- Identity/context header for tenant, unit/store, landlord or document.
+- Metadata groups for key-value operational facts.
+- Financial summary block for rent, paid, balance and arrears.
+- Lease summary block for dates, status and renewal/expiry state.
+- Activity/history list for payments, corrections, documents and notes.
+- Document list with type, status, uploaded date and safe action.
+- Related-record links for tenant to unit, unit to tenant, tenant to payments/arrears.
+
+#### Behaviour Rules
+
+- Detail components should make context visible before actions.
+- Financial and lease summaries should sit near the top of Tenant / Lease Detail.
+- Long histories should be scannable and collapsible on smaller screens.
+
+#### Preserve / Harden
+
+- Preserve tenant detail as the main combined operational record.
+- Harden by separating safety actions, standardising metadata groups and treating documents as controlled records rather than demo metadata.
+
+### 7. Actions & Safety
+
+#### Primitive Definition
+
+- Primary action: main task on a screen, such as Record Payment or Add Tenant.
+- Secondary action: useful but less urgent, such as Edit Details.
+- Row action: compact contextual command on a table/list row.
+- Archive action: preferred removal pattern for operational records.
+- Destructive action: permanent delete or irreversible removal, rare and strongly guarded.
+- Confirmation dialog: concise business-language explanation of consequence.
+- Payment correction treatment: explicit correction flow preserving context.
+- Document removal treatment: distinguish archive/hide from permanent deletion.
+
+#### Behaviour Rules
+
+- Only one primary action should dominate a screen region.
+- Archive should appear calmer than destructive delete.
+- Permanent destructive action should be visually distinct, require confirmation and avoid accidental reach.
+- Payment changes should not silently overwrite meaningful financial history.
+
+#### Preserve / Harden
+
+- Preserve direct action access from dashboard, tenant detail and payment surfaces.
+- Harden by replacing demo-disabled delete behaviour with deliberate archive/correction primitives before implementation.
+
+### 8. Empty / Loading / Error States
+
+#### Primitive Definition
+
+- No records: clear invitation to create the first relevant record.
+- Filtered-empty: explain that filters produced no results and offer reset.
+- Loading: lightweight skeleton or loading state sized to the eventual content.
+- Recoverable error: state the failed operation and retry path.
+- Permission denied: explain access limitation without exposing sensitive detail.
+- Demo/production distinction: persistent but unobtrusive environment marker.
+
+#### Behaviour Rules
+
+- Empty states should be useful, not promotional.
+- Loading states should not resize the layout dramatically.
+- Error states should avoid technical stack details.
+- Demo markers must prevent confusion without dominating production UI.
+
+#### Preserve / Harden
+
+- Preserve existing simple loading and empty states where clear.
+- Harden by standardising error language and adding production/demo distinction as an application-level primitive.
+
+### 9. Layout & Density Tokens
+
+#### Primitive Definition
+
+Keep tokens practical and minimal:
+
+| Token Area | Rule |
+| ---------- | ---- |
+| Spacing | Use compact, consistent spacing for operational screens; avoid oversized vertical gaps. |
+| Typography | Clear hierarchy: page title, section heading, table/list label, metadata text. No decorative type. |
+| Table density | Compact enough for scanning; row height should support status, amount and action without feeling cramped. |
+| Card density | Cards are compact summaries, not page sections. |
+| Border/radius | Subtle borders; radius should stay modest and operational. |
+| Responsive breakpoints | Desktop, tablet and mobile rules are principle-level; implementation can use the existing frontend framework. |
+
+#### Behaviour Rules
+
+- Data-heavy screens may be denser than marketing pages.
+- Text must not overflow controls or cards.
+- Components should not create nested-card visual clutter.
+
+#### Preserve / Harden
+
+- Preserve the existing practical density where it supports scanning.
+- Harden by aligning card/table spacing, status placement and responsive stacking.
+
+### 10. Brand Use
+
+#### Primitive Definition
+
+Takaven Electric Signal Green `#01FF22` should be used sparingly for:
+
+- primary action/focus;
+- active navigation;
+- selected state;
+- high-signal accent where attention is intentional.
+
+Use the existing Takaven neutrals for structure:
+
+- Soft Graphite `#42494D`;
+- Titanium Grey `#68707D`;
+- Deep Support Charcoal `#20242B`;
+- Soft Mist `#F4F6F8`;
+- White `#FFFFFF`.
+
+#### Behaviour Rules
+
+- Do not create a new LeaseDesk palette at D3.
+- Do not use green as generic success when that weakens payment/arrears status clarity.
+- Status colour treatment should remain distinct from brand accents.
+
+#### Preserve / Harden
+
+- Preserve LeaseDesk's neutral B2B feel.
+- Harden by applying the Takaven palette consistently and keeping product personality operational rather than decorative.
+
+### D3 Coherence Rules
+
+- Components must support the three approved D2 screens first.
+- Tables and record details are the core primitives; cards support prioritisation but do not replace worklists.
+- Safety patterns must be reusable across payments, records and documents.
+- Existing working flows should be adapted into these primitives, not rebuilt solely for stylistic uniformity.
+
+### D3 Non-Decisions
+
+- D3 does not authorise source-code changes.
+- D3 does not approve production frontend implementation.
+- D3 does not select database, authentication, storage, deployment or backend architecture.
+- D3 does not introduce new product features.
+- D3 does not start Gate 6/8.
