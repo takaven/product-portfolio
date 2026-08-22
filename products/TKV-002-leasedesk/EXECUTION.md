@@ -4,7 +4,7 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Gate 1/8 source registration complete; next LeaseDesk work requires explicit Gate 2/8 authorisation.
+Gate 2/8 completion gap audit and scope lock complete; next LeaseDesk work requires explicit Gate 3/8 authorisation.
 
 ## Execution Ready
 
