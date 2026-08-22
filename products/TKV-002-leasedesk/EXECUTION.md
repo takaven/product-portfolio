@@ -4,7 +4,7 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Gate 3/8 D1 UX principles proposed; awaiting orchestrator/founder design decision before Gate 4/8.
+Gate 3/8 D1 UX principles approved; next LeaseDesk work requires explicit Gate 4/8 D2 authorisation.
 
 ## Execution Ready
 
@@ -20,7 +20,7 @@ Not applicable.
 
 ## Design Governance
 
-- Design stage: `NOT_STARTED`
+- Design stage: `D1_APPROVED`
 - Design system version: `takaven-design-system-v1`
 - Visual profile version: `leasedesk-visual-profile-v0`
 

@@ -18,7 +18,7 @@ No final product design is created by this operating-repository setup.
 
 - Authorised issue: #15
 - Endpoint: `GATE 3/8 D1 READY FOR ORCHESTRATOR/FOUNDER DESIGN DECISION`
-- Design status: proposed D1 principles only. `PORTFOLIO.yaml` must not move to `D1_APPROVED` until explicit founder/orchestrator approval is recorded.
+- Design status: approved by founder decision recorded for Issue #15 / PR #16. `PORTFOLIO.yaml` records `D1_APPROVED`.
 
 ### Product Personality
 
