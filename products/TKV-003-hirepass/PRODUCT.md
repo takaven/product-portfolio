@@ -56,21 +56,21 @@ Do not rebuild from zero. Use the sanitised takaven/hirepass baseline as the aut
 
 ### Pass-first product model
 
-- Status: `PROVISIONAL`
+- Status: `REQUIRED`
 - Description: External participants should primarily experience HirePass through controlled role-specific Passes, while HR uses an internal operational workspace.
 - Governance rule: Do not turn Candidate Pass or Manager Pass into generic dashboards, ATS portals or ordinary CRUD workspaces.
 - Provisional terms: Candidate Pass, Manager Pass, HR Pass Control
 
 ### Next action first
 
-- Status: `PROVISIONAL`
+- Status: `REQUIRED`
 - Description: Every Pass opening state should immediately show current status, what needs attention, what can be done now and what happens next.
 - Governance rule: Do not require candidates or managers to interpret an administrative dashboard before taking the next useful action.
 - Provisional terms: Action Required, Waiting, Completed, Expired, Revoked
 
 ### Controlled access
 
-- Status: `PROVISIONAL`
+- Status: `REQUIRED`
 - Description: A Pass is a controlled-access object with expiry, revocation, role-specific visibility, least-necessary information, traceability and secure document handling.
 - Governance rule: Do not treat Pass links as merely shareable URLs or expose cross-candidate/internal recruitment information through external Passes.
 - Provisional terms: Issue Pass, Expire Pass, Revoke Pass, Pass Activity
