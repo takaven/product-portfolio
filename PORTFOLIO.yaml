@@ -134,7 +134,7 @@
       "source_repository_links": [
         "https://github.com/isudally/leasedesk-demo"
       ],
-      "current_execution_gate": "Gate 2/8 completion gap audit and scope lock complete; next LeaseDesk work requires explicit Gate 3/8 authorisation.",
+      "current_execution_gate": "Gate 3/8 D1 UX principles proposed; awaiting orchestrator/founder design decision before Gate 4/8.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "unrelated",
