@@ -4,7 +4,8 @@ This file records safe source metadata only. Do not copy source code, real recor
 
 | Source | Role | Type | Locator Status | Branch | Pinned Revision | Confidence | Remarks |
 | ------ | ---- | ---- | -------------- | ------ | --------------- | ---------- | ------- |
-| Talent-Flow | `PRIMARY` | `REPLIT_EXPORT_OR_LOCAL_ASSET` | `LOCATOR_REQUIRED` | - | - | `UNVERIFIED` | Selected foundation remains valid, but exact source locator and pinned revision must be supplied before execution. |
+| hirepass | `PRIMARY` | `GITHUB_REPOSITORY` | `VERIFIED` | main | 50b7704b732e3309ad5ce3a361b69eb83b2a5777 | `VERIFIED` | Founder-authorised public temporary repository containing the sanitised Talent-Flow working tree as fresh one-commit history. Sanitisation complete; old Git history intentionally not preserved. Known baseline execution debt: typecheck fails in client/src/pages/manager-form.tsx and no automated test script exists. |
+| Talent-Flow | `REFERENCE` | `REPLIT_EXPORT_OR_LOCAL_ASSET` | `VERIFIED` | main | 11411f3566e39760bb50d4936a45450b814b8554 | `VERIFIED` | Original local/Replit-export source used to prepare the sanitised HirePass baseline. Historical Git history is contaminated with previous-company/candidate material and must not be used for Builder access or future repository history. |
 | BaynunahPass-1 | `COMPONENT` | `REPLIT_EXPORT_OR_LOCAL_ASSET` | `UNVERIFIED` | - | - | `VERIFIED` | Use auth, roles, audit and security patterns only. |
 | HiringStreamline | `COMPONENT` | `REPLIT_EXPORT_OR_LOCAL_ASSET` | `UNVERIFIED` | - | - | `VERIFIED` | Use simplified V1 workflow reference. |
 | PremiumHRPass | `COMPONENT` | `REPLIT_EXPORT_OR_LOCAL_ASSET` | `UNVERIFIED` | - | - | `VERIFIED` | Use candidate timeline, interview slot and notification concepts where useful. |
@@ -14,4 +15,4 @@ This file records safe source metadata only. Do not copy source code, real recor
 
 ## Repository Links
 
-No safe verified repository links recorded during setup.
+- https://github.com/takaven/hirepass

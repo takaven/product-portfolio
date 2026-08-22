@@ -43,7 +43,7 @@ complementary; possible later integration at hire-to-employee handoff
 
 ## Remarks
 
-Do not rebuild from zero. Use Talent-Flow as the base, consolidate controlled modules, and remove full ATS/broad HR scope.
+Do not rebuild from zero. Use the sanitised takaven/hirepass baseline as the authoritative source, consolidate controlled modules later, and remove full ATS/broad HR scope. Repository is public temporarily by founder instruction for live review and should be made private after execution. Known baseline execution debt: manager-form typecheck failure and no automated test script.
 
 ## Product Principles
 

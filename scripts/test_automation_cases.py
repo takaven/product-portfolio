@@ -228,7 +228,12 @@ def test_sensitive_transition_rejects_arbitrary_approval_prose(base: dict) -> No
 def test_execution_ready_transition_requires_source_evidence(base: dict) -> None:
     head = copy.deepcopy(base)
     product = next(item for item in head["products"] if item["id"] == "TKV-003")
+    source = next(item for item in product["source_assets"] if item["role"] == "PRIMARY")
     product["execution_ready"] = True
+    source["repository_url"] = ""
+    source["local_or_replit_locator"] = ""
+    source["pinned_commit_sha"] = ""
+    source["locator_status"] = "LOCATOR_REQUIRED"
     assert_transition_fails(
         "execution ready transition without source evidence",
         base,

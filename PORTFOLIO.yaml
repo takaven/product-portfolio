@@ -185,18 +185,32 @@
       ],
       "source_assets": [
         {
-          "name": "Talent-Flow",
-          "classification": "production foundation",
-          "evidence_confidence": "UNVERIFIED",
-          "remarks": "Selected foundation remains valid, but exact source locator and pinned revision must be supplied before execution.",
+          "name": "hirepass",
+          "classification": "current authoritative implementation repository",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Founder-authorised public temporary repository containing the sanitised Talent-Flow working tree as fresh one-commit history. Sanitisation complete; old Git history intentionally not preserved. Known baseline execution debt: typecheck fails in client/src/pages/manager-form.tsx and no automated test script exists.",
           "role": "PRIMARY",
+          "source_type": "GITHUB_REPOSITORY",
+          "owner_repository": "takaven/hirepass",
+          "repository_url": "https://github.com/takaven/hirepass",
+          "branch": "main",
+          "pinned_commit_sha": "50b7704b732e3309ad5ce3a361b69eb83b2a5777",
+          "local_or_replit_locator": "",
+          "locator_status": "VERIFIED"
+        },
+        {
+          "name": "Talent-Flow",
+          "classification": "historical production foundation / sanitisation source",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Original local/Replit-export source used to prepare the sanitised HirePass baseline. Historical Git history is contaminated with previous-company/candidate material and must not be used for Builder access or future repository history.",
+          "role": "REFERENCE",
           "source_type": "REPLIT_EXPORT_OR_LOCAL_ASSET",
           "owner_repository": "",
           "repository_url": "",
-          "branch": "",
-          "pinned_commit_sha": "",
-          "local_or_replit_locator": "",
-          "locator_status": "LOCATOR_REQUIRED"
+          "branch": "main",
+          "pinned_commit_sha": "11411f3566e39760bb50d4936a45450b814b8554",
+          "local_or_replit_locator": "local Replit export source; private historical reference only",
+          "locator_status": "VERIFIED"
         },
         {
           "name": "BaynunahPass-1",
@@ -283,14 +297,16 @@
           "locator_status": "UNVERIFIED"
         }
       ],
-      "source_repository_links": [],
-      "current_execution_gate": "BLOCKED - verify Talent-Flow source locator and pinned revision before Phase 1 sanitisation and foundation extraction.",
+      "source_repository_links": [
+        "https://github.com/takaven/hirepass"
+      ],
+      "current_execution_gate": "Source foundation preserved. Next authorised gate must address baseline foundation debt before substantial feature work: fix client/src/pages/manager-form.tsx typecheck failure and establish an automated test baseline.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "complementary; possible later integration at hire-to-employee handoff",
       "owner_current_workstream": "awaiting execution",
       "evidence_confidence": "VERIFIED",
-      "important_remarks": "Do not rebuild from zero. Use Talent-Flow as the base, consolidate controlled modules, and remove full ATS/broad HR scope.",
+      "important_remarks": "Do not rebuild from zero. Use the sanitised takaven/hirepass baseline as the authoritative source, consolidate controlled modules later, and remove full ATS/broad HR scope. Repository is public temporarily by founder instruction for live review and should be made private after execution. Known baseline execution debt: manager-form typecheck failure and no automated test script.",
       "execution_ready": false,
       "product_principles": [
         {

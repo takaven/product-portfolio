@@ -101,7 +101,12 @@ def test_duplicate_or_reused_permanent_id(base: dict) -> None:
 def test_execution_ready_without_source_locator(base: dict) -> None:
     data = copy.deepcopy(base)
     product = next(item for item in data["products"] if item["id"] == "TKV-003")
+    source = next(item for item in product["source_assets"] if item["role"] == "PRIMARY")
     product["execution_ready"] = True
+    source["repository_url"] = ""
+    source["local_or_replit_locator"] = ""
+    source["pinned_commit_sha"] = ""
+    source["locator_status"] = "LOCATOR_REQUIRED"
     assert_fails("execution-ready without locator", data, "verified primary source locator")
 
 
