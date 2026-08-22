@@ -145,6 +145,9 @@ def test_design_gate_progression_requires_references(base: dict) -> None:
     data = copy.deepcopy(base)
     product = next(item for item in data["products"] if item["status"] != "COMPONENT_ABSORB")
     product["design_governance"]["design_stage"] = "D4_AUTHORISED"
+    product["design_governance"]["approved_d1_reference"] = ""
+    product["design_governance"]["approved_d2_reference"] = ""
+    product["design_governance"]["approved_d3_reference"] = ""
     assert_fails("D4 without prior design approvals", data, "approved D1 reference")
 
 
