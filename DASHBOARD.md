@@ -18,7 +18,7 @@ This generated dashboard is the operating snapshot for portfolio execution readi
 | Priority | ID | Product | Status | Stage | Execution Ready | Current Gate |
 | -------- | -- | ------- | ------ | ----- | --------------- | ------------ |
 | `P0` | TKV-002 | LeaseDesk | `REVIVAL_IN_PROGRESS` | `STAGE_4_MARKET_READY_PREPARATION` | `true` | Gate 8/8 release verification complete; production deployment/release pending founder approval. |
-| `P1` | TKV-003 | HirePass | `SHORTLIST_BUILD` | `STAGE_2_BUILD_COMPLETION` | `false` | Source foundation preserved. Next authorised gate must address baseline foundation debt before substantial feature work: fix client/src/pages/manager-form.tsx typecheck failure and establish an automated test baseline. |
+| `P1` | TKV-003 | HirePass | `SHORTLIST_BUILD` | `STAGE_2_BUILD_COMPLETION` | `false` | Foundation hardening complete. D1 product/UX definition is pending orchestrator/founder approval before D2 critical-screen exploration or any Pass redesign. |
 | `P2` | TKV-004 | PayrollFlowEngine | `SHORTLIST_CONDITIONAL` | `STAGE_1_PRODUCT_DEFINITION` | `false` | Resolve product boundary decision. |
 
 ## Source Locator Health
@@ -56,7 +56,7 @@ These records are not independent execution workstreams.
 
 | ID | Product | Blocking State |
 | -- | ------- | -------------- |
-| TKV-003 | HirePass | Source foundation preserved. Next authorised gate must address baseline foundation debt before substantial feature work: fix client/src/pages/manager-form.tsx typecheck failure and establish an automated test baseline. |
+| TKV-003 | HirePass | Foundation hardening complete. D1 product/UX definition is pending orchestrator/founder approval before D2 critical-screen exploration or any Pass redesign. |
 | TKV-004 | PayrollFlowEngine | Decide TeamFrame add-on vs independent Takaven control-layer product. |
 | TKV-005 | HR Operations Inbox | Only execute inside authorised TeamFrame work in the separate TeamFrame repository. |
 | TKV-006 | Attendance & Timesheet Exceptions | Only execute inside authorised TeamFrame work in the separate TeamFrame repository after source confirmation. |
