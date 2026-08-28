@@ -23,7 +23,7 @@ Takaven is a software portfolio for revived and active products with bounded exe
 | ID | Product | Category | Status | Priority | Execution Gate |
 | -- | ------- | -------- | ------ | -------- | -------------- |
 | TKV-002 | LeaseDesk | Property Operations | `REVIVAL_IN_PROGRESS` | `P0` | Gate 8/8 release verification complete; production deployment/release pending founder approval. |
-| TKV-003 | HirePass | Recruitment Workflow | `SHORTLIST_BUILD` | `P1` | D2 critical experiences approved. D3 Pass component system is pending orchestrator/founder approval before D4 implementation. |
+| TKV-003 | HirePass | Recruitment Workflow | `SHORTLIST_BUILD` | `P1` | Gate 8/8 release verification complete; production deployment/release pending founder approval. |
 | TKV-004 | PayrollFlowEngine | Payroll Operations / Document Intelligence | `SHORTLIST_CONDITIONAL` | `P2` | Resolve product boundary decision. |
 | TKV-007 | VisionForge / AI-DAN | AI Developer Tools | `HOLD` | `HOLD` | No execution scheduled. |
 

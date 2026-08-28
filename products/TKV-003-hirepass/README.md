@@ -8,10 +8,10 @@ A secure hiring pass workflow that lets HR, managers and candidates complete hir
 - Category: `Recruitment Workflow`
 - Status: `SHORTLIST_BUILD`
 - Priority: `P1`
-- Lifecycle stage: `STAGE_2_BUILD_COMPLETION`
-- Current execution gate: D2 critical experiences approved. D3 Pass component system is pending orchestrator/founder approval before D4 implementation.
+- Lifecycle stage: `STAGE_4_MARKET_READY_PREPARATION`
+- Current execution gate: Gate 8/8 release verification complete; production deployment/release pending founder approval.
 - Evidence confidence: `VERIFIED`
-- Design stage: `D2_APPROVED`
+- Design stage: `D4_AUTHORISED`
 - Design system version: `takaven-design-system-v1`
 
 ## Important Warning

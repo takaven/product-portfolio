@@ -4,11 +4,11 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-D2 critical experiences approved. D3 Pass component system is pending orchestrator/founder approval before D4 implementation.
+Gate 8/8 release verification complete; production deployment/release pending founder approval.
 
 ## Execution Ready
 
-`false`
+`true`
 
 ## Condition To Clear
 
@@ -20,7 +20,7 @@ Not applicable.
 
 ## Design Governance
 
-- Design stage: `D2_APPROVED`
+- Design stage: `D4_AUTHORISED`
 - Design system version: `takaven-design-system-v1`
 - Visual profile version: `hirepass-visual-profile-v0`
 

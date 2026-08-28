@@ -51,3 +51,15 @@ Append only material decisions for HirePass.
 - D3 proposes the reusable Pass interaction/component primitive system required for Candidate Pass, Manager Pass and HR Pass Control.
 - D3 records primitive behaviour and source reuse direction only; no HirePass source code or frontend was modified.
 - D3 remains pending orchestrator/founder approval and does not authorise D4 implementation.
+
+## 2026-08-28 - Product / Code Programme Complete Through Gate 8/8
+
+- `takaven/hirepass` PR #12 merged the final Gate 8 readiness correction at `968178eb7f9652750a1690b798404dfc4773676b`.
+- Gate 8/8 final release verification is complete and the HirePass product/code programme is complete.
+- The final governed source baseline is `takaven/hirepass` on `main` at `968178eb7f9652750a1690b798404dfc4773676b`.
+- HirePass remains bounded as a secure external hiring workflow centred on Candidate Pass, Manager Pass and HR Pass Control.
+- HirePass is not a generic ATS, recruitment agency CRM, HRIS, payroll product or TeamFrame replacement.
+- Production release and deployment are not started and remain founder-controlled.
+- Production release requires PostgreSQL database/schema, strong session secret, admin username/password hash, persistent upload storage, HTTPS/domain/runtime configuration, backup arrangements and final production smoke verification.
+- TeamFrame integration remains a future separate decision.
+- Final portfolio-wide UI harmonisation remains deferred.
