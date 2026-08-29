@@ -226,6 +226,9 @@ def test_sensitive_transition_rejects_arbitrary_approval_prose(base: dict) -> No
 
 
 def test_execution_ready_transition_requires_source_evidence(base: dict) -> None:
+    base = copy.deepcopy(base)
+    base_product = next(item for item in base["products"] if item["id"] == "TKV-003")
+    base_product["execution_ready"] = False
     head = copy.deepcopy(base)
     product = next(item for item in head["products"] if item["id"] == "TKV-003")
     source = next(item for item in product["source_assets"] if item["role"] == "PRIMARY")

@@ -51,3 +51,26 @@ Append only material decisions for HirePass.
 - D3 proposes the reusable Pass interaction/component primitive system required for Candidate Pass, Manager Pass and HR Pass Control.
 - D3 records primitive behaviour and source reuse direction only; no HirePass source code or frontend was modified.
 - D3 remains pending orchestrator/founder approval and does not authorise D4 implementation.
+
+## 2026-08-28 - Product / Code Programme Complete Through Gate 8/8
+
+- `takaven/hirepass` PR #12 merged the final Gate 8 readiness correction at `968178eb7f9652750a1690b798404dfc4773676b`.
+- Gate 8/8 final release verification is complete and the HirePass product/code programme is complete.
+- The final governed source baseline is `takaven/hirepass` on `main` at `968178eb7f9652750a1690b798404dfc4773676b`.
+- HirePass remains bounded as a secure external hiring workflow centred on Candidate Pass, Manager Pass and HR Pass Control.
+- HirePass is not a generic ATS, recruitment agency CRM, HRIS, payroll product or TeamFrame replacement.
+- Production release and deployment are not started and remain founder-controlled.
+- Production release requires PostgreSQL database/schema, strong session secret, admin username/password hash, persistent upload storage, HTTPS/domain/runtime configuration, backup arrangements and final production smoke verification.
+- TeamFrame integration remains a future separate decision.
+- Final portfolio-wide UI harmonisation remains deferred.
+
+## 2026-08-28 - Signature Pass Enhancement Complete
+
+- `takaven/hirepass` PR #14 merged the accepted Signature Pass enhancement at `6572c51cb15a4e41382f1dc36430445ecc5fcfcb`.
+- The final governed source baseline is now `takaven/hirepass` on `main` at `6572c51cb15a4e41382f1dc36430445ecc5fcfcb`.
+- Signature experience is achieved around a recurring Pass State contract: Now, Your Action, Waiting On, Next and Expected Movement.
+- Pass Handoff is visible across Candidate, Hiring Manager and HR workflow transitions.
+- The product thesis remains unchanged: HirePass is a controlled live hiring Pass centred on Candidate Pass, Manager Pass and HR Pass Control, designed to reduce recruitment silence by showing what happened, whether action is required, who owns the next move, what happens next and the expected movement/checkpoint.
+- HirePass is not repositioned as a generic ATS.
+- Production release and deployment are not started and remain founder-controlled.
+- TeamFrame integration remains a future separate decision.

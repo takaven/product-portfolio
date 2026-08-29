@@ -43,7 +43,7 @@ complementary; possible later integration at hire-to-employee handoff
 
 ## Remarks
 
-Do not rebuild from zero. Use the sanitised takaven/hirepass baseline as the authoritative source, consolidate controlled modules later, and remove full ATS/broad HR scope. Repository is public temporarily by founder instruction for live review and should be made private after execution. Foundation hardening resolved the initial typecheck/test-baseline debt; D1 must be approved before D2 or Pass redesign begins.
+HirePass product/code programme is complete through Gate 8/8 and the final governed source baseline is takaven/hirepass main at 6572c51cb15a4e41382f1dc36430445ecc5fcfcb. Signature Pass experience is achieved through the recurring Pass State contract (Now, Your Action, Waiting On, Next, Expected Movement) and visible Pass Handoff across Candidate, Hiring Manager and HR workflow transitions. Product remains a secure external hiring workflow centred on Candidate Pass, Manager Pass and HR Pass Control; do not describe or expand it as a generic ATS. Production release and deployment are NOT STARTED and require founder approval plus production PostgreSQL/schema, strong session secret, admin username/password hash, persistent upload storage, HTTPS/domain/runtime configuration, backups and final production smoke verification. TeamFrame integration remains a future separate decision. Final portfolio-wide UI harmonisation remains deferred. Repository is public temporarily by founder instruction for live review and should be made private after execution.
 
 ## Product Principles
 

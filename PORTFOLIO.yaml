@@ -158,7 +158,7 @@
       "category": "Recruitment Workflow",
       "status": "SHORTLIST_BUILD",
       "priority": "P1",
-      "lifecycle_stage": "STAGE_2_BUILD_COMPLETION",
+      "lifecycle_stage": "STAGE_4_MARKET_READY_PREPARATION",
       "product_promise": "A secure hiring pass workflow that lets HR, managers and candidates complete hiring steps through controlled external links.",
       "primary_buyer": "HR lead or founder at a 20-150 employee company hiring regularly.",
       "problem": "Hiring decisions, candidate documents, interviews and manager feedback are scattered across email, WhatsApp and manual follow-up.",
@@ -188,13 +188,13 @@
           "name": "hirepass",
           "classification": "current authoritative implementation repository",
           "evidence_confidence": "VERIFIED",
-          "remarks": "Founder-authorised public temporary repository containing the sanitised Talent-Flow working tree as fresh history. Sanitisation complete; old Git history intentionally not preserved. Foundation hardening PR #2 resolved the manager-form typecheck defect and established a minimal automated test baseline.",
+          "remarks": "Founder-authorised public temporary repository containing the sanitised Talent-Flow working tree as fresh history. Sanitisation complete; old Git history intentionally not preserved. HirePass product/code programme is complete through Gate 8/8, including Signature Pass enhancement; production release and deployment remain separate founder-controlled actions.",
           "role": "PRIMARY",
           "source_type": "GITHUB_REPOSITORY",
           "owner_repository": "takaven/hirepass",
           "repository_url": "https://github.com/takaven/hirepass",
           "branch": "main",
-          "pinned_commit_sha": "09ded87dbba0cff8c53a3a764608f96e03f9141b",
+          "pinned_commit_sha": "6572c51cb15a4e41382f1dc36430445ecc5fcfcb",
           "local_or_replit_locator": "",
           "locator_status": "VERIFIED"
         },
@@ -300,14 +300,14 @@
       "source_repository_links": [
         "https://github.com/takaven/hirepass"
       ],
-      "current_execution_gate": "D2 critical experiences approved. D3 Pass component system is pending orchestrator/founder approval before D4 implementation.",
+      "current_execution_gate": "Gate 8/8 release verification complete; production deployment/release pending founder approval.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "complementary; possible later integration at hire-to-employee handoff",
-      "owner_current_workstream": "awaiting execution",
+      "owner_current_workstream": "product/code programme complete; awaiting founder production-release decision",
       "evidence_confidence": "VERIFIED",
-      "important_remarks": "Do not rebuild from zero. Use the sanitised takaven/hirepass baseline as the authoritative source, consolidate controlled modules later, and remove full ATS/broad HR scope. Repository is public temporarily by founder instruction for live review and should be made private after execution. Foundation hardening resolved the initial typecheck/test-baseline debt; D1 must be approved before D2 or Pass redesign begins.",
-      "execution_ready": false,
+      "important_remarks": "HirePass product/code programme is complete through Gate 8/8 and the final governed source baseline is takaven/hirepass main at 6572c51cb15a4e41382f1dc36430445ecc5fcfcb. Signature Pass experience is achieved through the recurring Pass State contract (Now, Your Action, Waiting On, Next, Expected Movement) and visible Pass Handoff across Candidate, Hiring Manager and HR workflow transitions. Product remains a secure external hiring workflow centred on Candidate Pass, Manager Pass and HR Pass Control; do not describe or expand it as a generic ATS. Production release and deployment are NOT STARTED and require founder approval plus production PostgreSQL/schema, strong session secret, admin username/password hash, persistent upload storage, HTTPS/domain/runtime configuration, backups and final production smoke verification. TeamFrame integration remains a future separate decision. Final portfolio-wide UI harmonisation remains deferred. Repository is public temporarily by founder instruction for live review and should be made private after execution.",
+      "execution_ready": true,
       "product_principles": [
         {
           "name": "Pass concept",
@@ -360,11 +360,11 @@
         }
       ],
       "design_governance": {
-        "design_stage": "D2_APPROVED",
+        "design_stage": "D4_AUTHORISED",
         "design_system_version": "takaven-design-system-v1",
         "approved_d1_reference": "Founder approval via D1 closeout prompt; Issue #31 / PR #32",
         "approved_d2_reference": "Founder approval via D2 closeout prompt; Issue #33 / PR #34",
-        "approved_d3_reference": "",
+        "approved_d3_reference": "Founder/orchestrator approval via D3 closeout and D4 implementation prompts.",
         "visual_profile_version": "hirepass-visual-profile-v0"
       }
     },
