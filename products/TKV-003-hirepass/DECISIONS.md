@@ -63,3 +63,14 @@ Append only material decisions for HirePass.
 - Production release requires PostgreSQL database/schema, strong session secret, admin username/password hash, persistent upload storage, HTTPS/domain/runtime configuration, backup arrangements and final production smoke verification.
 - TeamFrame integration remains a future separate decision.
 - Final portfolio-wide UI harmonisation remains deferred.
+
+## 2026-08-28 - Signature Pass Enhancement Complete
+
+- `takaven/hirepass` PR #14 merged the accepted Signature Pass enhancement at `6572c51cb15a4e41382f1dc36430445ecc5fcfcb`.
+- The final governed source baseline is now `takaven/hirepass` on `main` at `6572c51cb15a4e41382f1dc36430445ecc5fcfcb`.
+- Signature experience is achieved around a recurring Pass State contract: Now, Your Action, Waiting On, Next and Expected Movement.
+- Pass Handoff is visible across Candidate, Hiring Manager and HR workflow transitions.
+- The product thesis remains unchanged: HirePass is a controlled live hiring Pass centred on Candidate Pass, Manager Pass and HR Pass Control, designed to reduce recruitment silence by showing what happened, whether action is required, who owns the next move, what happens next and the expected movement/checkpoint.
+- HirePass is not repositioned as a generic ATS.
+- Production release and deployment are not started and remain founder-controlled.
+- TeamFrame integration remains a future separate decision.
