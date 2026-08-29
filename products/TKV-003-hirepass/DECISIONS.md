@@ -74,3 +74,14 @@ Append only material decisions for HirePass.
 - HirePass is not repositioned as a generic ATS.
 - Production release and deployment are not started and remain founder-controlled.
 - TeamFrame integration remains a future separate decision.
+
+## 2026-08-29 - Final Release-Quality Cleanup and Visual Signature Acceptance
+
+- `takaven/hirepass` PR #17 merged the final release-quality cleanup and visual signature correction at `75b6df109a67542ee1bd7126b34c4cb758df059f`.
+- The final governed source baseline is now `takaven/hirepass` on `main` at `75b6df109a67542ee1bd7126b34c4cb758df059f`.
+- Browser-rendered final visual review accepted the Signature Pass experience with no signature-blocking or material findings.
+- Candidate Pass and Manager Pass are commercially strong; HR Pass Control is commercially usable.
+- The product thesis is: HirePass is the hiring process that tells everyone when it is their turn.
+- The candidate promise is: No more recruitment silence.
+- Production release and deployment are not started and remain founder-controlled future gates.
+- TeamFrame integration and portfolio-wide UI harmonisation remain deferred separate decisions.
