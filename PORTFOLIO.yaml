@@ -177,13 +177,13 @@
           "name": "hirepass",
           "classification": "current authoritative implementation repository",
           "evidence_confidence": "VERIFIED",
-          "remarks": "Founder-authorised public temporary repository containing the sanitised Talent-Flow working tree as fresh history. Sanitisation complete; old Git history intentionally not preserved. HirePass product/code programme, Signature Pass enhancement, final release-quality cleanup, browser-rendered visual signature acceptance and final branding are complete; production release and deployment remain separate founder-controlled actions.",
+          "remarks": "Founder-authorised repository containing the sanitised Talent-Flow working tree as fresh history. Sanitisation complete; old Git history intentionally not preserved. HirePass product/code programme, Signature Pass enhancement, final release-quality cleanup, browser-rendered visual signature acceptance, final branding and pre-outreach readiness documentation are complete; production release and deployment remain separate founder-controlled actions.",
           "role": "PRIMARY",
           "source_type": "GITHUB_REPOSITORY",
           "owner_repository": "takaven/hirepass",
           "repository_url": "https://github.com/takaven/hirepass",
           "branch": "main",
-          "pinned_commit_sha": "80b2e872cb92f3c2199763761626ecd7071a1657",
+          "pinned_commit_sha": "bc444c2f69cd1fc62359b8ee7fef49392971a619",
           "local_or_replit_locator": "",
           "locator_status": "VERIFIED"
         },
@@ -292,10 +292,10 @@
       "current_execution_gate": "Commercial launch preparation; production deployment/release remains founder/customer-delivery controlled.",
       "condition_to_clear": "",
       "destination_product": "",
-      "teamframe_relationship": "complementary; possible later integration at hire-to-employee handoff",
+      "teamframe_relationship": "complementary but distinct; HirePass covers the hiring handoff before employment, while TeamFrame covers ongoing people operations after an organisation needs structured employee and HR administration. Any integration remains a future separate decision.",
       "owner_current_workstream": "commercial package/pricing locked; awaiting Takaven commercial website, sales/demo preparation and customer deployment decisions",
       "evidence_confidence": "VERIFIED",
-      "important_remarks": "Active Takaven commercial product. HirePass product/code programme is complete through Gate 8/8 and the final governed source baseline is takaven/hirepass main at 80b2e872cb92f3c2199763761626ecd7071a1657. Candidate Pass, Manager Pass and HR Pass Control are accepted. Signature Pass experience is achieved through the recurring Pass State contract (Now, Your Action, Waiting On, Next, Expected Movement), visible Pass Handoff across Candidate, Hiring Manager and HR workflow transitions, final release-quality cleanup, browser-rendered visual signature acceptance and final branding. Product thesis: HirePass is the hiring process that tells everyone when it is their turn. Candidate promise: No more recruitment silence. Approved public commercial offer: HirePass + Setup at US$3,450 one-off. Customer infrastructure is customer-paid/customer-controlled where practical. Post-handover support and future change requests are optional and quoted separately; no monthly software subscription, mandatory maintenance or annual software licence is approved. Internal custom-work quoting anchor: from US$6,450 for complex workflow tailoring, candidate/data migration, additional process configuration, integrations, custom reporting or product changes; this is not a second public product tier and implementation allowances are not technical capacity limits. Product remains a secure external hiring workflow centred on Candidate Pass, Manager Pass and HR Pass Control; do not describe or expand it as a generic ATS. Production release and deployment are NOT STARTED and require founder/customer-delivery approval plus production PostgreSQL/schema, strong session secret, admin username/password hash, persistent upload storage, HTTPS/domain/runtime configuration, backups and final production smoke verification. TeamFrame integration remains a future separate decision. Repository is public temporarily by founder instruction for live review and should be made private after execution.",
+      "important_remarks": "Active Takaven commercial product. HirePass product/code programme is complete through Gate 8/8 and the final governed source baseline is takaven/hirepass main at bc444c2f69cd1fc62359b8ee7fef49392971a619. Candidate Pass, Manager Pass and HR Pass Control are accepted. Signature Pass experience is achieved through the recurring Pass State contract (Now, Your Action, Waiting On, Next, Expected Movement), visible Pass Handoff across Candidate, Hiring Manager and HR workflow transitions, final release-quality cleanup, browser-rendered visual signature acceptance, final branding and pre-outreach readiness documentation. Product thesis: HirePass is the hiring process that tells everyone when it is their turn. Candidate promise: No more recruitment silence. Approved public commercial offer: HirePass + Setup at US$3,450 one-off. Customer infrastructure is customer-paid/customer-controlled where practical. Post-handover support and future change requests are optional and quoted separately; no monthly software subscription, mandatory maintenance or annual software licence is approved. Internal custom-work quoting anchor: from US$6,450 for complex workflow tailoring, candidate/data migration, additional process configuration, integrations, custom reporting or product changes; this is not a second public product tier and implementation allowances are not technical capacity limits. Product remains a secure external hiring workflow centred on Candidate Pass, Manager Pass and HR Pass Control; do not describe or expand it as a generic ATS, HRIS or TeamFrame replacement. External proof and testimonials are an early commercial objective, not a product launch blocker. Production release and deployment are NOT STARTED and require founder/customer-delivery approval plus production PostgreSQL/schema, strong session secret, admin username/password hash, persistent upload storage, HTTPS/domain/runtime configuration, backups and final production smoke verification. TeamFrame integration remains a future separate decision.",
       "execution_ready": true,
       "product_principles": [
         {
@@ -395,7 +395,7 @@
           "owner_repository": "takaven/teamframe",
           "repository_url": "https://github.com/takaven/teamframe",
           "branch": "main",
-          "pinned_commit_sha": "3c7ecddf5135f1747d6c9e7d1922265b92ba7b56",
+          "pinned_commit_sha": "73c3e2df701b8484632d3335ca4861c4f2ccb8a7",
           "local_or_replit_locator": "",
           "locator_status": "VERIFIED"
         },
@@ -409,7 +409,7 @@
           "owner_repository": "takaven/teamframe-site",
           "repository_url": "https://github.com/takaven/teamframe-site",
           "branch": "main",
-          "pinned_commit_sha": "cb64e38587d2bc3568dfdfa4eee529866e7db47a",
+          "pinned_commit_sha": "34192eb663bdef5186032234e39f7d8d76969414",
           "local_or_replit_locator": "",
           "locator_status": "VERIFIED"
         }
@@ -424,7 +424,7 @@
       "teamframe_relationship": "self; established Takaven commercial product",
       "owner_current_workstream": "commercial package/pricing locked; awaiting walkthrough destination, Takaven commercial website, sales/demo preparation and customer deployment decisions",
       "evidence_confidence": "VERIFIED",
-      "important_remarks": "TeamFrame is an active Takaven commercial product, not a discovery item. Product application source is takaven/teamframe main at 3c7ecddf5135f1747d6c9e7d1922265b92ba7b56. Commercial site source is takaven/teamframe-site main at cb64e38587d2bc3568dfdfa4eee529866e7db47a. Final product branding is applied. Commercial model preserved: TeamFrame software at US$1,950 one-off and TeamFrame + Setup from US$3,450 one-off. Customer infrastructure is customer-paid/customer-controlled where applicable. Post-handover support and future change requests are optional and quoted separately; no monthly software subscription, mandatory maintenance or annual software licence is approved. Customer deployment, walkthrough destination and any integration with LeaseDesk, HirePass or PayrollFlowEngine remain separate founder-controlled decisions. Buy the HR system once; add HR support only if needed remains the commercial direction.",
+      "important_remarks": "TeamFrame is an active Takaven commercial product, not a discovery item. Product application source is takaven/teamframe main at 73c3e2df701b8484632d3335ca4861c4f2ccb8a7. Commercial site source is takaven/teamframe-site main at 34192eb663bdef5186032234e39f7d8d76969414. Final product branding is applied. Commercial model preserved: TeamFrame software at US$1,950 one-off and TeamFrame + Setup from US$3,450 one-off. Customer infrastructure is customer-paid/customer-controlled where applicable. Post-handover support and future change requests are optional and quoted separately; no monthly software subscription, mandatory maintenance or annual software licence is approved. Customer deployment, walkthrough destination and any integration with LeaseDesk, HirePass or PayrollFlowEngine remain separate founder-controlled decisions. Buy the HR system once; add HR support only if needed remains the commercial direction. The independent pricing concern is classified as monitor after first sales; current pricing is unchanged.",
       "execution_ready": true,
       "design_governance": {
         "design_stage": "D4_AUTHORISED",
