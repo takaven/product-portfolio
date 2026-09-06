@@ -54,12 +54,13 @@ Product-Portfolio Setup is 3/3 complete. Autonomous Agent Enablement is 2/2 comp
 - `TKV-002 LeaseDesk` is source-locked and brand-locked. Product/release work is complete, but LeaseDesk is not deployed or released.
 - LeaseDesk source of truth is `isudally/leasedesk-demo` on `main` at `c36c26f4d12b64f2a66239f47d23d46bbf50eebd`.
 - `TKV-003 HirePass` is source-locked and brand-locked. Product/code work, Signature Pass, Candidate Pass, Manager Pass and HR Pass Control are accepted, but HirePass is not deployed or released.
-- HirePass source of truth is `takaven/hirepass` on `main` at `80b2e872cb92f3c2199763761626ecd7071a1657`.
+- HirePass source of truth is `takaven/hirepass` on `main` at `bc444c2f69cd1fc62359b8ee7fef49392971a619`.
 - `TKV-004 PayrollFlowEngine` remains P2 / conditional. Its boundary is Payroll Change Control / Payroll Document Intelligence, not full payroll software. The standalone versus TeamFrame add-on decision remains unresolved.
 - The approved Takaven commercial model is one-off product purchase with customer-paid/customer-controlled infrastructure where practical. Post-handover support and future change requests are optional and quoted separately; no monthly software subscription, mandatory maintenance or annual software licence is approved.
 - LeaseDesk public offer is `LeaseDesk + Setup` at `US$2,950` one-off. HirePass public offer is `HirePass + Setup` at `US$3,450` one-off. TeamFrame preserves `US$1,950` software-only and `from US$3,450` with setup.
 - LeaseDesk `from US$5,450` and HirePass `from US$6,450` custom-work anchors are internal quoting anchors only, not second public product tiers or technical capacity limits.
 - The next programme phase is `COMMERCIAL LAUNCH PREPARATION`: Takaven commercial website, TeamFrame walkthrough destination, sales/demo preparation, deployment per actual sale/customer and sales/outreach.
+- The final independent adversarial launch review found no product-level blockers. Accepted pre-outreach corrections are operational/commercial readiness items only; product development remains closed.
 
 ## Portfolio-Wide UI Strategy
 

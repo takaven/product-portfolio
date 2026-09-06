@@ -91,7 +91,7 @@ Append only material decisions for HirePass.
 - HirePass is an active Takaven commercial product.
 - Product/code programme, Signature Pass, final release-quality cleanup, visual signature experience and final branding are complete.
 - Candidate Pass, Manager Pass and HR Pass Control are accepted.
-- The authoritative source baseline is now `takaven/hirepass` on `main` at `80b2e872cb92f3c2199763761626ecd7071a1657`.
+- The authoritative source baseline is now `takaven/hirepass` on `main` at `bc444c2f69cd1fc62359b8ee7fef49392971a619`.
 - Source/code launch work is closed.
 - Production release and deployment remain founder/customer-delivery controlled and are not started by this reconciliation.
 - HirePass remains bounded as a secure external hiring workflow and must not be repositioned as a generic ATS.
@@ -107,3 +107,11 @@ Append only material decisions for HirePass.
 - The custom-work anchor is internal only and must not be represented as a second public product tier.
 - Implementation allowances are commercial setup boundaries, not technical product-capacity limits.
 - Product development remains closed; production deployment/release remains founder/customer-delivery controlled.
+
+## 2026-09-06 - Independent Launch Review Response
+
+- The independent adversarial launch review found HirePass is product-level GO, with no product launch blocker.
+- Accepted pre-outreach corrections are operational/commercial readiness items only; product development remains closed.
+- External proof and testimonials are classified as an early commercial objective for controlled outreach, not as a reason to mark HirePass unready.
+- HirePass remains focused on the hiring handoff between candidates, managers and HR before employment. It is not a TeamFrame replacement, HRIS, payroll product or generic ATS.
+- Any HirePass to TeamFrame integration remains a future separate decision.

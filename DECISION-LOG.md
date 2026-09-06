@@ -38,3 +38,24 @@ This log is append-only for material portfolio decisions. Routine status updates
 - The next programme phase is `COMMERCIAL LAUNCH PREPARATION`.
 - Remaining commercial work includes LeaseDesk pricing/package decision, HirePass pricing/package decision, TeamFrame walkthrough destination, Takaven-level commercial website, deployment per actual sale/customer and sales/outreach.
 - PayrollFlowEngine and other retained/deferred records remain preserved but are not part of the immediate commercial launch focus.
+
+## 2026-09-06 - Commercial Packaging Source Lock
+
+- Approved commercial model: one-off product purchase with customer-paid/customer-controlled infrastructure where practical.
+- LeaseDesk public offer: `LeaseDesk + Setup` at `US$2,950` one-off.
+- HirePass public offer: `HirePass + Setup` at `US$3,450` one-off.
+- TeamFrame commercial model preserved: `US$1,950` software-only one-off and `from US$3,450` with setup.
+- Post-handover support and future change requests are optional and quoted separately.
+- No monthly software subscription, mandatory maintenance or annual software licence is approved.
+- Internal custom-work anchors are recorded for quoting discipline only and are not public product tiers.
+- Product development remains closed. Production deployment/release remains founder/customer-delivery controlled.
+- The next assurance stages before commercial launch closure remain product/documentation readiness reconciliation and an independent full adversarial launch review.
+
+## 2026-09-06 - Independent Launch Review Response
+
+- The independent adversarial launch review found LeaseDesk, HirePass and TeamFrame are product-level GO, with no product launch blockers.
+- Accepted pre-outreach corrections are operational and commercial readiness items only; product development remains closed.
+- External proof and testimonials are classified as an early commercial objective to pursue through controlled outreach, not as a blocker to beginning outreach.
+- The TeamFrame pricing concern is classified as monitor after first sales. Approved TeamFrame pricing remains unchanged.
+- HirePass is the hiring handoff before employment; TeamFrame is ongoing people operations after structured employee and HR administration is needed. Any integration remains a future separate decision.
+- Support and change requests remain optional and separately quoted after handover; no monthly subscription or mandatory maintenance model is approved.
