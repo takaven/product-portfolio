@@ -91,7 +91,7 @@ Append only material decisions for HirePass.
 - HirePass is an active Takaven commercial product.
 - Product/code programme, Signature Pass, final release-quality cleanup, visual signature experience and final branding are complete.
 - Candidate Pass, Manager Pass and HR Pass Control are accepted.
-- The authoritative source baseline is now `takaven/hirepass` on `main` at `bc444c2f69cd1fc62359b8ee7fef49392971a619`.
+- The authoritative source baseline is now `takaven/hirepass` on `main` at `7a45f1af75b7182c7a51daa8a1efe26ff9ba8d6a`.
 - Source/code launch work is closed.
 - Production release and deployment remain founder/customer-delivery controlled and are not started by this reconciliation.
 - HirePass remains bounded as a secure external hiring workflow and must not be repositioned as a generic ATS.

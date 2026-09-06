@@ -10,7 +10,7 @@ This repository is intended to be the central operating memory for Takaven produ
 
 Standalone Takaven products should normally have one dedicated source repository per product. This keeps deployment, CI/test history, secrets, databases/storage, release history, sanitisation, permissions and agent execution context separated, which is especially important for HR/payroll products that may handle sensitive data.
 
-LeaseDesk's actual source repository is `isudally/leasedesk-demo` on `main` at `c36c26f4d12b64f2a66239f47d23d46bbf50eebd`. HirePass's actual source repository is `takaven/hirepass` on `main` at `bc444c2f69cd1fc62359b8ee7fef49392971a619`. TeamFrame's actual application source repository is `takaven/teamframe` on `main` at `73c3e2df701b8484632d3335ca4861c4f2ccb8a7`, and its commercial-site source repository is `takaven/teamframe-site` on `main` at `34192eb663bdef5186032234e39f7d8d76969414`. Files under `products/` are governance/documentation records only; there is no duplicate application source in the control repository.
+LeaseDesk's actual source repository is `isudally/leasedesk-demo` on `main` at `ce0d8969966cbbab3c6ee2f0718ef3a64a2f0f69`. HirePass's actual source repository is `takaven/hirepass` on `main` at `7a45f1af75b7182c7a51daa8a1efe26ff9ba8d6a`. TeamFrame's actual application source repository is `takaven/teamframe` on `main` at `45e63bfd85c05d65b4fd935dd4ba61081b6799af`, and its commercial-site source repository is `takaven/teamframe-site` on `main` at `34192eb663bdef5186032234e39f7d8d76969414`. Files under `products/` are governance/documentation records only; there is no duplicate application source in the control repository.
 
 Future standalone products such as PayrollFlowEngine should receive separate source repositories if activated as standalone products. Long-term Takaven organisation repository normalisation, such as moving LeaseDesk to `takaven/leasedesk`, is deferred and no LeaseDesk migration, rename or new repository creation is currently authorised.
 
@@ -145,7 +145,7 @@ Governance is frozen for first-product execution. Future governance infrastructu
 
 - Product record: `TKV-002`
 - Source repository: `isudally/leasedesk-demo`
-- Final source `main` SHA: `c36c26f4d12b64f2a66239f47d23d46bbf50eebd`
+- Final source `main` SHA: `ce0d8969966cbbab3c6ee2f0718ef3a64a2f0f69`
 - Source closeout: `isudally/leasedesk-demo#6`, Issue `#5`
 - Control closeout: Issue `#21`, PR `#22`, merge SHA `86e3330b05a58e61423ca457b056e446b7361367`
 - Programme state: Phase 1/4 COMPLETE, Phase 2/4 COMPLETE, Phase 3/4 COMPLETE, Phase 4/4 COMPLETE, Gates 8/8 COMPLETE, Gate 6 slices 5/5 COMPLETE, Gate 7 PASS, Gate 8 PASS.
@@ -157,7 +157,7 @@ Governance is frozen for first-product execution. Future governance infrastructu
 
 - Product record: `TKV-003`
 - Source repository: `takaven/hirepass`
-- Final source `main` SHA: `bc444c2f69cd1fc62359b8ee7fef49392971a619`
+- Final source `main` SHA: `7a45f1af75b7182c7a51daa8a1efe26ff9ba8d6a`
 - Programme state: product/code programme COMPLETE through Gate 8/8; Signature Pass ACHIEVED; final release-quality cleanup COMPLETE; visual signature acceptance ACHIEVED; final branding applied.
 - Current gate: commercial launch preparation; production deployment/release requires founder/customer-delivery approval.
 - Not done: production deployment, release, infrastructure provisioning, DNS, production secrets, production database, durable upload storage/backups, final production smoke test and post-execution repository visibility closeout.
@@ -167,7 +167,7 @@ Governance is frozen for first-product execution. Future governance infrastructu
 
 - Product record: `TKV-001`
 - Application repository: `takaven/teamframe`
-- Application source `main` SHA: `73c3e2df701b8484632d3335ca4861c4f2ccb8a7`
+- Application source `main` SHA: `45e63bfd85c05d65b4fd935dd4ba61081b6799af`
 - Commercial-site repository: `takaven/teamframe-site`
 - Commercial-site source `main` SHA: `34192eb663bdef5186032234e39f7d8d76969414`
 - Programme state: established product; source locked; brand locked; commercial site locked.

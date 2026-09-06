@@ -6,7 +6,7 @@ Append only material decisions for TeamFrame.
 
 - TeamFrame is recorded as `TKV-001`, its original Takaven product identity.
 - TeamFrame is an active Takaven commercial product, not a discovery item.
-- `takaven/teamframe` on `main` at `73c3e2df701b8484632d3335ca4861c4f2ccb8a7` is the authoritative TeamFrame application source.
+- `takaven/teamframe` on `main` at `45e63bfd85c05d65b4fd935dd4ba61081b6799af` is the authoritative TeamFrame application source.
 - `takaven/teamframe-site` on `main` at `34192eb663bdef5186032234e39f7d8d76969414` is the authoritative TeamFrame commercial website source.
 - TeamFrame application source, commercial-site source and final branding are locked for commercial launch preparation.
 - Customer deployment remains controlled per customer and requires founder/customer-delivery approval.
