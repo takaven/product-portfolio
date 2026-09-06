@@ -97,13 +97,15 @@ def validate_pr(event: dict, changed_files: list[str], product_ids: set[str] | N
     changed_product_ids = sorted(
         {match.group(1) for path in changed_files for match in [PRODUCT_FOLDER_RE.match(path)] if match}
     )
-    if changed_product_ids and product_id == "N/A":
+    portfolio_level_reconciliation = product_id == "N/A" and "PORTFOLIO.yaml" in changed_files
+
+    if changed_product_ids and product_id == "N/A" and not portfolio_level_reconciliation:
         errors.append(
             "Repository-only PRs with Product ID N/A must not change product folders: "
             + ", ".join(changed_product_ids)
             + "."
         )
-    elif len(changed_product_ids) > 1:
+    elif len(changed_product_ids) > 1 and not portfolio_level_reconciliation:
         errors.append(
             "PRs must not change multiple product folders under one Product ID: "
             + ", ".join(changed_product_ids)

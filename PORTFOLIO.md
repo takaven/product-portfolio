@@ -10,21 +10,20 @@ Takaven is a software portfolio for revived and active products with bounded exe
 
 ## External Products
 
-| Product | Relationship | Governance Rule |
-| ------- | ------------ | --------------- |
-| TeamFrame | active product handled independently by the founder in a separate repository | TeamFrame is not part of this portfolio operating repository and must not be modified or executed from here. |
+No external products recorded.
 
 ## Operating Principle
 
-> Portfolio repository -> product source-of-truth -> bounded GitHub issue -> agent execution -> pull request -> automated checks -> status/register update
+> Portfolio repository -> product source-of-truth -> bounded GitHub issue -> agent execution or commercial action -> pull request/checks where applicable -> status/register update
 
 ## Independent Product Records
 
 | ID | Product | Category | Status | Priority | Execution Gate |
 | -- | ------- | -------- | ------ | -------- | -------------- |
-| TKV-002 | LeaseDesk | Property Operations | `REVIVAL_IN_PROGRESS` | `P0` | Gate 8/8 release verification complete; production deployment/release pending founder approval. |
-| TKV-003 | HirePass | Recruitment Workflow | `SHORTLIST_BUILD` | `P1` | Gate 8/8 release verification complete; production deployment/release pending founder approval. |
-| TKV-004 | PayrollFlowEngine | Payroll Operations / Document Intelligence | `SHORTLIST_CONDITIONAL` | `P2` | Resolve product boundary decision. |
+| TKV-002 | LeaseDesk | Property Operations | `EXISTING_CORE` | `P0` | Commercial launch preparation; production deployment/release remains founder/customer-delivery controlled. |
+| TKV-003 | HirePass | Recruitment Workflow | `EXISTING_CORE` | `P1` | Commercial launch preparation; production deployment/release remains founder/customer-delivery controlled. |
+| TKV-001 | TeamFrame | HR Operations | `EXISTING_CORE` | `P1` | Commercial launch preparation; customer deployment remains controlled per customer and requires founder/customer-delivery approval. |
+| TKV-004 | PayrollFlowEngine | Payroll Operations / Document Intelligence | `SHORTLIST_CONDITIONAL` | `P2` | Future/conditional. Resolve product boundary decision after LeaseDesk, HirePass and TeamFrame commercial launch preparation unless explicitly authorised earlier. |
 | TKV-007 | VisionForge / AI-DAN | AI Developer Tools | `HOLD` | `HOLD` | No execution scheduled. |
 
 ## Retained Component Records
@@ -41,7 +40,7 @@ These records are retained modules/components, not independent product workstrea
 | Priority | Products |
 | -------- | -------- |
 | `P0` | LeaseDesk |
-| `P1` | HirePass |
+| `P1` | HirePass, TeamFrame |
 | `P2` | PayrollFlowEngine |
 
 ## Components

@@ -1,15 +1,15 @@
 <!-- GENERATED FROM PORTFOLIO.yaml. DO NOT EDIT STRUCTURED STATE DIRECTLY. -->
-# TKV-002 - LeaseDesk
+# TKV-001 - TeamFrame
 
-A simple operating system for small commercial landlords to manage units, tenants, leases, rent, arrears, documents and expenses.
+A focused HR system for organisations where everyday HR administration has become real work but there is not necessarily a dedicated HR team.
 
 ## Orientation
 
-- Category: `Property Operations`
+- Category: `HR Operations`
 - Status: `EXISTING_CORE`
-- Priority: `P0`
+- Priority: `P1`
 - Lifecycle stage: `STAGE_5_READY_TO_LAUNCH`
-- Current execution gate: Commercial launch preparation; production deployment/release remains founder/customer-delivery controlled.
+- Current execution gate: Commercial launch preparation; customer deployment remains controlled per customer and requires founder/customer-delivery approval.
 - Evidence confidence: `VERIFIED`
 - Design stage: `D4_AUTHORISED`
 - Design system version: `takaven-design-system-v1`

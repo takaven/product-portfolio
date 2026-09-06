@@ -4,7 +4,7 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Gate 8/8 release verification complete; production deployment/release pending founder approval.
+Commercial launch preparation; production deployment/release remains founder/customer-delivery controlled.
 
 ## Execution Ready
 
@@ -22,7 +22,7 @@ Not applicable.
 
 - Design stage: `D4_AUTHORISED`
 - Design system version: `takaven-design-system-v1`
-- Visual profile version: `leasedesk-visual-profile-v0`
+- Visual profile version: `leasedesk-visual-profile-v1`
 
 ## Prohibited During Unauthorised Work
 

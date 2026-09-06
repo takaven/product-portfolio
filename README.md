@@ -2,9 +2,9 @@
 
 This is the central operating repository for the Takaven product portfolio.
 
-Takaven is the parent software portfolio for revived and governed product work including LeaseDesk, HirePass and selected retained components. This repository is not a product application. It is the source of truth for what this portfolio repository governs, what has already been decided, where each retained record stands and what execution step is authorised next.
+Takaven is the parent software portfolio for active commercial product work including LeaseDesk, HirePass, TeamFrame and selected retained components. This repository is not a product application. It is the source of truth for what this portfolio repository governs, what has already been decided, where each retained record stands and what execution step is authorised next.
 
-TeamFrame is an active product handled independently by the founder in a separate repository. It is referenced here only where retained components may later be absorbed into TeamFrame.
+TeamFrame is an active Takaven commercial product. Its application and commercial website live in separate source repositories; this control repository records only portfolio state, source baselines and governance context.
 
 ## Current Products
 
@@ -16,7 +16,7 @@ The canonical registry is `PORTFOLIO.yaml`. The generated human-readable product
 
 It is not an application monorepo and must not contain copies of product source code. Standalone Takaven products should use one dedicated source repository per product unless a later explicit founder/product architecture decision changes that topology.
 
-Current example: `isudally/leasedesk-demo` is the authoritative LeaseDesk application source repository on `main` at `d2ce8e988f2d8726fde3dc7e3529e84e0d27db78`. The files under `products/TKV-002-leasedesk/` are LeaseDesk governance and documentation records only, not another LeaseDesk implementation.
+Current examples: `isudally/leasedesk-demo` is the authoritative LeaseDesk application source repository, `takaven/hirepass` is the authoritative HirePass application source repository, `takaven/teamframe` is the authoritative TeamFrame application source repository and `takaven/teamframe-site` is the authoritative TeamFrame commercial-site source repository. The files under `products/` are governance and documentation records only, not product implementations.
 
 This separation preserves independent deployment, CI/test history, secrets and environment boundaries, database/storage boundaries, release histories, sanitisation controls, agent execution context and future licensing, sale, transfer or spin-out options. Future Takaven organisation normalisation such as `takaven/leasedesk`, `takaven/hirepass` or `takaven/payrollflowengine` is deferred until there is a material operational reason; do not migrate or rename `isudally/leasedesk-demo` merely for tidiness.
 
@@ -39,7 +39,7 @@ See `PORTFOLIO.md`. Do not manually maintain product status, priority or queue s
 
 Portfolio discovery is closed. Do not reopen broad product discovery, change product scope, alter product status, or start a new execution phase unless an authorised GitHub issue explicitly allows it.
 
-No product repositories, including TeamFrame, may be modified from this setup repository.
+No product repositories may be modified from this setup repository unless a separate authorised issue explicitly names that source repository and work boundary.
 
 ## Operating State
 
@@ -50,13 +50,13 @@ Product-Portfolio Setup is 3/3 complete. Autonomous Agent Enablement is 2/2 comp
 ## Current Programme State
 
 - Governance is enabled and frozen for product execution. Discovery is closed.
-- `TKV-002 LeaseDesk` is 8/8 complete. Product code is ready for a founder production-release decision, but LeaseDesk is not deployed, released or commercially live.
-- LeaseDesk source of truth is `isudally/leasedesk-demo` on `main` at `d2ce8e988f2d8726fde3dc7e3529e84e0d27db78`.
-- LeaseDesk production release still requires founder approval and deployment prerequisites: production PostgreSQL, production secrets, durable document storage, backups, HTTPS/TLS, runtime/domain configuration, host/port compatibility, health/readiness access and final fictional-data smoke testing.
-- LeaseDesk final visual harmonisation is intentionally deferred. Do not reopen LeaseDesk implementation for cosmetic polish before the portfolio-wide UI alignment phase unless a material usability defect appears.
-- `TKV-003 HirePass` is the next P1 product priority. Before execution, verify the authoritative `Talent-Flow` source locator, pinned baseline, sanitisation/secrets status and governed boundary. Preserve Candidate Pass, Manager Pass and secure external hiring workflow; do not turn HirePass into a generic ATS.
+- `TKV-001 TeamFrame` is source-locked and brand-locked. TeamFrame is an active commercial product; customer deployment remains controlled per customer.
+- `TKV-002 LeaseDesk` is source-locked and brand-locked. Product/release work is complete, but LeaseDesk is not deployed or released.
+- LeaseDesk source of truth is `isudally/leasedesk-demo` on `main` at `c36c26f4d12b64f2a66239f47d23d46bbf50eebd`.
+- `TKV-003 HirePass` is source-locked and brand-locked. Product/code work, Signature Pass, Candidate Pass, Manager Pass and HR Pass Control are accepted, but HirePass is not deployed or released.
+- HirePass source of truth is `takaven/hirepass` on `main` at `80b2e872cb92f3c2199763761626ecd7071a1657`.
 - `TKV-004 PayrollFlowEngine` remains P2 / conditional. Its boundary is Payroll Change Control / Payroll Document Intelligence, not full payroll software. The standalone versus TeamFrame add-on decision remains unresolved.
-- TeamFrame remains external and founder-managed in a separate repository.
+- The next programme phase is `COMMERCIAL LAUNCH PREPARATION`: LeaseDesk pricing/package decision, HirePass pricing/package decision, TeamFrame walkthrough destination, Takaven-level commercial website, deployment per actual sale/customer and sales/outreach.
 
 ## Portfolio-Wide UI Strategy
 

@@ -38,7 +38,7 @@ unrelated
 
 ## Remarks
 
-Substantive product asset. Gate 8/8 release verification is complete and product code is ready for a founder production-release decision. LeaseDesk is not deployed or commercially released. Final visual harmonisation is intentionally deferred to a later portfolio-wide UI alignment programme after the selected Takaven products are complete. Deferred hypothesis: Tenant Pass may later become a controlled live lease, rent-status and document interaction model for commercial and possibly residential tenant relationships. Residential expansion and Tenant Pass are not current approved scope; no LeaseDesk reopening is authorised without a later explicit product-extension decision.
+Active Takaven commercial product. Gate 8/8 release verification, final commercial-readiness Issue #7 and final branding are complete; source/code launch work is closed at isudally/leasedesk-demo main c36c26f4d12b64f2a66239f47d23d46bbf50eebd. LeaseDesk is ready for commercial launch preparation, but production deployment/release remains founder/customer-delivery controlled and is not started. Deferred hypothesis: Tenant Pass may later become a controlled live lease, rent-status and document interaction model for commercial and possibly residential tenant relationships. Residential expansion and Tenant Pass are not current approved scope; no LeaseDesk reopening is authorised without a later explicit product-extension decision.
 
 ## Product Principles
 

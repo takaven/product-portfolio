@@ -29,3 +29,12 @@ This log is append-only for material portfolio decisions. Routine status updates
 - D2, D3 and D4 design gates require prerequisite approval evidence.
 - HirePass's Pass concept is canonically required while detailed terminology remains provisional.
 - Retained component records are separated from active independent products in generated views.
+
+## 2026-09-06 - Commercial-State Reconciliation
+
+- Takaven is taking LeaseDesk, HirePass and TeamFrame to market as the current active commercial product focus.
+- TeamFrame is restored as `TKV-001`, using its original product ID rather than creating or recycling another identifier.
+- LeaseDesk, HirePass and TeamFrame are source-locked and brand-locked, with product/code launch work closed and production deployment still founder/customer-delivery controlled.
+- The next programme phase is `COMMERCIAL LAUNCH PREPARATION`.
+- Remaining commercial work includes LeaseDesk pricing/package decision, HirePass pricing/package decision, TeamFrame walkthrough destination, Takaven-level commercial website, deployment per actual sale/customer and sales/outreach.
+- PayrollFlowEngine and other retained/deferred records remain preserved but are not part of the immediate commercial launch focus.

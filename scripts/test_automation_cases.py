@@ -111,6 +111,22 @@ def test_na_product_id_cannot_change_product_folder() -> None:
     )
 
 
+def test_portfolio_reconciliation_can_update_generated_product_folders() -> None:
+    errors = validate_pr_governance.validate_pr(
+        pr_event(governance_body("N/A")),
+        [
+            "PORTFOLIO.yaml",
+            "PORTFOLIO.md",
+            "DASHBOARD.md",
+            "products/TKV-001-teamframe/README.md",
+            "products/TKV-002-leasedesk/README.md",
+            "products/TKV-003-hirepass/README.md",
+        ],
+    )
+    if errors:
+        raise AssertionError(f"portfolio-level reconciliation should pass. Errors: {errors}")
+
+
 def test_unknown_product_id_fails() -> None:
     assert_pr_fails(
         "unknown product ID",
@@ -286,6 +302,7 @@ def main() -> int:
         test_canonical_product_id_passes,
         test_na_product_id_passes_for_governance_pr,
         test_na_product_id_cannot_change_product_folder,
+        test_portfolio_reconciliation_can_update_generated_product_folders,
         test_unknown_product_id_fails,
         test_product_pr_requires_authorised_issue_reference,
         test_product_pr_rejects_malformed_work_item_reference,

@@ -85,3 +85,13 @@ Append only material decisions for HirePass.
 - The candidate promise is: No more recruitment silence.
 - Production release and deployment are not started and remain founder-controlled future gates.
 - TeamFrame integration and portfolio-wide UI harmonisation remain deferred separate decisions.
+
+## 2026-09-06 - Commercial-State Reconciliation
+
+- HirePass is an active Takaven commercial product.
+- Product/code programme, Signature Pass, final release-quality cleanup, visual signature experience and final branding are complete.
+- Candidate Pass, Manager Pass and HR Pass Control are accepted.
+- The authoritative source baseline is now `takaven/hirepass` on `main` at `80b2e872cb92f3c2199763761626ecd7071a1657`.
+- Source/code launch work is closed.
+- Production release and deployment remain founder/customer-delivery controlled and are not started by this reconciliation.
+- HirePass remains bounded as a secure external hiring workflow and must not be repositioned as a generic ATS.
