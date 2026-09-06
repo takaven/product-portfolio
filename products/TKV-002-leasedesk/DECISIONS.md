@@ -200,3 +200,15 @@ No LeaseDesk repository migration, rename, source copy, or new `takaven/leasedes
 - Source/code launch work is closed.
 - Production deployment/release remains founder/customer-delivery controlled and is not started by this reconciliation.
 - Current product boundary, priority and deferred Tenant Pass / residential-extension hypothesis remain unchanged.
+
+## 2026-09-06 - Commercial Packaging Source Lock
+
+- Approved public offer: `LeaseDesk + Setup`.
+- Approved public price: `US$2,950` one-off.
+- Commercial principle: one-off product purchase; no monthly software subscription, mandatory maintenance or annual software licence is approved.
+- Customer infrastructure is customer-paid/customer-controlled where practical.
+- Post-handover support and future change requests are optional and quoted separately.
+- Internal custom-work quoting anchor: from `US$5,450` for substantial data cleanup, historical payment migration, large document migration, custom reporting, additional workflow configuration, integrations or product changes.
+- The custom-work anchor is internal only and must not be represented as a second public product tier.
+- Implementation allowances are commercial setup boundaries, not technical product-capacity limits.
+- Product development remains closed; production deployment/release remains founder/customer-delivery controlled.
