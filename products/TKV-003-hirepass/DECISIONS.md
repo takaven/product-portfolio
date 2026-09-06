@@ -95,3 +95,15 @@ Append only material decisions for HirePass.
 - Source/code launch work is closed.
 - Production release and deployment remain founder/customer-delivery controlled and are not started by this reconciliation.
 - HirePass remains bounded as a secure external hiring workflow and must not be repositioned as a generic ATS.
+
+## 2026-09-06 - Commercial Packaging Source Lock
+
+- Approved public offer: `HirePass + Setup`.
+- Approved public price: `US$3,450` one-off.
+- Commercial principle: one-off product purchase; no monthly software subscription, mandatory maintenance or annual software licence is approved.
+- Customer infrastructure is customer-paid/customer-controlled where practical.
+- Post-handover support and future change requests are optional and quoted separately.
+- Internal custom-work quoting anchor: from `US$6,450` for complex workflow tailoring, candidate/data migration, additional process configuration, integrations, custom reporting or product changes.
+- The custom-work anchor is internal only and must not be represented as a second public product tier.
+- Implementation allowances are commercial setup boundaries, not technical product-capacity limits.
+- Product development remains closed; production deployment/release remains founder/customer-delivery controlled.

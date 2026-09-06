@@ -38,7 +38,7 @@ self; established Takaven commercial product
 
 ## Remarks
 
-TeamFrame is an active Takaven commercial product, not a discovery item. Product application source is takaven/teamframe main at 3c7ecddf5135f1747d6c9e7d1922265b92ba7b56. Commercial site source is takaven/teamframe-site main at cb64e38587d2bc3568dfdfa4eee529866e7db47a. Final product branding is applied. Customer deployment, walkthrough destination and any integration with LeaseDesk, HirePass or PayrollFlowEngine remain separate founder-controlled decisions. Buy the HR system once; add HR support only if needed remains the commercial direction, but pricing values are not recorded in this portfolio state.
+TeamFrame is an active Takaven commercial product, not a discovery item. Product application source is takaven/teamframe main at 3c7ecddf5135f1747d6c9e7d1922265b92ba7b56. Commercial site source is takaven/teamframe-site main at cb64e38587d2bc3568dfdfa4eee529866e7db47a. Final product branding is applied. Commercial model preserved: TeamFrame software at US$1,950 one-off and TeamFrame + Setup from US$3,450 one-off. Customer infrastructure is customer-paid/customer-controlled where applicable. Post-handover support and future change requests are optional and quoted separately; no monthly software subscription, mandatory maintenance or annual software licence is approved. Customer deployment, walkthrough destination and any integration with LeaseDesk, HirePass or PayrollFlowEngine remain separate founder-controlled decisions. Buy the HR system once; add HR support only if needed remains the commercial direction.
 
 ## Product Principles
 

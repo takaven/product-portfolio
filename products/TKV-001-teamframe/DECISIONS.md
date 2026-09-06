@@ -13,3 +13,11 @@ Append only material decisions for TeamFrame.
 - The TeamFrame walkthrough destination remains a launch configuration item; no URL is invented in the portfolio record.
 - Any integration with LeaseDesk, HirePass or PayrollFlowEngine remains a separate future decision.
 
+## 2026-09-06 - Commercial Model Preserved
+
+- TeamFrame software remains recorded as `US$1,950` one-off.
+- TeamFrame + Setup remains recorded as from `US$3,450` one-off.
+- Customer infrastructure is customer-paid/customer-controlled where applicable.
+- Post-handover support and future change requests are optional and quoted separately.
+- No monthly software subscription, mandatory maintenance or annual software licence is approved.
+- TeamFrame product scope, application source and commercial-site source are unchanged by this commercial packaging source lock.
