@@ -10,16 +10,16 @@ This repository is intended to be the central operating memory for Takaven produ
 
 Standalone Takaven products should normally have one dedicated source repository per product. This keeps deployment, CI/test history, secrets, databases/storage, release history, sanitisation, permissions and agent execution context separated, which is especially important for HR/payroll products that may handle sensitive data.
 
-LeaseDesk's actual source repository is `isudally/leasedesk-demo` on `main` at `d2ce8e988f2d8726fde3dc7e3529e84e0d27db78`. The LeaseDesk files under `products/TKV-002-leasedesk/` are governance/documentation records only; there is no duplicate LeaseDesk application source in the control repository.
+LeaseDesk's actual source repository is `isudally/leasedesk-demo` on `main` at `c36c26f4d12b64f2a66239f47d23d46bbf50eebd`. HirePass's actual source repository is `takaven/hirepass` on `main` at `80b2e872cb92f3c2199763761626ecd7071a1657`. TeamFrame's actual application source repository is `takaven/teamframe` on `main` at `3c7ecddf5135f1747d6c9e7d1922265b92ba7b56`, and its commercial-site source repository is `takaven/teamframe-site` on `main` at `cb64e38587d2bc3568dfdfa4eee529866e7db47a`. Files under `products/` are governance/documentation records only; there is no duplicate application source in the control repository.
 
-Future standalone products such as HirePass and PayrollFlowEngine should receive separate source repositories if activated as standalone products. TeamFrame remains external and founder-managed. Long-term Takaven organisation repository normalisation, such as moving to `takaven/leasedesk`, is deferred and no LeaseDesk migration, rename or new repository creation is currently authorised.
+Future standalone products such as PayrollFlowEngine should receive separate source repositories if activated as standalone products. Long-term Takaven organisation repository normalisation, such as moving LeaseDesk to `takaven/leasedesk`, is deferred and no LeaseDesk migration, rename or new repository creation is currently authorised.
 
 ## What Was Created
 
 - Canonical registry: `PORTFOLIO.yaml`
 - Schema/constants: `schema/portfolio.schema.json`
 - Generated human view: `PORTFOLIO.md`
-- Product folders for retained governed records except TeamFrame, which is external
+- Product folders for retained governed records, including TeamFrame as `TKV-001`
 - Component and archive registers
 - Root governance files
 - Issue templates, PR template, CODEOWNERS and validation workflow
@@ -28,11 +28,12 @@ Future standalone products such as HirePass and PayrollFlowEngine should receive
 ## Locked Decisions Imported
 
 - Portfolio discovery is closed.
-- TeamFrame is external to this repository and handled independently by the founder.
-- LeaseDesk is 8/8 complete. Product code is ready for a founder production-release decision, but LeaseDesk is not deployed, released or commercially live.
-- HirePass is shortlist build, P1, foundation `Talent-Flow`, controlled consolidation.
+- LeaseDesk, HirePass and TeamFrame are active Takaven commercial products in the immediate launch focus.
+- LeaseDesk is source-locked and brand-locked. Product/release work is complete, but LeaseDesk is not deployed or released.
+- HirePass is source-locked and brand-locked. Product/code work, Signature Pass, Candidate Pass, Manager Pass and HR Pass Control are accepted, but HirePass is not deployed or released.
+- TeamFrame is source-locked and brand-locked as an established product with a separate commercial-site repository.
 - PayrollFlowEngine is conditional pending TeamFrame add-on vs independent control-layer decision.
-- HR Operations Inbox and Attendance & Timesheet Exceptions are component records whose destination is the separate TeamFrame repository.
+- HR Operations Inbox and Attendance & Timesheet Exceptions are component records whose destination is TeamFrame.
 - VisionForge / AI-DAN is on hold.
 
 ## Intentionally Incomplete
@@ -74,7 +75,7 @@ Future standalone products such as HirePass and PayrollFlowEngine should receive
 ## Unverified Items
 
 - `TKV-006` source attribution such as `PassGuard-Pipeline` remains `UNVERIFIED`.
-- `TKV-003` primary source `Talent-Flow` remains selected but has `LOCATOR_REQUIRED` until an exact source locator and pinned revision are supplied.
+- LeaseDesk, HirePass and TeamFrame source baselines are verified and pinned in `PORTFOLIO.yaml`.
 - Repository visibility is currently public. If the repository is made private again under a plan that does not support private-repo branch protection, `main` protection and required checks must be reverified before autonomous product execution.
 
 ## Manual Actions Required
@@ -144,18 +145,39 @@ Governance is frozen for first-product execution. Future governance infrastructu
 
 - Product record: `TKV-002`
 - Source repository: `isudally/leasedesk-demo`
-- Final source `main` SHA: `d2ce8e988f2d8726fde3dc7e3529e84e0d27db78`
+- Final source `main` SHA: `c36c26f4d12b64f2a66239f47d23d46bbf50eebd`
 - Source closeout: `isudally/leasedesk-demo#6`, Issue `#5`
 - Control closeout: Issue `#21`, PR `#22`, merge SHA `86e3330b05a58e61423ca457b056e446b7361367`
 - Programme state: Phase 1/4 COMPLETE, Phase 2/4 COMPLETE, Phase 3/4 COMPLETE, Phase 4/4 COMPLETE, Gates 8/8 COMPLETE, Gate 6 slices 5/5 COMPLETE, Gate 7 PASS, Gate 8 PASS.
 - Current gate: product code ready for production release; production deployment/release requires founder approval.
 - Not done: production deployment, release, infrastructure provisioning, DNS, production secrets, production database, durable document storage/backups, and final production smoke test.
-- UI decision: functional D1/D2/D3 direction and sufficient D4 implementation exist, but final visual harmonisation is intentionally deferred to the later portfolio-wide visual phase.
+- UI decision: final branding is applied; production deployment remains a separate founder/customer-delivery decision.
 
-### Next Product Queue
+### HirePass
 
-- `TKV-003 HirePass` is the next P1 product priority, but execution remains blocked until the authoritative `Talent-Flow` source locator, pinned baseline, sanitisation/secrets state and governed boundary are verified.
+- Product record: `TKV-003`
+- Source repository: `takaven/hirepass`
+- Final source `main` SHA: `80b2e872cb92f3c2199763761626ecd7071a1657`
+- Programme state: product/code programme COMPLETE through Gate 8/8; Signature Pass ACHIEVED; final release-quality cleanup COMPLETE; visual signature acceptance ACHIEVED; final branding applied.
+- Current gate: commercial launch preparation; production deployment/release requires founder/customer-delivery approval.
+- Not done: production deployment, release, infrastructure provisioning, DNS, production secrets, production database, durable upload storage/backups, final production smoke test and post-execution repository visibility closeout.
+- Boundary: secure external hiring workflow centred on Candidate Pass, Manager Pass and HR Pass Control; do not turn HirePass into a generic ATS.
+
+### TeamFrame
+
+- Product record: `TKV-001`
+- Application repository: `takaven/teamframe`
+- Application source `main` SHA: `3c7ecddf5135f1747d6c9e7d1922265b92ba7b56`
+- Commercial-site repository: `takaven/teamframe-site`
+- Commercial-site source `main` SHA: `cb64e38587d2bc3568dfdfa4eee529866e7db47a`
+- Programme state: established product; source locked; brand locked; commercial site locked.
+- Current gate: commercial launch preparation; customer deployment remains controlled per customer.
+- Not done: walkthrough destination, customer deployment, production release actions and any cross-product integration.
+
+### Commercial Launch Preparation
+
+- Immediate commercial focus: LeaseDesk, HirePass and TeamFrame.
+- Remaining founder/commercial decisions: LeaseDesk pricing/package, HirePass pricing/package, TeamFrame walkthrough destination, Takaven-level commercial website, deployment per actual sale/customer and sales/outreach.
 - `TKV-004 PayrollFlowEngine` remains P2 / conditional. The exact condition is deciding TeamFrame add-on versus independent Takaven control-layer product. It is Payroll Change Control / Payroll Document Intelligence, not full payroll software.
-- TeamFrame remains external and founder-managed.
 
 No product deployment or next-product execution is authorised by this handoff.

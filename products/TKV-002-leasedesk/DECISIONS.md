@@ -191,3 +191,12 @@ No Tenant Pass, residential expansion, shared HirePass architecture, or implemen
 `takaven/product-portfolio` contains LeaseDesk governance and documentation records only. The files under `products/TKV-002-leasedesk/` are not another LeaseDesk implementation, so there is no duplicate-source ambiguity between the control repo and the application source repo.
 
 No LeaseDesk repository migration, rename, source copy, or new `takaven/leasedesk` repository is currently authorised. Future Takaven-organisation repository normalisation is deferred until there is a material operational reason and an explicit founder/product architecture decision.
+
+## 2026-09-06 - Commercial-State Reconciliation
+
+- LeaseDesk is an active Takaven commercial product.
+- Final commercial-readiness Issue #7 and final branding are complete.
+- The authoritative source baseline is now `isudally/leasedesk-demo` on `main` at `c36c26f4d12b64f2a66239f47d23d46bbf50eebd`.
+- Source/code launch work is closed.
+- Production deployment/release remains founder/customer-delivery controlled and is not started by this reconciliation.
+- Current product boundary, priority and deferred Tenant Pass / residential-extension hypothesis remain unchanged.

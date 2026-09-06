@@ -4,15 +4,15 @@ Canonical execution state lives in `../../PORTFOLIO.yaml`.
 
 ## Current Gate
 
-Future/conditional. Resolve product boundary decision after LeaseDesk, HirePass and TeamFrame commercial launch preparation unless explicitly authorised earlier.
+Commercial launch preparation; customer deployment remains controlled per customer and requires founder/customer-delivery approval.
 
 ## Execution Ready
 
-`false`
+`true`
 
 ## Condition To Clear
 
-Decide TeamFrame add-on vs independent Takaven control-layer product.
+None.
 
 ## Destination Product
 
@@ -20,9 +20,9 @@ Not applicable.
 
 ## Design Governance
 
-- Design stage: `NOT_STARTED`
+- Design stage: `D4_AUTHORISED`
 - Design system version: `takaven-design-system-v1`
-- Visual profile version: `payrollflowengine-visual-profile-v0`
+- Visual profile version: `teamframe-visual-profile-v1`
 
 ## Prohibited During Unauthorised Work
 

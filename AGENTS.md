@@ -41,7 +41,7 @@ Markdown files may explain context but must not introduce conflicting canonical 
 
 Do not copy real candidate, employee, payroll, tenant, property, uploaded-document, credential or environment data into this repository.
 
-Do not modify product repositories from this repository. That includes TeamFrame, LeaseDesk, Talent-Flow, HirePass source variants, PayrollFlowEngine, Replit exports, demo apps, databases, deployment configuration and uploaded assets.
+Do not modify product repositories from this repository unless a separate authorised issue explicitly names that source repository and work boundary. Product source repositories include TeamFrame, LeaseDesk, Talent-Flow, HirePass source variants, PayrollFlowEngine, Replit exports, demo apps, databases, deployment configuration and uploaded assets.
 
 ## Authority Model
 
@@ -55,11 +55,11 @@ For autonomous-agent work, GitHub Copilot cloud agent is the preferred future Bu
 
 ## Product-Specific Guardrails
 
-- TeamFrame is an external active product handled separately by the founder in a separate repository. It is not a governed product record here.
-- LeaseDesk is revival in progress and should not be treated as a disposable validation app.
-- HirePass is the next build target but no product execution is authorised by this repository setup.
+- TeamFrame is an active Takaven commercial product with application and commercial-site source repositories recorded in `TKV-001`.
+- LeaseDesk is an active Takaven commercial product with source/code launch work closed; production deployment remains founder/customer-delivery controlled.
+- HirePass is an active Takaven commercial product with product/code work closed; production deployment remains founder/customer-delivery controlled.
 - PayrollFlowEngine is conditional and must not become a full payroll system.
-- HR Operations Inbox and Attendance & Timesheet Exceptions are retained component records whose destination is the separate TeamFrame repository; they are not independent product workstreams.
+- HR Operations Inbox and Attendance & Timesheet Exceptions are retained component records whose destination is TeamFrame; they are not independent product workstreams.
 - VisionForge / AI-DAN is on hold.
 
 ## Design Gate Enforcement

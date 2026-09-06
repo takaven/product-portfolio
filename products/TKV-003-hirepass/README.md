@@ -6,10 +6,10 @@ A secure hiring pass workflow that lets HR, managers and candidates complete hir
 ## Orientation
 
 - Category: `Recruitment Workflow`
-- Status: `SHORTLIST_BUILD`
+- Status: `EXISTING_CORE`
 - Priority: `P1`
-- Lifecycle stage: `STAGE_4_MARKET_READY_PREPARATION`
-- Current execution gate: Gate 8/8 release verification complete; production deployment/release pending founder approval.
+- Lifecycle stage: `STAGE_5_READY_TO_LAUNCH`
+- Current execution gate: Commercial launch preparation; production deployment/release remains founder/customer-delivery controlled.
 - Evidence confidence: `VERIFIED`
 - Design stage: `D4_AUTHORISED`
 - Design system version: `takaven-design-system-v1`

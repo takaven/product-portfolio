@@ -3,26 +3,15 @@
     "name": "Takaven Product Portfolio",
     "discovery_status": "PORTFOLIO_DISCOVERY_CLOSED",
     "canonical_source": "PORTFOLIO.yaml",
-    "last_reviewed": "2026-08-20",
-    "operating_principle": "Portfolio repository -> product source-of-truth -> bounded GitHub issue -> agent execution -> pull request -> automated checks -> status/register update",
+    "last_reviewed": "2026-09-06",
+    "operating_principle": "Portfolio repository -> product source-of-truth -> bounded GitHub issue -> agent execution or commercial action -> pull request/checks where applicable -> status/register update",
     "new_product_policy": [
       "genuinely new source assets are discovered",
       "Takaven intentionally creates a new product",
       "materially new evidence justifies reopening an archived lineage"
     ],
-    "external_products": [
-      {
-        "name": "TeamFrame",
-        "relationship": "active product handled independently by the founder in a separate repository",
-        "governance_rule": "TeamFrame is not part of this portfolio operating repository and must not be modified or executed from here."
-      }
-    ],
-    "reserved_product_ids": [
-      {
-        "id": "TKV-001",
-        "reason": "Former TeamFrame portfolio record. TeamFrame is external and permanent product IDs are never recycled."
-      }
-    ],
+    "external_products": [],
+    "reserved_product_ids": [],
     "design_system": {
       "current_version": "takaven-design-system-v1",
       "source_file": "DESIGN-SYSTEM.md",
@@ -79,9 +68,9 @@
       "name": "LeaseDesk",
       "slug": "leasedesk",
       "category": "Property Operations",
-      "status": "REVIVAL_IN_PROGRESS",
+      "status": "EXISTING_CORE",
       "priority": "P0",
-      "lifecycle_stage": "STAGE_4_MARKET_READY_PREPARATION",
+      "lifecycle_stage": "STAGE_5_READY_TO_LAUNCH",
       "product_promise": "A simple operating system for small commercial landlords to manage units, tenants, leases, rent, arrears, documents and expenses.",
       "primary_buyer": "Small commercial landlord or family-owned commercial property operator.",
       "problem": "Small commercial portfolios are often run through spreadsheets, email and scattered documents.",
@@ -120,13 +109,13 @@
           "name": "leasedesk-demo",
           "classification": "current authoritative implementation repository",
           "evidence_confidence": "VERIFIED",
-          "remarks": "Current authoritative LeaseDesk implementation and execution source. Repository separation must remain; do not copy source code into product-portfolio.",
+          "remarks": "Current authoritative LeaseDesk implementation and execution source. Source/code launch work and final branding are locked on main. Repository separation must remain; do not copy source code into product-portfolio.",
           "role": "PRIMARY",
           "source_type": "GITHUB_REPOSITORY",
           "owner_repository": "isudally/leasedesk-demo",
           "repository_url": "https://github.com/isudally/leasedesk-demo",
           "branch": "main",
-          "pinned_commit_sha": "d2ce8e988f2d8726fde3dc7e3529e84e0d27db78",
+          "pinned_commit_sha": "c36c26f4d12b64f2a66239f47d23d46bbf50eebd",
           "local_or_replit_locator": "",
           "locator_status": "VERIFIED"
         }
@@ -134,13 +123,13 @@
       "source_repository_links": [
         "https://github.com/isudally/leasedesk-demo"
       ],
-      "current_execution_gate": "Gate 8/8 release verification complete; production deployment/release pending founder approval.",
+      "current_execution_gate": "Commercial launch preparation; production deployment/release remains founder/customer-delivery controlled.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "unrelated",
-      "owner_current_workstream": "revival in progress",
+      "owner_current_workstream": "source/code launch work closed; awaiting commercial launch preparation",
       "evidence_confidence": "VERIFIED",
-      "important_remarks": "Substantive product asset. Gate 8/8 release verification is complete and product code is ready for a founder production-release decision. LeaseDesk is not deployed or commercially released. Final visual harmonisation is intentionally deferred to a later portfolio-wide UI alignment programme after the selected Takaven products are complete. Deferred hypothesis: Tenant Pass may later become a controlled live lease, rent-status and document interaction model for commercial and possibly residential tenant relationships. Residential expansion and Tenant Pass are not current approved scope; no LeaseDesk reopening is authorised without a later explicit product-extension decision.",
+      "important_remarks": "Active Takaven commercial product. Gate 8/8 release verification, final commercial-readiness Issue #7 and final branding are complete; source/code launch work is closed at isudally/leasedesk-demo main c36c26f4d12b64f2a66239f47d23d46bbf50eebd. LeaseDesk is ready for commercial launch preparation, but production deployment/release remains founder/customer-delivery controlled and is not started. Deferred hypothesis: Tenant Pass may later become a controlled live lease, rent-status and document interaction model for commercial and possibly residential tenant relationships. Residential expansion and Tenant Pass are not current approved scope; no LeaseDesk reopening is authorised without a later explicit product-extension decision.",
       "execution_ready": true,
       "design_governance": {
         "design_stage": "D4_AUTHORISED",
@@ -148,7 +137,7 @@
         "approved_d1_reference": "Issue #15 / PR #16 founder decision: D1 APPROVED",
         "approved_d2_reference": "Issue #17 / PR #18 founder decision: D2 APPROVED",
         "approved_d3_reference": "Issue #19 / PR #20 orchestrator decision: D3 ACCEPTED - NO BLOCKING/MATERIAL FINDINGS",
-        "visual_profile_version": "leasedesk-visual-profile-v0"
+        "visual_profile_version": "leasedesk-visual-profile-v1"
       }
     },
     {
@@ -156,9 +145,9 @@
       "name": "HirePass",
       "slug": "hirepass",
       "category": "Recruitment Workflow",
-      "status": "SHORTLIST_BUILD",
+      "status": "EXISTING_CORE",
       "priority": "P1",
-      "lifecycle_stage": "STAGE_4_MARKET_READY_PREPARATION",
+      "lifecycle_stage": "STAGE_5_READY_TO_LAUNCH",
       "product_promise": "A secure hiring pass workflow that lets HR, managers and candidates complete hiring steps through controlled external links.",
       "primary_buyer": "HR lead or founder at a 20-150 employee company hiring regularly.",
       "problem": "Hiring decisions, candidate documents, interviews and manager feedback are scattered across email, WhatsApp and manual follow-up.",
@@ -188,13 +177,13 @@
           "name": "hirepass",
           "classification": "current authoritative implementation repository",
           "evidence_confidence": "VERIFIED",
-          "remarks": "Founder-authorised public temporary repository containing the sanitised Talent-Flow working tree as fresh history. Sanitisation complete; old Git history intentionally not preserved. HirePass product/code programme is complete through Gate 8/8, including Signature Pass enhancement, final release-quality cleanup and browser-rendered visual signature acceptance; production release and deployment remain separate founder-controlled actions.",
+          "remarks": "Founder-authorised public temporary repository containing the sanitised Talent-Flow working tree as fresh history. Sanitisation complete; old Git history intentionally not preserved. HirePass product/code programme, Signature Pass enhancement, final release-quality cleanup, browser-rendered visual signature acceptance and final branding are complete; production release and deployment remain separate founder-controlled actions.",
           "role": "PRIMARY",
           "source_type": "GITHUB_REPOSITORY",
           "owner_repository": "takaven/hirepass",
           "repository_url": "https://github.com/takaven/hirepass",
           "branch": "main",
-          "pinned_commit_sha": "75b6df109a67542ee1bd7126b34c4cb758df059f",
+          "pinned_commit_sha": "80b2e872cb92f3c2199763761626ecd7071a1657",
           "local_or_replit_locator": "",
           "locator_status": "VERIFIED"
         },
@@ -300,13 +289,13 @@
       "source_repository_links": [
         "https://github.com/takaven/hirepass"
       ],
-      "current_execution_gate": "Gate 8/8 release verification complete; production deployment/release pending founder approval.",
+      "current_execution_gate": "Commercial launch preparation; production deployment/release remains founder/customer-delivery controlled.",
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "complementary; possible later integration at hire-to-employee handoff",
-      "owner_current_workstream": "product/code programme complete; awaiting founder production-release decision",
+      "owner_current_workstream": "source/code launch work closed; awaiting commercial launch preparation",
       "evidence_confidence": "VERIFIED",
-      "important_remarks": "HirePass product/code programme is complete through Gate 8/8 and the final governed source baseline is takaven/hirepass main at 75b6df109a67542ee1bd7126b34c4cb758df059f. Signature Pass experience is achieved through the recurring Pass State contract (Now, Your Action, Waiting On, Next, Expected Movement), visible Pass Handoff across Candidate, Hiring Manager and HR workflow transitions, final release-quality cleanup and browser-rendered visual signature acceptance. Candidate Pass and Manager Pass are commercially strong; HR Pass Control is commercially usable. Product thesis: HirePass is the hiring process that tells everyone when it is their turn. Candidate promise: No more recruitment silence. Product remains a secure external hiring workflow centred on Candidate Pass, Manager Pass and HR Pass Control; do not describe or expand it as a generic ATS. Production release and deployment are NOT STARTED and require founder approval plus production PostgreSQL/schema, strong session secret, admin username/password hash, persistent upload storage, HTTPS/domain/runtime configuration, backups and final production smoke verification. TeamFrame integration remains a future separate decision. Final portfolio-wide UI harmonisation remains deferred. Repository is public temporarily by founder instruction for live review and should be made private after execution.",
+      "important_remarks": "Active Takaven commercial product. HirePass product/code programme is complete through Gate 8/8 and the final governed source baseline is takaven/hirepass main at 80b2e872cb92f3c2199763761626ecd7071a1657. Candidate Pass, Manager Pass and HR Pass Control are accepted. Signature Pass experience is achieved through the recurring Pass State contract (Now, Your Action, Waiting On, Next, Expected Movement), visible Pass Handoff across Candidate, Hiring Manager and HR workflow transitions, final release-quality cleanup, browser-rendered visual signature acceptance and final branding. Product thesis: HirePass is the hiring process that tells everyone when it is their turn. Candidate promise: No more recruitment silence. Product remains a secure external hiring workflow centred on Candidate Pass, Manager Pass and HR Pass Control; do not describe or expand it as a generic ATS. Production release and deployment are NOT STARTED and require founder/customer-delivery approval plus production PostgreSQL/schema, strong session secret, admin username/password hash, persistent upload storage, HTTPS/domain/runtime configuration, backups and final production smoke verification. TeamFrame integration remains a future separate decision. Repository is public temporarily by founder instruction for live review and should be made private after execution.",
       "execution_ready": true,
       "product_principles": [
         {
@@ -365,68 +354,85 @@
         "approved_d1_reference": "Founder approval via D1 closeout prompt; Issue #31 / PR #32",
         "approved_d2_reference": "Founder approval via D2 closeout prompt; Issue #33 / PR #34",
         "approved_d3_reference": "Founder/orchestrator approval via D3 closeout and D4 implementation prompts.",
-        "visual_profile_version": "hirepass-visual-profile-v0"
+        "visual_profile_version": "hirepass-visual-profile-v1"
       }
     },
     {
-      "id": "TKV-004",
-      "name": "PayrollFlowEngine",
-      "slug": "payrollflowengine",
-      "category": "Payroll Operations / Document Intelligence",
-      "status": "SHORTLIST_CONDITIONAL",
-      "priority": "P2",
-      "lifecycle_stage": "STAGE_1_PRODUCT_DEFINITION",
-      "product_promise": "A payroll change-control and document-intelligence layer for intake, extraction, approvals, variance checks and auditability.",
-      "primary_buyer": "HR/payroll operator responsible for controlled payroll changes.",
-      "problem": "Payroll change inputs arrive through documents and manual messages, creating variance, approval and audit risk.",
+      "id": "TKV-001",
+      "name": "TeamFrame",
+      "slug": "teamframe",
+      "category": "HR Operations",
+      "status": "EXISTING_CORE",
+      "priority": "P1",
+      "lifecycle_stage": "STAGE_5_READY_TO_LAUNCH",
+      "product_promise": "A focused HR system for organisations where everyday HR administration has become real work but there is not necessarily a dedicated HR team.",
+      "primary_buyer": "Founder, operator or HR owner at a growing organisation that needs a controlled internal HR system without committing to a heavy HR suite.",
+      "problem": "Growing organisations need employee records, leave, documents, policies and setup support handled cleanly without turning HR administration into scattered spreadsheets and messages.",
       "product_boundary": [
-        "incoming payroll change documents",
-        "document extraction",
-        "classification",
-        "employee change records",
-        "approval workflow",
-        "payroll variance control",
-        "auditability",
-        "exports"
+        "employee records",
+        "leave and absence workflows",
+        "documents and policies",
+        "organisation structure",
+        "HR administration dashboard",
+        "setup and installation support",
+        "commercial walkthrough website"
       ],
       "exclusions": [
-        "full payroll system",
-        "payroll calculation engine",
-        "replacement for mature payroll suites",
-        "tax filing engine"
+        "payroll engine",
+        "enterprise HRIS replacement",
+        "broad workforce-management suite",
+        "recruitment workflow before employment",
+        "TeamFrame integration with other Takaven products without a separate decision"
       ],
       "source_assets": [
         {
-          "name": "PayrollFlowEngine source assets",
-          "classification": "source lineage",
+          "name": "teamframe",
+          "classification": "current authoritative application repository",
           "evidence_confidence": "VERIFIED",
-          "remarks": "Retained as conditional product asset.",
+          "remarks": "Current authoritative TeamFrame product application source. Source/code and final branding are locked on main; customer deployment remains controlled per customer.",
           "role": "PRIMARY",
-          "source_type": "REPLIT_EXPORT_OR_LOCAL_ASSET",
-          "owner_repository": "",
-          "repository_url": "",
-          "branch": "",
-          "pinned_commit_sha": "",
+          "source_type": "GITHUB_REPOSITORY",
+          "owner_repository": "takaven/teamframe",
+          "repository_url": "https://github.com/takaven/teamframe",
+          "branch": "main",
+          "pinned_commit_sha": "3c7ecddf5135f1747d6c9e7d1922265b92ba7b56",
           "local_or_replit_locator": "",
-          "locator_status": "LOCATOR_REQUIRED"
+          "locator_status": "VERIFIED"
+        },
+        {
+          "name": "teamframe-site",
+          "classification": "current authoritative commercial website repository",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Current authoritative TeamFrame commercial website source. Site source and final branding are locked on main; walkthrough destination remains a founder-controlled launch configuration item.",
+          "role": "COMPONENT",
+          "source_type": "GITHUB_REPOSITORY",
+          "owner_repository": "takaven/teamframe-site",
+          "repository_url": "https://github.com/takaven/teamframe-site",
+          "branch": "main",
+          "pinned_commit_sha": "cb64e38587d2bc3568dfdfa4eee529866e7db47a",
+          "local_or_replit_locator": "",
+          "locator_status": "VERIFIED"
         }
       ],
-      "source_repository_links": [],
-      "current_execution_gate": "Resolve product boundary decision.",
-      "condition_to_clear": "Decide TeamFrame add-on vs independent Takaven control-layer product.",
+      "source_repository_links": [
+        "https://github.com/takaven/teamframe",
+        "https://github.com/takaven/teamframe-site"
+      ],
+      "current_execution_gate": "Commercial launch preparation; customer deployment remains controlled per customer and requires founder/customer-delivery approval.",
+      "condition_to_clear": "",
       "destination_product": "",
-      "teamframe_relationship": "conditional; could be TeamFrame add-on or independent control-layer product",
-      "owner_current_workstream": "not scheduled",
+      "teamframe_relationship": "self; established Takaven commercial product",
+      "owner_current_workstream": "source and brand locked; awaiting commercial launch preparation",
       "evidence_confidence": "VERIFIED",
-      "important_remarks": "Must not become full payroll software. Boundary is payroll change control and document intelligence.",
-      "execution_ready": false,
+      "important_remarks": "TeamFrame is an active Takaven commercial product, not a discovery item. Product application source is takaven/teamframe main at 3c7ecddf5135f1747d6c9e7d1922265b92ba7b56. Commercial site source is takaven/teamframe-site main at cb64e38587d2bc3568dfdfa4eee529866e7db47a. Final product branding is applied. Customer deployment, walkthrough destination and any integration with LeaseDesk, HirePass or PayrollFlowEngine remain separate founder-controlled decisions. Buy the HR system once; add HR support only if needed remains the commercial direction, but pricing values are not recorded in this portfolio state.",
+      "execution_ready": true,
       "design_governance": {
-        "design_stage": "NOT_STARTED",
+        "design_stage": "D4_AUTHORISED",
         "design_system_version": "takaven-design-system-v1",
-        "approved_d1_reference": "",
-        "approved_d2_reference": "",
-        "approved_d3_reference": "",
-        "visual_profile_version": "payrollflowengine-visual-profile-v0"
+        "approved_d1_reference": "Established product; source migrated to takaven/teamframe and commercial site locked after rendered acceptance.",
+        "approved_d2_reference": "Established product; commercial site and application source accepted before commercial-state reconciliation.",
+        "approved_d3_reference": "Established product; final Takaven branding applied across application and commercial site.",
+        "visual_profile_version": "teamframe-visual-profile-v1"
       }
     },
     {
@@ -556,6 +562,67 @@
       }
     },
     {
+      "id": "TKV-004",
+      "name": "PayrollFlowEngine",
+      "slug": "payrollflowengine",
+      "category": "Payroll Operations / Document Intelligence",
+      "status": "SHORTLIST_CONDITIONAL",
+      "priority": "P2",
+      "lifecycle_stage": "STAGE_1_PRODUCT_DEFINITION",
+      "product_promise": "A payroll change-control and document-intelligence layer for intake, extraction, approvals, variance checks and auditability.",
+      "primary_buyer": "HR/payroll operator responsible for controlled payroll changes.",
+      "problem": "Payroll change inputs arrive through documents and manual messages, creating variance, approval and audit risk.",
+      "product_boundary": [
+        "incoming payroll change documents",
+        "document extraction",
+        "classification",
+        "employee change records",
+        "approval workflow",
+        "payroll variance control",
+        "auditability",
+        "exports"
+      ],
+      "exclusions": [
+        "full payroll system",
+        "payroll calculation engine",
+        "replacement for mature payroll suites",
+        "tax filing engine"
+      ],
+      "source_assets": [
+        {
+          "name": "PayrollFlowEngine source assets",
+          "classification": "source lineage",
+          "evidence_confidence": "VERIFIED",
+          "remarks": "Retained as conditional product asset.",
+          "role": "PRIMARY",
+          "source_type": "REPLIT_EXPORT_OR_LOCAL_ASSET",
+          "owner_repository": "",
+          "repository_url": "",
+          "branch": "",
+          "pinned_commit_sha": "",
+          "local_or_replit_locator": "",
+          "locator_status": "LOCATOR_REQUIRED"
+        }
+      ],
+      "source_repository_links": [],
+      "current_execution_gate": "Future/conditional. Resolve product boundary decision after LeaseDesk, HirePass and TeamFrame commercial launch preparation unless explicitly authorised earlier.",
+      "condition_to_clear": "Decide TeamFrame add-on vs independent Takaven control-layer product.",
+      "destination_product": "",
+      "teamframe_relationship": "conditional; could be TeamFrame add-on or independent control-layer product",
+      "owner_current_workstream": "future/conditional; not in current commercial launch focus",
+      "evidence_confidence": "VERIFIED",
+      "important_remarks": "Must not become full payroll software. Boundary is payroll change control and document intelligence.",
+      "execution_ready": false,
+      "design_governance": {
+        "design_stage": "NOT_STARTED",
+        "design_system_version": "takaven-design-system-v1",
+        "approved_d1_reference": "",
+        "approved_d2_reference": "",
+        "approved_d3_reference": "",
+        "visual_profile_version": "payrollflowengine-visual-profile-v0"
+      }
+    },
+    {
       "id": "TKV-007",
       "name": "VisionForge / AI-DAN",
       "slug": "visionforge",
@@ -594,7 +661,7 @@
       "condition_to_clear": "",
       "destination_product": "",
       "teamframe_relationship": "unrelated",
-      "owner_current_workstream": "hold",
+      "owner_current_workstream": "deferred/hold; not in current commercial launch focus",
       "evidence_confidence": "VERIFIED",
       "important_remarks": "Do not reopen during normal execution. Revisit only with material new commercial evidence.",
       "execution_ready": false,

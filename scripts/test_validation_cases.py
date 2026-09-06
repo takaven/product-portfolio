@@ -90,7 +90,8 @@ def test_orphan_product_folder(base: dict) -> None:
 
 def test_duplicate_or_reused_permanent_id(base: dict) -> None:
     data = copy.deepcopy(base)
-    data["products"][0]["id"] = "TKV-001"
+    data["portfolio"]["reserved_product_ids"] = [{"id": "TKV-999", "reason": "test reserved id"}]
+    data["products"][0]["id"] = "TKV-999"
     assert_fails("reserved ID", data, "Reserved product IDs")
 
     data = copy.deepcopy(base)

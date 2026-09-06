@@ -9,7 +9,7 @@ A payroll change-control and document-intelligence layer for intake, extraction,
 - Status: `SHORTLIST_CONDITIONAL`
 - Priority: `P2`
 - Lifecycle stage: `STAGE_1_PRODUCT_DEFINITION`
-- Current execution gate: Resolve product boundary decision.
+- Current execution gate: Future/conditional. Resolve product boundary decision after LeaseDesk, HirePass and TeamFrame commercial launch preparation unless explicitly authorised earlier.
 - Evidence confidence: `VERIFIED`
 - Design stage: `NOT_STARTED`
 - Design system version: `takaven-design-system-v1`
