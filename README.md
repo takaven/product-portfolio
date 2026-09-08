@@ -52,9 +52,9 @@ Product-Portfolio Setup is 3/3 complete. Autonomous Agent Enablement is 2/2 comp
 - Governance is enabled and frozen for product execution. Discovery is closed.
 - `TKV-001 TeamFrame` is source-locked and brand-locked. TeamFrame is an active commercial product; customer deployment remains controlled per customer.
 - `TKV-002 LeaseDesk` is source-locked and brand-locked. Product/release work is complete, but LeaseDesk is not deployed or released.
-- LeaseDesk source of truth is `isudally/leasedesk-demo` on `main` at `c36c26f4d12b64f2a66239f47d23d46bbf50eebd`.
+- LeaseDesk source of truth is `isudally/leasedesk-demo` on `main` at `ce0d8969966cbbab3c6ee2f0718ef3a64a2f0f69`.
 - `TKV-003 HirePass` is source-locked and brand-locked. Product/code work, Signature Pass, Candidate Pass, Manager Pass and HR Pass Control are accepted, but HirePass is not deployed or released.
-- HirePass source of truth is `takaven/hirepass` on `main` at `bc444c2f69cd1fc62359b8ee7fef49392971a619`.
+- HirePass source of truth is `takaven/hirepass` on `main` at `7a45f1af75b7182c7a51daa8a1efe26ff9ba8d6a`.
 - `TKV-004 PayrollFlowEngine` remains P2 / conditional. Its boundary is Payroll Change Control / Payroll Document Intelligence, not full payroll software. The standalone versus TeamFrame add-on decision remains unresolved.
 - The approved Takaven commercial model is one-off product purchase with customer-paid/customer-controlled infrastructure where practical. Post-handover support and future change requests are optional and quoted separately; no monthly software subscription, mandatory maintenance or annual software licence is approved.
 - LeaseDesk public offer is `LeaseDesk + Setup` at `US$2,950` one-off. HirePass public offer is `HirePass + Setup` at `US$3,450` one-off. TeamFrame preserves `US$1,950` software-only and `from US$3,450` with setup.
