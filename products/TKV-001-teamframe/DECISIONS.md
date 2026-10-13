@@ -29,3 +29,11 @@ Append only material decisions for TeamFrame.
 - The independent concern that TeamFrame may be underpriced is classified as monitor after first sales. Approved pricing remains unchanged.
 - External proof and testimonials are classified as an early commercial objective, not as a product launch blocker.
 - TeamFrame remains focused on ongoing people operations after an organisation needs structured employee and HR administration. HirePass remains the pre-employment hiring handoff product; any integration remains a future separate decision.
+
+## 2026-10-13 - Canonical Marketing Website Source Reconciled (Issue #49)
+
+- Founder instructed review of the predecessor commercial website and consolidation into `takaven/takaven-web`, keeping `takaven/teamframe` as the separate protected HR product application source.
+- `takaven/takaven-web`, `main` at `f42496f1f6ff243bca729c3b434b03bd0b8b907f` is the verified website source baseline for `teamframe/`; its Vercel-generated URL was reported Ready/checked, but the `www.takaven.com` domain verification and DNS cutover were pending at the dated checkpoint. Online form endpoint remains inactive; `admin@takaven.com` is the direct contact fallback.
+- `takaven/teamframe-site` is a predecessor only. Preserve until documentation, current deployments and Git references are reconciled, then obtain separate explicit deletion approval. Historical September source locks are provenance, not current source precedence.
+- Existing one-off commercial model is unchanged; previously approved price figures remain internal references and are not republished on the current website by this source correction. Current product/optional-support scope remains governed by the later TeamFrame application commercial scope and decisions.
+- The TeamFrame application at `app.takaven.com` and its pending real-customer-data gates are unaffected.

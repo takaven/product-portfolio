@@ -59,3 +59,10 @@ This log is append-only for material portfolio decisions. Routine status updates
 - The TeamFrame pricing concern is classified as monitor after first sales. Approved TeamFrame pricing remains unchanged.
 - HirePass is the hiring handoff before employment; TeamFrame is ongoing people operations after structured employee and HR administration is needed. Any integration remains a future separate decision.
 - Support and change requests remain optional and separately quoted after handover; no monthly subscription or mandatory maintenance model is approved.
+
+## 2026-10-13 - TKV-001 Commercial Website Source Realignment (Issue #49)
+
+- Founder-directed elimination of competing authoritative TeamFrame marketing-site claims: current website source is `takaven/takaven-web` at `teamframe/`, and `takaven/teamframe` remains the protected HR application source.
+- The predecessor `takaven/teamframe-site` remains preserved only for reconciliation and explicit later deletion; this decision does not delete repositories or update production DNS.
+- Source locator in `PORTFOLIO.yaml` and generated TKV-001 documentation now points to verified `main` checkpoints as of 2026-10-13. Later deployments/merges require re-verification, not reuse of fixed SHAs as current.
+- Software pricing and customer-data activation boundaries are unchanged; new website remains no-public-price and form-endpoint-unconfigured until separately validated.
