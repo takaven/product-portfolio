@@ -66,3 +66,10 @@ This log is append-only for material portfolio decisions. Routine status updates
 - The predecessor `takaven/teamframe-site` remains preserved only for reconciliation and explicit later deletion; this decision does not delete repositories or update production DNS.
 - Source locator in `PORTFOLIO.yaml` and generated TKV-001 documentation now points to verified `main` checkpoints as of 2026-10-13. Later deployments/merges require re-verification, not reuse of fixed SHAs as current.
 - Software pricing and customer-data activation boundaries are unchanged; new website remains no-public-price and form-endpoint-unconfigured until separately validated.
+
+## 2026-10-14 - TKV-001 Audit-Readiness Reconciliation (Issue #51)
+
+- TeamFrame's live marketing site is now recorded as published at `www.takaven.com/teamframe/`; domain verification is complete and the superseded `takaven/teamframe-site` repository has been deleted.
+- Canonical source pins were refreshed to current TeamFrame application and marketing `main` checkpoints after the documentation reconciliations.
+- The six-finding bounded TeamFrame correction workstream is closed; the final behaviour-changing baseline remains `3865ec2ea9ee37bfdefbb95d45214e48038ce784` and normal product-freeze rules remain in force.
+- Real-customer data activation, pricing and product scope are unchanged. This is documentation/source reconciliation only.
