@@ -37,3 +37,11 @@ Append only material decisions for TeamFrame.
 - `takaven/teamframe-site` is a predecessor only. Preserve until documentation, current deployments and Git references are reconciled, then obtain separate explicit deletion approval. Historical September source locks are provenance, not current source precedence.
 - Existing one-off commercial model is unchanged; previously approved price figures remain internal references and are not republished on the current website by this source correction. Current product/optional-support scope remains governed by the later TeamFrame application commercial scope and decisions.
 - The TeamFrame application at `app.takaven.com` and its pending real-customer-data gates are unaffected.
+
+## 2026-10-14 - Live Website and Audit-Ready Source State (Issue #51)
+
+- `takaven/takaven-web` is the live canonical TeamFrame marketing source. `www.takaven.com` is Vercel-verified, the root redirects to `/teamframe/`, and the published privacy/HR Setup Check journeys are active.
+- The predecessor `takaven/teamframe-site` repository was deleted after source reconciliation; historical September references remain provenance only.
+- TeamFrame's six-finding bounded correction workstream closed through PR #30 and PR #31. Final behaviour-changing application baseline is `3865ec2ea9ee37bfdefbb95d45214e48038ce784`; current application `main` at this reconciliation is `e53d9ecee1fd53ccbcfa0e24ea8a6871c2a761cc` after documentation-only follow-up.
+- The current marketing `main` source checkpoint is `2835dafe1abe97578dd7b2733cba47d1c061ad83`; documentation-only website commits do not change the accepted behavioural baseline or product scope.
+- The website form endpoint remains unset with `admin@takaven.com` as fallback. Real-customer application data remains separately gated. No price, product-boundary or customer-data authorisation changed.

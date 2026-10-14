@@ -16,7 +16,7 @@ The canonical registry is `PORTFOLIO.yaml`. The generated human-readable product
 
 It is not an application monorepo and must not contain copies of product source code. Standalone Takaven products should use one dedicated source repository per product unless a later explicit founder/product architecture decision changes that topology.
 
-Current examples: `isudally/leasedesk-demo` is the authoritative LeaseDesk application source repository, `takaven/hirepass` is the authoritative HirePass application source repository, `takaven/teamframe` is the authoritative TeamFrame application source repository and `takaven/takaven-web` is the authoritative TeamFrame marketing-site source repository (under `teamframe/`; former `teamframe-site` retained temporarily for historical reconciliation). The files under `products/` are governance and documentation records only, not product implementations.
+Current examples: `isudally/leasedesk-demo` is the authoritative LeaseDesk application source repository, `takaven/hirepass` is the authoritative HirePass application source repository, `takaven/teamframe` is the authoritative TeamFrame application source repository and `takaven/takaven-web` is the authoritative live TeamFrame marketing-site source repository (under `teamframe/`; the superseded `teamframe-site` repository was deleted after reconciliation). The files under `products/` are governance and documentation records only, not product implementations.
 
 This separation preserves independent deployment, CI/test history, secrets and environment boundaries, database/storage boundaries, release histories, sanitisation controls, agent execution context and future licensing, sale, transfer or spin-out options. Future Takaven organisation normalisation such as `takaven/leasedesk`, `takaven/hirepass` or `takaven/payrollflowengine` is deferred until there is a material operational reason; do not migrate or rename `isudally/leasedesk-demo` merely for tidiness.
 
@@ -50,7 +50,7 @@ Product-Portfolio Setup is 3/3 complete. Autonomous Agent Enablement is 2/2 comp
 ## Current Programme State
 
 - Governance is enabled and frozen for product execution. Discovery is closed.
-- `TKV-001 TeamFrame` is source-locked and brand-locked. Product app source is `takaven/teamframe`; public marketing source is `takaven/takaven-web` under `teamframe/`. Marketing custom-domain cutover and real-customer application activation remain separately gated.
+- `TKV-001 TeamFrame` is source-locked and brand-locked. Product app source is `takaven/teamframe`; public marketing source is `takaven/takaven-web` under `teamframe/`. The `www.takaven.com` marketing site is live; real-customer application activation remains separately gated.
 - `TKV-002 LeaseDesk` is source-locked and brand-locked. Product/release work is complete, but LeaseDesk is not deployed or released.
 - LeaseDesk source of truth is `isudally/leasedesk-demo` on `main` at `ce0d8969966cbbab3c6ee2f0718ef3a64a2f0f69`.
 - `TKV-003 HirePass` is source-locked and brand-locked. Product/code work, Signature Pass, Candidate Pass, Manager Pass and HR Pass Control are accepted, but HirePass is not deployed or released.
@@ -59,7 +59,7 @@ Product-Portfolio Setup is 3/3 complete. Autonomous Agent Enablement is 2/2 comp
 - The approved Takaven commercial model is one-off product purchase with customer-paid/customer-controlled infrastructure where practical. Post-handover support and future change requests are optional and quoted separately; no monthly software subscription, mandatory maintenance or annual software licence is approved.
 - LeaseDesk public offer is `LeaseDesk + Setup` at `US$2,950` one-off. HirePass public offer is `HirePass + Setup` at `US$3,450` one-off. TeamFrame preserves `US$1,950` software-only and `from US$3,450` with setup.
 - LeaseDesk `from US$5,450` and HirePass `from US$6,450` custom-work anchors are internal quoting anchors only, not second public product tiers or technical capacity limits.
-- The next programme phase is `COMMERCIAL LAUNCH PREPARATION`: Takaven commercial website, TeamFrame walkthrough destination, sales/demo preparation, deployment per actual sale/customer and sales/outreach.
+- The programme remains in `COMMERCIAL LAUNCH PREPARATION`: the TeamFrame marketing website is live; remaining work is sales/demo preparation, deployment per actual sale/customer and sales/outreach. Do not reopen TeamFrame product development without a qualifying trigger.
 - The final independent adversarial launch review found no product-level blockers. Accepted pre-outreach corrections are operational/commercial readiness items only; product development remains closed.
 
 ## Portfolio-Wide UI Strategy
